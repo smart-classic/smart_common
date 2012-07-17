@@ -1,7 +1,9 @@
 import rdflib
 from rdflib import Namespace, URIRef, Literal, BNode
 from StringIO import StringIO as sIO
+import threading
 
+lock = threading.Lock()
 
 rdflib.plugin.register('sparql', rdflib.query.Processor,
                        'rdfextras.sparql.processor', 'Processor')
@@ -33,14 +35,15 @@ def serialize_rdf(model):
     return model.serialize(format="pretty-xml")
 
 def parse_rdf(string, model=None):
-    if model == None:
-        model = bound_graph() 
-    try:
-        model.default_context.parse(data=string)
-    except:
-        model.default_context.parse(data=string, format="n3")
+    with lock:
+        if model == None:
+            model = bound_graph() 
+        try:
+            model.default_context.parse(data=string)
+        except:
+            model.default_context.parse(data=string, format="n3")
 
-    return model
+        return model
 
 def get_property(model, s, p, raw_statement=False):
     r = model.triples((s, p, None))
