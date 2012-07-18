@@ -480,7 +480,7 @@ try:
   f = open(settings.ONTOLOGY_FILE).read()
 except:
   try:
-    f = open(os.getcwd()+'/schema/smart.owl').read()
+    f = open(os.getcwd()+'/smart_common/schema/smart.owl').read()
   except:
     raise IOError, "Can't read ONTOLOGY_FILE from django settings or schema/smart.owl"
 
