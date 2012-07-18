@@ -1,5 +1,6 @@
 from util import *
-import string, re
+import string, re, os
+
 class OWL_Base(object):
     __metaclass__ = LookupType
     store = {}
@@ -477,7 +478,11 @@ f = None
 try:
   from django.conf import settings
   f = open(settings.ONTOLOGY_FILE).read()
-except: pass
+except:
+  try:
+    f = open(os.getcwd()+'/schema/smart.owl').read()
+  except:
+    raise IOError, "Can't read ONTOLOGY_FILE from django settings or schema/smart.owl"
 
 if f != None:
   parse_ontology(f)
