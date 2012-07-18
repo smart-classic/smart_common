@@ -1748,20 +1748,32 @@ While it might seem inelegant to expose explicit AllergyExclusion statements, th
         <rdfs:label>ContainerManifest</rdfs:label>
 	<api:example rdf:datatype="&rdf;XMLLiteral">
 {
-    &quot;http://smartplatforms.org/terms#Demographics&quot;: {
-        &quot;methods&quot;: [
-            &quot;GET&quot;
-        ]
-    }, 
-    &quot;http://smartplatforms.org/terms#Encounter&quot;: {
-        &quot;methods&quot;: [
-            &quot;GET&quot;
-        ]
-    }, 
-    &quot;http://smartplatforms.org/terms#VitalSigns&quot;: {
-        &quot;methods&quot;: [
-            &quot;GET&quot;
-        ]
+    smart_version: &quot;0.4&quot;,
+    api_base: &quot;http://sandbox-api.smartplatforms.org&quot;,
+    name: &quot;SMART v0.4 Sandbox&quot;,
+    description: &quot;Public sandbox to demonstrate the SMART API&quot;,
+    admin: &quot;info@smartplatforms.org&quot;,
+
+    oauth_request: 'http://request/uri',
+    oauth_authorize: 'http://authorize/uri',
+    oauth_exchange: 'http://exchange/uri',
+
+    capabilities: {
+        &quot;http://smartplatforms.org/terms#Demographics&quot;: {
+            &quot;methods&quot;: [
+                &quot;GET&quot;
+            ]
+        }, 
+        &quot;http://smartplatforms.org/terms#Encounter&quot;: {
+            &quot;methods&quot;: [
+                &quot;GET&quot;
+            ]
+        }, 
+        &quot;http://smartplatforms.org/terms#VitalSigns&quot;: {
+            &quot;methods&quot;: [
+                &quot;GET&quot;
+            ]
+        }
     }
 }
 </api:example>
