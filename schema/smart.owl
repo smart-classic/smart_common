@@ -1742,10 +1742,10 @@ While it might seem inelegant to expose explicit AllergyExclusion statements, th
     
 
 
-    <!-- http://smartplatforms.org/terms#Container -->
+    <!-- http://smartplatforms.org/terms#ContainerManifest -->
 
-    <owl:Class rdf:about="http://smartplatforms.org/terms#Capabilities">
-        <rdfs:label>Capabilities</rdfs:label>
+    <owl:Class rdf:about="http://smartplatforms.org/terms#ContainerManifest">
+        <rdfs:label>ContainerManifest</rdfs:label>
 	<api:example rdf:datatype="&rdf;XMLLiteral">
 {
     &quot;http://smartplatforms.org/terms#Demographics&quot;: {
@@ -1765,7 +1765,7 @@ While it might seem inelegant to expose explicit AllergyExclusion statements, th
     }
 }
 </api:example>
-<rdfs:comment>A SMART Container exposes a set of capabilities as a JSON structure.  The example below shows the capabilities of a container that provides Demographics, Encounters, and Vital Signs only.</rdfs:comment>
+<rdfs:comment>A SMART Container exposes a manifest describing its properties and capabilities as a JSON structure.  The example below is for a container that provides Demographics, Encounters, and Vital Signs only.</rdfs:comment>
     </owl:Class>
 
     <!-- http://smartplatforms.org/terms#DataType -->
@@ -5676,16 +5676,16 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
     
 
 
-    <!-- http://smartplatforms.org/terms/api/calls#get_capabilities -->
+    <!-- http://smartplatforms.org/terms/api/calls#get_manifest -->
 
-    <owl:NamedIndividual rdf:about="&calls;get_capabilities">
+    <owl:NamedIndividual rdf:about="&calls;get_manifest">
         <rdf:type rdf:resource="&api;call"/>
-        <api:path>/capabilities/</api:path>
+        <api:path>/manifest</api:path>
         <api:by_internal_id>true</api:by_internal_id>
         <api:category>container_items</api:category>
-        <rdfs:comment>Get capabilities for a container</rdfs:comment>
+        <rdfs:comment>Get manifest for a container</rdfs:comment>
         <api:method>GET</api:method>
-        <api:target rdf:resource="http://smartplatforms.org/terms#Capabilities"/>
+        <api:target rdf:resource="http://smartplatforms.org/terms#ContainerManifest"/>
     </owl:NamedIndividual>
     
 
