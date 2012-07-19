@@ -479,10 +479,16 @@ try:
   from django.conf import settings
   f = open(settings.ONTOLOGY_FILE).read()
 except:
-  try:
-    f = open(os.getcwd()+'/smart_common/schema/smart.owl').read()
-  except:
-    raise IOError, "Can't read ONTOLOGY_FILE from django settings or schema/smart.owl"
+  pass
+
+try:
+  smart_owl = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+      "..",
+      "schema",
+      "smart.owl")
+  f = open(smart_owl).read()
+except:
+  pass
 
 if f != None:
   parse_ontology(f)
