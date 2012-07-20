@@ -135,14 +135,19 @@ def container_manifest_structure_validator (manifest):
         if "smart_version" not in keys or not isinstance(manifest["smart_version"], basestring) :
             messages.append ("All container manifests must have an 'smart_version' string property")
             
-        if "oauth_authorize" not in keys or not isurl(manifest["oauth_authorize"]):
-            messages.append ("The 'oauth_authorize' propery should be an http/https URL") 
-      
-        if "oauth_exchange" not in keys or not isurl(manifest["oauth_exchange"]):
-            messages.append ("The 'oauth_exchange' propery should be an http/https URL") 
+        if "launch_urls" not in keys or type(manifest["launch_urls"]) != dict:
+            messages.append ("The 'launch_urls' propery should be a dictionary")
+        else:
+            rkeys = manifest["launch_urls"].keys()
+            
+            if "authorize_token" not in rkeys or not isurl(manifest["launch_urls"]["authorize_token"]):
+                messages.append ("The 'authorize_token' propery should be an http/https URL")
                 
-        if "oauth_request" not in keys or not isurl(manifest["oauth_request"]):
-            messages.append ("The 'oauth_request' propery should be an http/https URL") 
+            if "exchange_token" not in rkeys or not isurl(manifest["launch_urls"]["exchange_token"]):
+                messages.append ("The 'exchange_token' propery should be an http/https URL")  
+                
+            if "request_token" not in rkeys or not isurl(manifest["launch_urls"]["request_token"]):
+                messages.append ("The 'request_token' propery should be an http/https URL")  
               
         if "capabilities" not in keys or type(manifest["capabilities"]) != dict:
             messages.append ("The 'capabilities' property definition should be a dictionary")
@@ -170,7 +175,7 @@ def container_manifest_structure_validator (manifest):
                     for k in (key for key in r[api].keys() if key not in ("methods", "codes")):
                         messages.append ("'%s' property is not part of the SMART standard" % k)
             
-        for k in (key for key in keys if key not in ("admin", "api_base", "description", "name", "smart_version", "oauth_authorize", "oauth_exchange", "oauth_request", "capabilities")):
+        for k in (key for key in keys if key not in ("admin", "api_base", "description", "name", "smart_version", "launch_urls", "capabilities")):
             messages.append ("'%s' property is not part of the SMART standard" % k)
         
     return messages
