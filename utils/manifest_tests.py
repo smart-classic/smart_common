@@ -59,22 +59,6 @@ def app_manifest_structure_validator (manifest):
         if "smart_version" in keys and not re.match("^[\d]+(?:\.[\d]+){0,2}$", manifest["smart_version"]) :
             messages.append ("'smart_version' should be of type 'major[.minor][.build]'")
             
-        if "optimalBrowserEnvironments" in keys: 
-            if type(manifest["optimalBrowserEnvironments"]) != list :
-                messages.append ("'optimalBrowserEnvironments' property should define a list")
-            else:
-                for e in manifest["optimalBrowserEnvironments"]:
-                    if e not in ("desktop", "mobile", "tablet"):
-                        messages.append ("'optimalBrowserEnvironments' list items must be one of ('desktop', 'mobile', 'tablet')")
-                     
-        if "supportedBrowserEnvironments" in keys: 
-            if type(manifest["supportedBrowserEnvironments"]) != list :
-                messages.append ("'supportedBrowserEnvironments' property should define a list")
-            else:
-                for e in manifest["supportedBrowserEnvironments"]:
-                    if e not in ("desktop", "mobile", "tablet"):
-                        messages.append ("'supportedBrowserEnvironments' list items must be one of ('desktop', 'mobile', 'tablet')")
-            
         if "requires" in keys:
             r = manifest["requires"]
             if type(r) != dict:
@@ -134,7 +118,7 @@ def container_manifest_structure_validator (manifest):
             
         if "smart_version" not in keys or not isinstance(manifest["smart_version"], basestring) :
             messages.append ("All container manifests must have an 'smart_version' string property")
-            
+  
         if "launch_urls" not in keys or type(manifest["launch_urls"]) != dict:
             messages.append ("The 'launch_urls' propery should be a dictionary")
         else:
@@ -148,7 +132,7 @@ def container_manifest_structure_validator (manifest):
                 
             if "request_token" not in rkeys or not isurl(manifest["launch_urls"]["request_token"]):
                 messages.append ("The 'request_token' propery should be an http/https URL")  
-              
+
         if "capabilities" not in keys or type(manifest["capabilities"]) != dict:
             messages.append ("The 'capabilities' property definition should be a dictionary")
         else:

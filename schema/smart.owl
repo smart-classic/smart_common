@@ -1748,15 +1748,17 @@ While it might seem inelegant to expose explicit AllergyExclusion statements, th
         <rdfs:label>ContainerManifest</rdfs:label>
 	<api:example rdf:datatype="&rdf;XMLLiteral">
 {
-    smart_version: &quot;0.4&quot;,
+    smart_version: &quot;0.5.0&quot;,
     api_base: &quot;http://sandbox-api.smartplatforms.org&quot;,
-    name: &quot;SMART v0.4 Sandbox&quot;,
+    name: &quot;SMART v0.5 Sandbox&quot;,
     description: &quot;Public sandbox to demonstrate the SMART API&quot;,
     admin: &quot;info@smartplatforms.org&quot;,
 
-    oauth_request: 'http://request/uri',
-    oauth_authorize: 'http://authorize/uri',
-    oauth_exchange: 'http://exchange/uri',
+    launch_urls: {
+        &quot;authorize_token&quot;: &quot;http://localhost:7001/oauth/authorize&quot;, 
+        &quot;exchange_token&quot;: &quot;http://localhost:7000/oauth/access_token&quot;, 
+        &quot;request_token&quot;: &quot;http://localhost:7000/oauth/request_token&quot;
+    }, 
 
     capabilities: {
         &quot;http://smartplatforms.org/terms#Demographics&quot;: {
