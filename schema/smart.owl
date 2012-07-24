@@ -4102,19 +4102,13 @@ A single fulfillment event (that is, the medication was dispensed to the patient
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&sp;smokingStatus"/>
-                <owl:allValuesFrom rdf:resource="&sp;CodedValue"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&sp;smokingStatus"/>
-                <owl:allValuesFrom rdf:resource="&dcterms;title#SmokingStatus"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&sp;smokingStatus"/>
                 <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&sp;smokingStatus"/>
+                <owl:allValuesFrom rdf:resource="&sp;CodedValue"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment rdf:datatype="&rdf;XMLLiteral">The SMART Social History model describes smoking status accoring to Meaningful Use classifications.  This mode is expected to expand over time to accomodate additional aspects of the social history.</rdfs:comment>
@@ -4160,7 +4154,7 @@ A single fulfillment event (that is, the medication was dispensed to the patient
         <owl:annotatedTarget>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&sp;smokingStatus"/>
-                <owl:allValuesFrom rdf:resource="&dcterms;title#SmokingStatus"/>
+                <owl:allValuesFrom rdf:resource="&sp;CodedValue"/>
             </owl:Restriction>
         </owl:annotatedTarget>
     </owl:Axiom>
