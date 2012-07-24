@@ -22,7 +22,6 @@
     <!ENTITY AlertSeverity "http://smartplatforms.org/terms/codes/AlertSeverity#" >
     <!ENTITY BloodPressureMethod "http://smartplatforms.org/terms/codes/BloodPressureMethod#" >
     <!ENTITY TranslationFidelity "http://smartplatforms.org/terms/codes/TranslationFidelity#" >
-    <!ENTITY MedicationProvenance "http://smartplatforms.org/terms/codes/MedicationProvenance#" >
     <!ENTITY LabResultInterpretation "http://smartplatforms.org/terms/codes/LabResultInterpretation#" >
     <!ENTITY ImmunizationRefusalReason "http://smartplatforms.org/terms/codes/ImmunizationRefusalReason#" >
     <!ENTITY ImmunizationAdministrationStatus "http://smartplatforms.org/terms/codes/ImmunizationAdministrationStatus#" >
@@ -53,7 +52,6 @@
      xmlns:ImmunizationAdministrationStatus="&spcode;ImmunizationAdministrationStatus#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:MedicationProvenance="&spcode;MedicationProvenance#"
      xmlns:examples="http://smartplatforms.org/examples#">
     <owl:Ontology rdf:about="http://smartplatforms.org/terms#"/>
     
@@ -414,6 +412,10 @@
     <owl:ObjectProperty rdf:about="http://smartplatforms.org/terms#problemName"/>
     
 
+    <!-- http://smartplatforms.org/terms#procedureName -->
+
+    <owl:ObjectProperty rdf:about="http://smartplatforms.org/terms#procedureName"/>
+ 
 
     <!-- http://smartplatforms.org/terms#productClass -->
 
@@ -2957,23 +2959,6 @@ No example yet.</api:example>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#provenance"/>
-                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#provenance"/>
-                <owl:allValuesFrom>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://smartplatforms.org/terms#code"/>
-                        <owl:allValuesFrom rdf:resource="&spcode;MedicationProvenance"/>
-                    </owl:Restriction>
-                </owl:allValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://smartplatforms.org/terms#instructions"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
@@ -3465,6 +3450,145 @@ For a medication with a simple dosing schedule, record the amount to take with e
         </owl:annotatedTarget>
     </owl:Axiom>
     
+    <!-- http://smartplatforms.org/terms#Procedure -->
+
+    <owl:Class rdf:about="http://smartplatforms.org/terms#Procedure">
+        <rdfs:label>Procedure</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://smartplatforms.org/terms#Statement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&dcterms;date"/>
+                <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&dcterms;date"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#procedureName"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#procedureName"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://smartplatforms.org/terms#code"/>
+                        <owl:allValuesFrom rdf:resource="&spcode;Procedure"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#procedureName"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#notes"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#notes"/>
+                <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#provider"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#Provider"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+	<rdfs:comment rdf:datatype="&rdf;XMLLiteral">The SMART Procedure model describes a procedure that has been performed on a patient.  Examples include surgical procedures (such as an appendectomy) and physical exam procedures (such as a diabetic foot exam).  More broadly, the SMART procedure model is used to capture events under SNOMED CT's Procedure hierarchy. </rdfs:comment>
+        <api:example><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:sp="http://smartplatforms.org/terms#"
+  xmlns:dcterms="http://purl.org/dc/terms/"
+  xmlns:spcode="http://smartplatforms.org/terms/codes/"
+  xmlns:v="http://www.w3.org/2006/vcard/ns#">
+ <sp:Procedure>
+    <sp:belongsTo rdf:resource="http://sandbox-api.smartplatforms.org/records/2169591" />
+    <dcterms:date>2011-02-15</dcterms:date>
+    <sp:procedureName>
+      <sp:CodedValue>
+          <dcterms:title></dcterms:title>
+          <sp:code>
+            <spcode:Procedure rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/80146002">
+              <rdf:type rdf:resource="http://smartplatforms.org/terms#Code" /> 
+              <sp:system>http://purl.bioontology.org/ontology/SNOMEDCT/</sp:system>
+              <dcterms:identifier>80146002</dcterms:identifier>
+              <dcterms:title>Appendectomy</dcterms:title>
+            </spcode:Procedure>    
+          </sp:code>
+      </sp:CodedValue>
+    </sp:procedureName>
+    <sp:provider>
+      <sp:Provider>
+        <v:n>
+          <v:Name>
+           <v:given-name>Joshua</v:given-name>
+           <v:family-name>Mandel</v:family-name>
+          </v:Name>
+        </v:n>
+      </sp:Provider>
+    </sp:provider>
+ </sp:Procedure>
+</rdf:RDF>]]></api:example>
+        <api:base_path>/records/{record_id}/procedures/{procedure_id}</api:base_path>
+    </owl:Class>
+    <owl:Axiom>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral">Provider responsible for the procedure.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#Procedure"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#provider"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#Provider"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral">SNOMED CT concept ID (under the procedure hierarchy) for this procedure.  Code element with code drawn from http://purl.bioontology.org/ontology/SNOMEDCT/{cui}</rdfs:comment>
+        <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#Procedure"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#procedureName"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral">When the proceduere was performed, encoded as an ISO-8601 string.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#Procedure"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&dcterms;date"/>
+                <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral">Free-text notes about this procedure.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#Procedure"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+	    <owl:onProperty rdf:resource="http://smartplatforms.org/terms#notes"/>
+                <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
 
 
     <!-- http://smartplatforms.org/terms#Problem -->
@@ -4829,25 +4953,6 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
     
 
 
-    <!-- http://smartplatforms.org/terms/codes/MedicationProvenance -->
-
-    <owl:Class rdf:about="&spcode;MedicationProvenance">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&spcode;MedicationProvenance#prescription"/>
-                    <rdf:Description rdf:about="&spcode;MedicationProvenance#fulfillment"/>
-                    <rdf:Description rdf:about="&spcode;MedicationProvenance#administration"/>
-                    <rdf:Description rdf:about="&spcode;MedicationProvenance#reconciliation"/>
-                    <rdf:Description rdf:about="&spcode;MedicationProvenance#patientReport"/>
-                </owl:oneOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://smartplatforms.org/terms#Code"/>
-    </owl:Class>
-    
-
-
     <!-- http://smartplatforms.org/terms/codes/NDFRT -->
 
     <owl:Class rdf:about="&spcode;NDFRT">
@@ -4880,7 +4985,11 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
         <rdfs:comment>RxNorm TTY in (&#39;SCD&#39;,&#39;SBD&#39;,&#39;GPCK&#39;,&#39;BPCK&#39;)</rdfs:comment>
     </owl:Class>
     
-
+    <owl:Class rdf:about="&spcode;Procedure">
+        <rdfs:subClassOf rdf:resource="&spcode;SNOMED"/>
+        <rdfs:comment>SNOMED Concept from the Procedure hierarchy</rdfs:comment>
+    </owl:Class>
+ 
 
     <!-- http://smartplatforms.org/terms/codes/SNOMED -->
 
@@ -5606,16 +5715,16 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
     
 
 
-    <!-- http://smartplatforms.org/terms/api/calls#get_all_medication -->
+    <!-- http://smartplatforms.org/terms/api/calls#get_all_procedure -->
 
-    <owl:NamedIndividual rdf:about="&calls;get_all_medication">
+    <owl:NamedIndividual rdf:about="&calls;get_all_procedure">
         <rdf:type rdf:resource="&api;call"/>
         <api:category>record_items</api:category>
-        <rdfs:comment>Get all medications for a patient</rdfs:comment>
-        <api:path>/records/{record_id}/medications/</api:path>
+        <rdfs:comment>Get all procedures for a patient</rdfs:comment>
+        <api:path>/records/{record_id}/procedures/</api:path>
         <api:method>GET</api:method>
         <api:by_internal_id>true</api:by_internal_id>
-        <api:target rdf:resource="http://smartplatforms.org/terms#Medication"/>
+        <api:target rdf:resource="http://smartplatforms.org/terms#Procedure"/>
     </owl:NamedIndividual>
     
 
@@ -5785,8 +5894,20 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
         <rdfs:comment>Get medication for a patient</rdfs:comment>
         <api:target rdf:resource="http://smartplatforms.org/terms#Medication"/>
     </owl:NamedIndividual>
-    
 
+
+    <!-- http://smartplatforms.org/terms/api/calls#get_procedure -->
+
+    <owl:NamedIndividual rdf:about="&calls;get_procedure">
+        <rdf:type rdf:resource="&api;call"/>
+        <api:by_internal_id>true</api:by_internal_id>
+        <api:path>/records/{record_id}/medications/{procedure_id}</api:path>
+        <api:method>GET</api:method>
+        <api:category>record_item</api:category>
+        <rdfs:comment>Get procedure for a patient</rdfs:comment>
+        <api:target rdf:resource="http://smartplatforms.org/terms#Procedure"/>
+    </owl:NamedIndividual>
+    
 
     <!-- http://smartplatforms.org/terms/api/calls#get_ontology -->
 
@@ -6368,52 +6489,6 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
         <dcterms:title>Preliminary</dcterms:title>
     </owl:NamedIndividual>
     
-
-
-    <!-- http://smartplatforms.org/terms/codes/MedicationProvenance#administration -->
-
-    <owl:NamedIndividual rdf:about="&spcode;MedicationProvenance#administration">
-        <rdf:type rdf:resource="&spcode;MedicationProvenance"/>
-        <dcterms:title>Derived by administration</dcterms:title>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://smartplatforms.org/terms/codes/MedicationProvenance#fulfillment -->
-
-    <owl:NamedIndividual rdf:about="&spcode;MedicationProvenance#fulfillment">
-        <rdf:type rdf:resource="&spcode;MedicationProvenance"/>
-        <dcterms:title>Derived by fulfillment</dcterms:title>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://smartplatforms.org/terms/codes/MedicationProvenance#patientReport -->
-
-    <owl:NamedIndividual rdf:about="&spcode;MedicationProvenance#patientReport">
-        <rdf:type rdf:resource="&spcode;MedicationProvenance"/>
-        <dcterms:title>Derived by patient report</dcterms:title>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://smartplatforms.org/terms/codes/MedicationProvenance#prescription -->
-
-    <owl:NamedIndividual rdf:about="&spcode;MedicationProvenance#prescription">
-        <rdf:type rdf:resource="&spcode;MedicationProvenance"/>
-        <dcterms:title>Derived by prescription</dcterms:title>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://smartplatforms.org/terms/codes/MedicationProvenance#reconciliation -->
-
-    <owl:NamedIndividual rdf:about="&spcode;MedicationProvenance#reconciliation">
-        <rdf:type rdf:resource="&spcode;MedicationProvenance"/>
-        <dcterms:title>Derived by medication reconciliation</dcterms:title>
-    </owl:NamedIndividual>
-    
-
 
     <!-- http://smartplatforms.org/terms/codes/TranslationFidelity#automated -->
 
