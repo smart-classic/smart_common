@@ -416,12 +416,6 @@ class SMART_Class(OWL_Class):
 
         self.calls = []
 
-        def callback(c):
-            self.calls.append(c)
-
-        for call in graph.triples((None, api.target, uri)):
-            SMART_API_Call.get_or_create(graph, call[0], callback)
-
 """Represent calls like GET /records/{rid}/medications/"""
 class SMART_API_Call(OWL_Base):
     rdf_type = api.call
@@ -446,6 +440,10 @@ def parse_ontology(f):
     m = parse_rdf(f)
     for c in m.triples((None, rdf.type, owl.Class)):
         SMART_Class.get_or_create(m, c[0])
+
+    for c in m.triples((None, rdf.type, api.call)):
+        call = SMART_API_Call.get_or_create(m, c[0])
+        SMART_Class[call.target].calls.append(call)
 
     api_calls = SMART_API_Call.store.values()
     api_types = filter(lambda t: isinstance(t, SMART_Class) and isinstance(t.uri, URIRef), SMART_Class.store.values())

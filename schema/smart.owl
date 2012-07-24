@@ -501,6 +501,12 @@
     
 
 
+    <!-- http://smartplatforms.org/terms#smokingStatus -->
+
+    <owl:ObjectProperty rdf:about="&sp;smokingStatus"/>
+    
+
+
     <!-- http://smartplatforms.org/terms#specimenCollected -->
 
     <owl:ObjectProperty rdf:about="&sp;specimenCollected"/>
@@ -901,6 +907,26 @@
                 <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/dc/terms/title#SmokingStatus -->
+
+    <owl:Class rdf:about="&dcterms;title#SmokingStatus">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/449868002"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/266927001"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/230059006"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/8517006"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/405746006"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/266919005"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&spcode;SNOMED"/>
     </owl:Class>
     
 
@@ -1713,7 +1739,9 @@ While it might seem inelegant to expose explicit AllergyExclusion statements, th
                 <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <api:example rdf:datatype="&rdf;XMLLiteral">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral">The SMART Clinical Note model encapsulates a simple clinical note with a date, author, title, and one or more instances of formatted data,  The formatted data, in turn, comprises a MIME type + URI at which the content can be found.</rdfs:comment>
+        <api:base_path>/records/{record_id}/clinical_notes/{clinical_note_id}</api:base_path>
+        <api:example>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
 &lt;rdf:RDF xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;
   xmlns:sp=&quot;http://smartplatforms.org/terms#&quot;
   xmlns:dcterms=&quot;http://purl.org/dc/terms/&quot;
@@ -1725,7 +1753,7 @@ While it might seem inelegant to expose explicit AllergyExclusion statements, th
     &lt;dcterms:date&gt;2012-05-17&lt;/dcterms:date&gt;
     &lt;dcterms:title&gt;Cardiology clinic follow-up&lt;/dcterms:title&gt;
     &lt;dcterms:hasFormat&gt;
-         &lt;sp:DocumentWithFormat rdf:about=&quot;http://sandbox-api.smartplatforms.org/2169591/clinical_notes/123/raw&quot;&gt;
+         &lt;sp:DocumentWithFormat rdf:about=&quot;http://url.of.raw.note/content&quot;&gt;
             &lt;dcterms:format rdf:resoruce=&quot;http://purl.org/NET/mediatypes/text/html&quot;/&gt;
          &lt;/sp:DocumentWithFormat&gt;
     &lt;/dcterms:hasFormat&gt;
@@ -1741,8 +1769,6 @@ While it might seem inelegant to expose explicit AllergyExclusion statements, th
     &lt;/sp:provider&gt;
  &lt;/sp:ClinicalNote&gt;
 &lt;/rdf:RDF&gt;</api:example>
-        <rdfs:comment rdf:datatype="&rdf;XMLLiteral">The SMART Clinical Note model encapsulates a simple clinical note with a date, author, title, and one or more instances of formatted data,  The formatted data, in turn, comprises a MIME type + URI at which the content can be found.</rdfs:comment>
-        <api:base_path>/records/{record_id}/clinical_notes/{clinical_note_id}</api:base_path>
     </owl:Class>
     <owl:Axiom>
         <rdfs:comment>Date on which the note was written.</rdfs:comment>
@@ -4052,6 +4078,95 @@ A single fulfillment event (that is, the medication was dispensed to the patient
     
 
 
+    <!-- http://smartplatforms.org/terms#SocialHistory -->
+
+    <owl:Class rdf:about="&sp;SocialHistory">
+        <rdfs:label>Social History</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&sp;Statement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&sp;smokingStatus"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&sp;CodedValue"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&sp;code"/>
+                                <owl:allValuesFrom rdf:resource="&dcterms;title#SmokingStatus"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&sp;smokingStatus"/>
+                <owl:allValuesFrom rdf:resource="&sp;CodedValue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&sp;smokingStatus"/>
+                <owl:allValuesFrom rdf:resource="&dcterms;title#SmokingStatus"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&sp;smokingStatus"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral">The SMART Social History model describes smoking status accoring to Meaningful Use classifications.  This mode is expected to expand over time to accomodate additional aspects of the social history.</rdfs:comment>
+        <api:example>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;rdf:RDF
+  xmlns:dcterms=&quot;http://purl.org/dc/terms/&quot;
+  xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;
+  xmlns:sp=&quot;http://smartplatforms.org/terms#&quot;
+  xmlns:spcode=&quot;http://smartplatforms.org/terms/codes/&quot;&gt; 
+    &lt;sp:SocialHistory&gt;
+      &lt;sp:belongsTo rdf:resource=&quot;http://sandbox-api.smartplatforms.org/records/2169591&quot; /&gt;
+      &lt;sp:smokingStatus&gt;
+      &lt;sp:CodedValue&gt;
+          &lt;dcterms:title&gt;Former smoker)&lt;/dcterms:title&gt;      
+          &lt;sp:code&gt;
+            &lt;spcode:SmokingStatus rdf:about=&quot;http://purl.bioontology.org/ontology/SNOMEDCT/8517006&quot;&gt;
+              &lt;rdf:type rdf:resource=&quot;http://smartplatforms.org/terms#Code&quot; /&gt; 
+              &lt;dcterms:title&gt;Former smoker&lt;/dcterms:title&gt;      
+              &lt;sp:system&gt;http://purl.bioontology.org/ontology/SNOMEDCT/&lt;/sp:system&gt;
+              &lt;dcterms:identifier&gt;8517006&lt;/dcterms:identifier&gt; 
+            &lt;/spcode:SmokingStatus&gt;
+          &lt;/sp:code&gt;
+      &lt;/sp:CodedValue&gt;
+      &lt;/sp:smokingStatus&gt;
+    &lt;/sp:SocialHistory&gt;
+&lt;/rdf:RDF&gt;
+</api:example>
+        <api:base_path>/records/{record_id}/social_history</api:base_path>
+    </owl:Class>
+    <owl:Axiom>
+        <rdfs:comment>A patient&apos;s smoking status according the Meaningful Use classification.  This must be one of six prespecified LOINC codes: 
+
+449868002
+230059006
+8517006
+266919005
+266927001
+405746006
+
+</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&sp;SocialHistory"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&sp;smokingStatus"/>
+                <owl:allValuesFrom rdf:resource="&dcterms;title#SmokingStatus"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    
+
+
     <!-- http://smartplatforms.org/terms#Statement -->
 
     <owl:Class rdf:about="&sp;Statement">
@@ -5648,6 +5763,15 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
     
 
 
+    <!-- http://purl.bioontology.org/ontology/SNOMEDCT/230059006 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/230059006">
+        <rdf:type rdf:resource="&dcterms;title#SmokingStatus"/>
+        <dcterms:title>Current some day smoker</dcterms:title>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://purl.bioontology.org/ontology/SNOMEDCT/235719002 -->
 
     <owl:NamedIndividual rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/235719002">
@@ -5671,6 +5795,24 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
     <owl:NamedIndividual rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/255604002">
         <rdf:type rdf:resource="&spcode;AllergySeverity"/>
         <dcterms:title>Mild</dcterms:title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.bioontology.org/ontology/SNOMEDCT/266919005 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/266919005">
+        <rdf:type rdf:resource="&dcterms;title#SmokingStatus"/>
+        <dcterms:title>Never smoker</dcterms:title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.bioontology.org/ontology/SNOMEDCT/266927001 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/266927001">
+        <rdf:type rdf:resource="&dcterms;title#SmokingStatus"/>
+        <dcterms:title>Smoker, current status unknown</dcterms:title>
     </owl:NamedIndividual>
     
 
@@ -5716,6 +5858,15 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
     <owl:NamedIndividual rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/40199007">
         <rdf:type rdf:resource="&spcode;BloodPressureBodyPosition"/>
         <dcterms:title>Supine</dcterms:title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.bioontology.org/ontology/SNOMEDCT/405746006 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/405746006">
+        <rdf:type rdf:resource="&dcterms;title#SmokingStatus"/>
+        <dcterms:title>Unknown if ever smoked</dcterms:title>
     </owl:NamedIndividual>
     
 
@@ -5783,6 +5934,15 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
     
 
 
+    <!-- http://purl.bioontology.org/ontology/SNOMEDCT/449868002 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/449868002">
+        <rdf:type rdf:resource="&dcterms;title#SmokingStatus"/>
+        <dcterms:title>Current every day smoker</dcterms:title>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://purl.bioontology.org/ontology/SNOMEDCT/59037007 -->
 
     <owl:NamedIndividual rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/59037007">
@@ -5806,6 +5966,15 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
     <owl:NamedIndividual rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/6736007">
         <rdf:type rdf:resource="&spcode;AllergySeverity"/>
         <dcterms:title>Moderate</dcterms:title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.bioontology.org/ontology/SNOMEDCT/8517006 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/8517006">
+        <rdf:type rdf:resource="&dcterms;title#SmokingStatus"/>
+        <dcterms:title>Former smoker</dcterms:title>
     </owl:NamedIndividual>
     
 
@@ -5875,6 +6044,20 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
         <rdfs:comment>Get all allergies for a patient</rdfs:comment>
         <api:category>record_items</api:category>
         <api:target rdf:resource="&sp;Allergy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://smartplatforms.org/terms/api/calls#get_all_clinical_notes -->
+
+    <owl:NamedIndividual rdf:about="&calls;get_all_clinical_notes">
+        <rdf:type rdf:resource="&api;call"/>
+        <api:category>record_items</api:category>
+        <api:path>/records/{record_id}/clinical_notes/</api:path>
+        <api:method>GET</api:method>
+        <api:by_internal_id>true</api:by_internal_id>
+        <rdfs:comment>Get all clinical notes for a patient</rdfs:comment>
+        <api:target rdf:resource="&sp;ClinicalNote"/>
     </owl:NamedIndividual>
     
 
@@ -6015,6 +6198,20 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
         <api:path>/apps/manifests/</api:path>
         <api:method>GET</api:method>
         <api:target rdf:resource="&sp;AppManifest"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://smartplatforms.org/terms/api/calls#get_clinical_note -->
+
+    <owl:NamedIndividual rdf:about="&calls;get_clinical_note">
+        <rdf:type rdf:resource="&api;call"/>
+        <api:by_internal_id>true</api:by_internal_id>
+        <api:path>/records/{record_id}/clinical_notes/{clinical_note_id}</api:path>
+        <rdfs:comment>Get clinical note for a patient</rdfs:comment>
+        <api:method>GET</api:method>
+        <api:category>record_item</api:category>
+        <api:target rdf:resource="&sp;ClinicalNote"/>
     </owl:NamedIndividual>
     
 
@@ -6394,6 +6591,20 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
         <api:category>record_items</api:category>
         <api:method>PUT</api:method>
         <api:target rdf:resource="&sp;UserPreferences"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://smartplatforms.org/terms/api/calls/#get_social_history -->
+
+    <owl:NamedIndividual rdf:about="http://smartplatforms.org/terms/api/calls/#get_social_history">
+        <rdf:type rdf:resource="&api;call"/>
+        <api:path>/records/{record_id}/social_history</api:path>
+        <api:method>GET</api:method>
+        <rdfs:comment>Get social history for a patient</rdfs:comment>
+        <api:category>record_items</api:category>
+        <api:by_internal_id>true</api:by_internal_id>
+        <api:target rdf:resource="&sp;SocialHistory"/>
     </owl:NamedIndividual>
     
 
