@@ -463,7 +463,7 @@ def get_api_calls ():
         if method == "GET" and (category == "record_items" or
                                     path == "/ontology" or
                                     path == "/apps/manifests/" or
-                                    path == "/capabilities/"):
+                                    path == "/manifest"):
             if target not in calls.keys():
                 calls[target] = path
             
