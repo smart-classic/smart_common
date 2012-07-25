@@ -287,6 +287,12 @@
     
 
 
+    <!-- http://smartplatforms.org/terms#headCircumference -->
+
+    <owl:ObjectProperty rdf:about="&sp;headCircumference"/>
+    
+
+
     <!-- http://smartplatforms.org/terms#heartRate -->
 
     <owl:ObjectProperty rdf:about="&sp;heartRate"/>
@@ -4517,6 +4523,12 @@ A single fulfillment event (that is, the medication was dispensed to the patient
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="&sp;headCircumference"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="&sp;weight"/>
                 <owl:allValuesFrom rdf:resource="&sp;VitalSign"/>
             </owl:Restriction>
@@ -4576,6 +4588,17 @@ A single fulfillment event (that is, the medication was dispensed to the patient
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="&sp;headCircumference"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&sp;unit"/>
+                        <owl:hasValue>cm</owl:hasValue>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="&sp;heartRate"/>
                 <owl:allValuesFrom rdf:resource="&sp;VitalSign"/>
             </owl:Restriction>
@@ -4583,6 +4606,12 @@ A single fulfillment event (that is, the medication was dispensed to the patient
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&sp;height"/>
+                <owl:allValuesFrom rdf:resource="&sp;VitalSign"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&sp;headCircumference"/>
                 <owl:allValuesFrom rdf:resource="&sp;VitalSign"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -4862,23 +4891,23 @@ A single fulfillment event (that is, the medication was dispensed to the patient
         <api:base_path>/records/{record_id}/vital_signs/{vital_signs_id}</api:base_path>
     </owl:Class>
     <owl:Axiom>
-        <rdfs:comment>Patient&apos;s Temperature in Celcius. </rdfs:comment>
-        <owl:annotatedSource rdf:resource="&sp;VitalSigns"/>
-        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&sp;temperature"/>
-                <owl:allValuesFrom rdf:resource="&sp;VitalSign"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-    </owl:Axiom>
-    <owl:Axiom>
         <rdfs:comment>Patient&apos;s weight in kg. </rdfs:comment>
         <owl:annotatedSource rdf:resource="&sp;VitalSigns"/>
         <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
         <owl:annotatedTarget>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&sp;weight"/>
+                <owl:allValuesFrom rdf:resource="&sp;VitalSign"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Patient&apos;s Temperature in Celcius. </rdfs:comment>
+        <owl:annotatedSource rdf:resource="&sp;VitalSigns"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&sp;temperature"/>
                 <owl:allValuesFrom rdf:resource="&sp;VitalSign"/>
             </owl:Restriction>
         </owl:annotatedTarget>
@@ -4917,17 +4946,6 @@ A single fulfillment event (that is, the medication was dispensed to the patient
         </owl:annotatedTarget>
     </owl:Axiom>
     <owl:Axiom>
-        <rdfs:comment>Patient&apos;s oxygen saturation in percent.  </rdfs:comment>
-        <owl:annotatedSource rdf:resource="&sp;VitalSigns"/>
-        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&sp;oxygenSaturation"/>
-                <owl:allValuesFrom rdf:resource="&sp;VitalSign"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-    </owl:Axiom>
-    <owl:Axiom>
         <rdfs:comment>Patient&apos;s Body Mass Index.  </rdfs:comment>
         <owl:annotatedSource rdf:resource="&sp;VitalSigns"/>
         <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
@@ -4939,23 +4957,34 @@ A single fulfillment event (that is, the medication was dispensed to the patient
         </owl:annotatedTarget>
     </owl:Axiom>
     <owl:Axiom>
-        <rdfs:comment>Patient&apos;s height in meters.  </rdfs:comment>
-        <owl:annotatedSource rdf:resource="&sp;VitalSigns"/>
-        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&sp;height"/>
-                <owl:allValuesFrom rdf:resource="&sp;VitalSign"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-    </owl:Axiom>
-    <owl:Axiom>
         <rdfs:comment>Patient&apos;s Heart Rate per minute. </rdfs:comment>
         <owl:annotatedSource rdf:resource="&sp;VitalSigns"/>
         <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
         <owl:annotatedTarget>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&sp;heartRate"/>
+                <owl:allValuesFrom rdf:resource="&sp;VitalSign"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Patient&apos;s oxygen saturation in percent.  </rdfs:comment>
+        <owl:annotatedSource rdf:resource="&sp;VitalSigns"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&sp;oxygenSaturation"/>
+                <owl:allValuesFrom rdf:resource="&sp;VitalSign"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Patient&apos;s height in meters.  </rdfs:comment>
+        <owl:annotatedSource rdf:resource="&sp;VitalSigns"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&sp;height"/>
                 <owl:allValuesFrom rdf:resource="&sp;VitalSign"/>
             </owl:Restriction>
         </owl:annotatedTarget>
