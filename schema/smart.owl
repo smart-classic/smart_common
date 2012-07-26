@@ -6635,6 +6635,8 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
 
     <owl:NamedIndividual rdf:about="http://smartplatforms.org/terms/api/parameter_sets#put_preferences_params_0">
         <rdf:type rdf:resource="&api;ParameterSet"/>
+        <rdf:first rdf:resource="http://smartplatforms.org/terms/api/parameters#content_type"/>
+        <rdf:rest rdf:resource="&rdf;nil"/>
     </owl:NamedIndividual>
     
 
