@@ -418,15 +418,16 @@ class SMART_Class(OWL_Class):
 
 """Represent calls like GET /records/{rid}/medications/"""
 class SMART_API_Call(OWL_Base):
-    rdf_type = api.call
+    rdf_type = api.Call
     store = {}
     attributes =  {
         "target": api.target,
         "description": rdfs.comment,
         "path": api.path,
-        "method": api.method,
-        "by_internal_id": api.by_internal_id,
-        "category": api.category
+        "http_method": api.http_method,
+        "client_method_name": api.client_method_name,
+        "category": api.category,
+        "cardinality": api.cardinality
         }
 
 
@@ -441,32 +442,13 @@ def parse_ontology(f):
     for c in m.triples((None, rdf.type, owl.Class)):
         SMART_Class.get_or_create(m, c[0])
 
-    for c in m.triples((None, rdf.type, api.call)):
+    for c in m.triples((None, rdf.type, api.Call)):
         call = SMART_API_Call.get_or_create(m, c[0])
         SMART_Class[call.target].calls.append(call)
 
     api_calls = SMART_API_Call.store.values()
     api_types = filter(lambda t: isinstance(t, SMART_Class) and isinstance(t.uri, URIRef), SMART_Class.store.values())
     parsed = True
-    
-def get_api_calls ():
-    calls = {}
-    
-    for t in api_calls:
-
-        target = str(t.target)
-        method = str(t.method)
-        path = str(t.path)
-        category = str(t.category)
-
-        if method == "GET" and (category == "record_items" or
-                                    path == "/ontology" or
-                                    path == "/apps/manifests/" or
-                                    path == "/capabilities/"):
-            if target not in calls.keys():
-                calls[target] = path
-            
-    return calls
 
 api_calls = None  
 api_types = None 
