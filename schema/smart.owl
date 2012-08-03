@@ -5526,7 +5526,7 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
 
     <owl:NamedIndividual rdf:about="&calls;delete_preferences">
         <rdf:type rdf:resource="&api;call"/>
-        <api:path>/accounts/{user_id}/apps/{smart_app_id}/preferences</api:path>
+        <api:path>/users/{user_id}/apps/{smart_app_id}/preferences</api:path>
         <api:by_internal_id>true</api:by_internal_id>
         <api:method>DELETE</api:method>
         <api:category>record_items</api:category>
@@ -5809,7 +5809,7 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
         <api:method>GET</api:method>
         <api:by_internal_id>true</api:by_internal_id>
         <api:category>record_items</api:category>
-        <api:path>/accounts/{user_id}/apps/{smart_app_id}/preferences</api:path>
+        <api:path>/users/{user_id}/apps/{smart_app_id}/preferences</api:path>
         <rdfs:comment>Get user preferences for an app</rdfs:comment>
         <api:target rdf:resource="http://smartplatforms.org/terms#UserPreferences"/>
     </owl:NamedIndividual>
@@ -6047,7 +6047,7 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
         <rdf:type rdf:resource="&api;call"/>
         <rdfs:comment>Set new user preferences for an app</rdfs:comment>
         <api:by_internal_id>true</api:by_internal_id>
-        <api:path>/accounts/{user_id}/apps/{smart_app_id}/preferences</api:path>
+        <api:path>/users/{user_id}/apps/{smart_app_id}/preferences</api:path>
         <api:category>record_items</api:category>
         <api:method>PUT</api:method>
         <api:target rdf:resource="http://smartplatforms.org/terms#UserPreferences"/>
