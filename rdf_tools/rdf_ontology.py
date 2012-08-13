@@ -424,12 +424,36 @@ class SMART_API_Call(OWL_Base):
         "target": api.target,
         "description": rdfs.comment,
         "path": api.path,
-        "http_method": api.http_method,
-        "client_method_name": api.client_method_name,
+        "http_method": api.httpMethod,
+        "client_method_name": api.clientMethodName,
+        "client_parameter_name": api.clientParameterName,
+        "client_parameter_type": api.clientParameterType,
         "category": api.category,
         "cardinality": api.cardinality
         }
 
+    def __init__(self, graph, uri):
+        super(SMART_API_Call, self).__init__(graph, uri)
+        self.filters = []
+        for f in self.get_property(api.hasFilter):
+            self.filters.append(SMART_API_Filter.get_or_create(self.graph, f))
+
+"""Represent calls like GET /records/{rid}/medications/"""
+class SMART_API_Filter(OWL_Base):
+    __metaclass__ = LookupType
+    rdf_type = api.Filter
+    store = {}
+    attributes =  {
+        "client_parameter_name": api.clientParameterName,
+        "filter_sparql_path": api.filterSparqlPath,
+        "filter_sparql_cast": api.filterSparqlCast,
+        "filter_sparql_operator": api.filterSparqlOperator,
+        "client_parameter_type": api.clientParameterType,
+        "category": api.category,
+        "cardinality": api.cardinality
+        }
+    def __init__(self, graph, uri):
+        super(SMART_API_Filter, self).__init__(graph, uri)
 
 parsed = False
                 
