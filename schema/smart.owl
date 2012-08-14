@@ -6358,12 +6358,13 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
     <owl:NamedIndividual rdf:about="&calls;get_encounters">
         <rdf:type rdf:resource="&api;Call"/>
         <api:cardinality>multiple</api:cardinality>
-        <api:path>/records/{record_id}/encountfers/</api:path>
+        <api:path>/records/{record_id}/encounters/</api:path>
         <api:clientMethodName>get_encounters</api:clientMethodName>
         <api:category>record</api:category>
         <rdfs:comment>Get all Encounters for a patient</rdfs:comment>
         <api:httpMethod>GET</api:httpMethod>
         <api:target rdf:resource="&sp;Encounter"/>
+        <api:defaultSort>sp:startDate</api:defaultSort>
     </owl:NamedIndividual>
     
 
@@ -6394,6 +6395,7 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
         <rdfs:comment>Get all Fulfillments for a patient</rdfs:comment>
         <api:clientMethodName>get_fulfillments</api:clientMethodName>
         <api:target rdf:resource="&sp;Fulfillment"/>
+        <api:defaultSort>dcterms:date</api:defaultSort>
     </owl:NamedIndividual>
     
 
@@ -6424,6 +6426,7 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
         <api:cardinality>multiple</api:cardinality>
         <api:category>record</api:category>
         <api:target rdf:resource="&sp;Immunization"/>
+        <api:defaultSort>dcterms:date</api:defaultSort>
     </owl:NamedIndividual>
     
 
@@ -6563,6 +6566,7 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
         <api:cardinality>multiple</api:cardinality>
         <api:httpMethod>GET</api:httpMethod>
         <api:target rdf:resource="&sp;Problem"/>
+        <api:defaultSort>sp:startDate</api:defaultSort>
     </owl:NamedIndividual>
     
 
