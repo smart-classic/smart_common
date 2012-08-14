@@ -425,6 +425,7 @@ class SMART_API_Call(OWL_Base):
         "description": rdfs.comment,
         "path": api.path,
         "http_method": api.httpMethod,
+        "default_sort": api.defaultSort,
         "client_method_name": api.clientMethodName,
         "client_parameter_name": api.clientParameterName,
         "client_parameter_type": api.clientParameterType,
@@ -445,9 +446,7 @@ class SMART_API_Filter(OWL_Base):
     store = {}
     attributes =  {
         "client_parameter_name": api.clientParameterName,
-        "filter_sparql_path": api.filterSparqlPath,
-        "filter_sparql_cast": api.filterSparqlCast,
-        "filter_sparql_operator": api.filterSparqlOperator,
+        "filter_sparql": api.filterSparql,
         "client_parameter_type": api.clientParameterType,
         "category": api.category,
         "cardinality": api.cardinality
