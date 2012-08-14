@@ -4738,7 +4738,7 @@ For a medication with a simple dosing schedule, record how often to take the med
   xmlns:v=&quot;http://www.w3.org/2006/vcard/ns#&quot;
   xmlns:spcode=&quot;http://smartplatforms.org/terms/codes/&quot;&gt; 
 
-  &lt;sp:VitalSignSet rdf:about=&quot;http://sandbox-api.smartplatforms.org/records/2169591/vital_signs/823523&quot;&gt;
+  &lt;sp:VitalSignSet rdf:about=&quot;http://sandbox-api.smartplatforms.org/records/2169591/vital_sign_sets/823523&quot;&gt;
     &lt;sp:belongsTo  rdf:resource=&quot;http://sandbox-api.smartplatforms.org/records/2169591&quot; /&gt;
     &lt;dcterms:date&gt;2010-05-12T04:00:00Z&lt;/dcterms:date&gt;
     &lt;sp:encounter&gt;
