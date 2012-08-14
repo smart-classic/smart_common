@@ -6486,6 +6486,7 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
         <api:category>record</api:category>
         <api:target rdf:resource="&sp;LabResult"/>
         <api:hasFilter rdf:resource="http://smartplatforms.org/terms/api/filters#lab_results_by_loinc"/>
+        <api:hasFilter rdf:resource="http://smartplatforms.org/terms/api/filters#lab_results_from_date"/>
     </owl:NamedIndividual>
     
 
@@ -6753,7 +6754,18 @@ FILTER(?d &gt;= &quot;%s&quot;)</api:filterSparql>
 FILTER (?c = uri(&lt;http://purl.bioontology.org/ontology/LNC/{loinc}&gt;))</api:filterSparql>
         <api:clientParameterName>loinc</api:clientParameterName>
     </owl:NamedIndividual>
-    
+
+
+
+    <!-- http://smartplatforms.org/terms/api/filters#lab_results_from_date -->
+
+    <owl:NamedIndividual rdf:about="http://smartplatforms.org/terms/api/filters#lab_results_from_date">
+        <rdf:type rdf:resource="&api;Filter"/>
+        <api:filterSparql>?v sp:specimenCollected/sp:startDate ?d .
+FILTER(?d >= "{date_from}")</api:filterSparql>
+        <api:clientParameterName>date_from</api:clientParameterName>
+    </owl:NamedIndividual>
+
 
 
     <!-- http://smartplatforms.org/terms/api/filters#vital_sign_set_by_encounter_type -->
