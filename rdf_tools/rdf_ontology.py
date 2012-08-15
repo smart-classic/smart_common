@@ -427,8 +427,6 @@ class SMART_API_Call(OWL_Base):
         "http_method": api.httpMethod,
         "default_sort": api.defaultSort,
         "client_method_name": api.clientMethodName,
-        "client_parameter_name": api.clientParameterName,
-        "client_parameter_type": api.clientParameterType,
         "category": api.category,
         "cardinality": api.cardinality
         }
@@ -439,7 +437,22 @@ class SMART_API_Call(OWL_Base):
         for f in self.get_property(api.hasFilter):
             self.filters.append(SMART_API_Filter.get_or_create(self.graph, f))
 
-"""Represent calls like GET /records/{rid}/medications/"""
+        self.parameters = []
+        for p in self.get_property(api.hasParameter):
+            self.parameters.append(SMART_API_Parameter.get_or_create(self.graph,
+                p))
+
+class SMART_API_Parameter(OWL_Base):
+    __metaclass__ = LookupType
+    rdf_type = api.Parameter
+    store = {}
+    attributes =  {
+        "client_parameter_name": api.clientParameterName,
+        "client_parameter_type": api.clientParameterType,
+        }
+    def __init__(self, graph, uri):
+        super(SMART_API_Parameter, self).__init__(graph, uri)
+
 class SMART_API_Filter(OWL_Base):
     __metaclass__ = LookupType
     rdf_type = api.Filter
