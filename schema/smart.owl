@@ -2808,7 +2808,7 @@ http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=vg#ROTAVIRUS</rdfs:co
         <api:example rdf:datatype="&rdf;XMLLiteral">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
 No example yet.</api:example>
         <api:namePlural>Lab Panels</api:namePlural>
-        <api:name>Lab Panel</api:name>
+        <rdfs:label>Lab Panel</rdfs:label>
         <api:base_path>/records/{record_id}/lab_panels/{lab_panel_id}</api:base_path>
         <api:description>In RDF/XML, a CBC looks like this: </api:description>
     </owl:Class>
