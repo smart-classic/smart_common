@@ -434,14 +434,16 @@ class SMART_API_Call(OWL_Base):
 
     def __init__(self, graph, uri):
         super(SMART_API_Call, self).__init__(graph, uri)
+
         self.filters = []
+        def callback (x): self.filters.append(x)
         for f in self.get_property(api.hasFilter):
-            self.filters.append(SMART_API_Filter.get_or_create(self.graph, f))
+            SMART_API_Filter.get_or_create(self.graph, f, callback)
 
         self.parameters = []
+        def callback (x): self.parameters.append(x)
         for p in self.get_property(api.hasParameter):
-            self.parameters.append(SMART_API_Parameter.get_or_create(self.graph,
-                p))
+            SMART_API_Parameter.get_or_create(self.graph, p, callback)
 
 class SMART_API_Parameter(OWL_Base):
     __metaclass__ = LookupType
