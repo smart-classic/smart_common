@@ -427,6 +427,7 @@ class SMART_API_Call(OWL_Base):
         "http_method": api.httpMethod,
         "default_sort": api.defaultSort,
         "client_method_name": api.clientMethodName,
+        "response_content_type": api.responseContentType,
         "category": api.category,
         "cardinality": api.cardinality
         }
