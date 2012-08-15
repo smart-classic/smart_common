@@ -6167,7 +6167,7 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
         <api:path>/users/{user_id}/apps/{smart_app_id}/preferences</api:path>
         <api:cardinality>single</api:cardinality>
         <api:httpMethod>DELETE</api:httpMethod>
-        <api:category>container</api:category>
+        <api:category>user</api:category>
         <api:target rdf:resource="&sp;UserPreferences"/>
     </owl:NamedIndividual>
     
@@ -6626,6 +6626,7 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
         <api:path>/users/{user_id}/apps/{smart_app_id}/preferences</api:path>
         <api:cardinality>single</api:cardinality>
         <rdfs:comment>Get user preferences for an app</rdfs:comment>
+        <api:category>user</api:category>
         <api:clientMethodName>get_user_preferences</api:clientMethodName>
         <api:httpMethod>GET</api:httpMethod>
         <api:target rdf:resource="&sp;UserPreferences"/>
@@ -6689,7 +6690,7 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
         <rdfs:comment>Set new user preferences for an app</rdfs:comment>
         <api:clientMethodName>put_user_preferences</api:clientMethodName>
         <api:httpMethod>PUT</api:httpMethod>
-        <api:category>container</api:category>
+        <api:category>user</api:category>
         <api:target rdf:resource="&sp;UserPreferences"/>
     </owl:NamedIndividual>
     
