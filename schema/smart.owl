@@ -19,9 +19,7 @@
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
     <!ENTITY fidelity "http://smartplatforms.org/terms/code/fidelity#" >
     <!ENTITY LabStatus "http://smartplatforms.org/terms/codes/LabStatus#" >
-    <!ENTITY AlertLevel "http://smartplatforms.org/terms/codes/AlertLevel#" >
     <!ENTITY EncounterType "http://smartplatforms.org/terms/codes/EncounterType#" >
-    <!ENTITY AlertSeverity "http://smartplatforms.org/terms/codes/AlertSeverity#" >
     <!ENTITY BloodPressureMethod "http://smartplatforms.org/terms/codes/BloodPressureMethod#" >
     <!ENTITY TranslationFidelity "http://smartplatforms.org/terms/codes/TranslationFidelity#" >
     <!ENTITY LabResultInterpretation "http://smartplatforms.org/terms/codes/LabResultInterpretation#" >
@@ -40,7 +38,6 @@
      xmlns:dcterms="http://purl.org/dc/terms/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:fidelity="http://smartplatforms.org/terms/code/fidelity#"
-     xmlns:AlertLevel="&spcode;AlertLevel#"
      xmlns:api="http://smartplatforms.org/terms/api#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -48,7 +45,6 @@
      xmlns:LabStatus="&spcode;LabStatus#"
      xmlns:sp="http://smartplatforms.org/terms#"
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
-     xmlns:AlertSeverity="&spcode;AlertSeverity#"
      xmlns:calls="http://smartplatforms.org/terms/api/calls#"
      xmlns:cemterms="http://smartplatforms.org/cemterms#"
      xmlns:v="http://www.w3.org/2006/vcard/ns#"
@@ -991,91 +987,6 @@
         <rdfs:subClassOf rdf:resource="&spcode;SNOMED"/>
     </owl:Class>
     
-
-
-    <!-- http://smartplatforms.org/terms#Alert -->
-
-    <owl:Class rdf:about="&sp;Alert">
-        <rdfs:label>Alert</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&sp;Statement"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&sp;alertLevel"/>
-                <owl:allValuesFrom rdf:resource="&sp;CodedValue"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&sp;alertLevel"/>
-                <owl:allValuesFrom>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="&sp;code"/>
-                        <owl:allValuesFrom rdf:resource="&spcode;AlertLevel"/>
-                    </owl:Restriction>
-                </owl:allValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&sp;alertLevel"/>
-                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&sp;notes"/>
-                <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&sp;notes"/>
-                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <api:namePlural>Alerts</api:namePlural>
-        <rdfs:comment>Alerts are a way for an application to generate a message (about a patient record) intended for a human recipient.</rdfs:comment>
-        <api:base_path>/records/{record_id}/alerts/{alert_id}</api:base_path>
-        <api:path>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;rdf:RDF
-  xmlns:dcterms=&quot;http://purl.org/dc/terms/&quot;
-  xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;
-  xmlns:sp=&quot;http://smartplatforms.org/terms#&quot;
-  xmlns:spcode=&quot;http://smartplatforms.org/terms/codes/&quot;&gt; 
-
-  &lt;sp:Alert rdf:about=&quot;http://sandbox-api.smartplatforms.org/records/2169591/alerts/63466&quot;&gt; 
-    &lt;sp:belongsTo rdf:resource=&quot;http://sandbox-api.smartplatforms.org/records/2169591&quot; /&gt;
-    &lt;sp:notes&gt;Patient with T2DM is overdue for HbA1c&lt;/sp:notes&gt;
-    &lt;sp:severity&gt;
-      &lt;sp:CodedValue&gt;
-        &lt;dcterms:title&gt;Warning&lt;/dcterms:title&gt;
-        &lt;sp:code&gt;
-          &lt;spcode:AlertSeverity rdf:about=&quot;http://smartplatforms.org/terms/codes/AlertSeverity#warning&quot;&gt;
-            &lt;rdf:type rdf:resource=&quot;http://smartplatforms.org/terms#Code&quot; /&gt; 
-            &lt;dcterms:title&gt;Warning&lt;/dcterms:title&gt; 
-            &lt;sp:system&gt;http://smartplatforms.org/terms/codes/AlertSeverity#&lt;/sp:system&gt;
-            &lt;dcterms:identifier&gt;warning&lt;/dcterms:identifier&gt; 
-          &lt;/spcode:AlertSeverity&gt;   
-        &lt;/sp:code&gt;
-      &lt;/sp:CodedValue&gt;
-
-    &lt;/sp:severity&gt; 
-  &lt;/sp:Alert&gt;
-&lt;/rdf:RDF&gt;</api:path>
-    </owl:Class>
-    <owl:Axiom>
-        <rdfs:comment>Message intended for a human recipient.	</rdfs:comment>
-        <owl:annotatedSource rdf:resource="&sp;Alert"/>
-        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&sp;notes"/>
-                <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-    </owl:Axiom>
-    
-
 
     <!-- http://smartplatforms.org/terms#Allergy -->
 
@@ -2727,7 +2638,7 @@ Examples include:
         </owl:annotatedTarget>
     </owl:Axiom>
     <owl:Axiom>
-        <rdfs:comment>coded describing the product according to the set of codes in the CVX for immunizationa controlled vocabulary.  CVX Code URIs should be represented as:
+        <rdfs:comment>coded describing the product according to the set of codes in the CVX for immunizations controlled vocabulary.  CVX Code URIs should be represented as:
 
 http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#{code}
 
@@ -3298,7 +3209,9 @@ No example yet.</api:example>
                 <owl:allValuesFrom rdf:resource="&sp;ValueAndUnit"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment rdf:datatype="&rdf;XMLLiteral">The SMART medication type expresses a medication at the level of an RxNorm branded or generic drug concept (e.g. &quot;20 mg generic loratadine&quot; or &quot;20 mg brand-name claritin&quot;).  A medication may include start- and end-dates, as well as a free-text &quot;instructions&quot; field describing how it should be taken.  When the instructions are simple enough, we also represent them in a structured way, aiming to capture about 80% of outpatient medication dosing schedules.  A very simple semantic structure defines how much to take (&quot;quantity&quot;) and how often (&quot;frequency&quot;). Both quantity and frequency are defined with expressions from [http://www.unitsofmeasure.org The Unified Code for Units of Measure], or UCUM (see below).
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral">The SMART medication type expresses a medication at the level of an
+            RxNorm branded or generic drug concept (e.g. &quot;20 mg generic loratadine&quot; or &quot;20 mg brand-name
+            claritin&quot;).  A medication must include a start date and may include an end date as well as a free-text &quot;instructions&quot; field describing how it should be taken.  When the instructions are simple enough, we also represent them in a structured way, aiming to capture about 80% of outpatient medication dosing schedules.  A very simple semantic structure defines how much to take (&quot;quantity&quot;) and how often (&quot;frequency&quot;). Both quantity and frequency are defined with expressions from [http://www.unitsofmeasure.org The Unified Code for Units of Measure], or UCUM (see below).
 
 In RDF/XML notation, a patient on oral amitriptyline 50 mg tablets might provide the following RDF sub-graph as part of a medication list:
     </rdfs:comment>
@@ -3464,38 +3377,6 @@ For a medication with a simple dosing schedule, record the amount to take with e
     </owl:Axiom>
     
 
-
-    <!-- http://smartplatforms.org/terms#NominalResult -->
-
-    <owl:Class rdf:about="&sp;NominalResult">
-        <rdfs:subClassOf rdf:resource="&sp;Component"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&sp;value"/>
-                <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&sp;value"/>
-                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
-    <owl:Axiom>
-        <rdfs:comment>value of result (free text).</rdfs:comment>
-        <owl:annotatedSource rdf:resource="&sp;NominalResult"/>
-        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&sp;value"/>
-                <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-    </owl:Axiom>
-    
-
-
     <!-- http://smartplatforms.org/terms#Ontology -->
 
     <owl:Class rdf:about="&sp;Ontology">
@@ -3504,38 +3385,6 @@ For a medication with a simple dosing schedule, record the amount to take with e
         <rdfs:comment>An OWL ontology representing SMART data types + API calls</rdfs:comment>
     </owl:Class>
     
-
-
-    <!-- http://smartplatforms.org/terms#OrdinalResult -->
-
-    <owl:Class rdf:about="&sp;OrdinalResult">
-        <rdfs:subClassOf rdf:resource="&sp;Component"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&sp;value"/>
-                <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&sp;value"/>
-                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
-    <owl:Axiom>
-        <rdfs:comment>value of result (free text).</rdfs:comment>
-        <owl:annotatedSource rdf:resource="&sp;OrdinalResult"/>
-        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&sp;value"/>
-                <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-    </owl:Axiom>
-    
-
 
     <!-- http://smartplatforms.org/terms#Organization -->
 
@@ -5137,7 +4986,7 @@ For a medication with a simple dosing schedule, record the amount to take with e
         </owl:annotatedTarget>
     </owl:Axiom>
     <owl:Axiom>
-        <rdfs:comment>Patient&apos;s systolic + diastolic Blood Pressure in mmHg, with optinal position coding</rdfs:comment>
+        <rdfs:comment>Patient&apos;s systolic + diastolic Blood Pressure in mmHg, with optional position coding</rdfs:comment>
         <owl:annotatedSource rdf:resource="&sp;VitalSignSet"/>
         <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
         <owl:annotatedTarget>
@@ -5177,23 +5026,6 @@ For a medication with a simple dosing schedule, record the amount to take with e
     <!-- http://smartplatforms.org/terms/api#ParameterSet -->
 
     <owl:Class rdf:about="&api;ParameterSet"/>
-    
-
-
-    <!-- http://smartplatforms.org/terms/codes/AlertLevel -->
-
-    <owl:Class rdf:about="&spcode;AlertLevel">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&spcode;AlertLevel#warning"/>
-                    <rdf:Description rdf:about="&spcode;AlertLevel#severe"/>
-                    <rdf:Description rdf:about="&spcode;AlertLevel#info"/>
-                </owl:oneOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="&sp;Code"/>
-    </owl:Class>
     
 
 
@@ -6272,37 +6104,6 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
     </owl:NamedIndividual>
     
 
-
-    <!-- http://smartplatforms.org/terms/api/calls#get_alert -->
-
-    <owl:NamedIndividual rdf:about="&calls;get_alert">
-        <rdf:type rdf:resource="&api;Call"/>
-        <api:clientMethodName>get_alert</api:clientMethodName>
-        <api:httpMethod>GET</api:httpMethod>
-        <api:category>record</api:category>
-        <api:cardinality>single</api:cardinality>
-        <api:path>/records/{record_id}/alerts/{alert_id}</api:path>
-        <rdfs:comment>Get one Alert for a patient</rdfs:comment>
-        <api:target rdf:resource="&sp;Alert"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://smartplatforms.org/terms/api/calls#get_alerts -->
-
-    <owl:NamedIndividual rdf:about="&calls;get_alerts">
-        <rdf:type rdf:resource="&api;Call"/>
-        <rdfs:comment>Get all Alerts for a patient</rdfs:comment>
-        <api:httpMethod>GET</api:httpMethod>
-        <api:clientMethodName>get_alerts</api:clientMethodName>
-        <api:path>/records/{record_id}/alerts/</api:path>
-        <api:cardinality>multiple</api:cardinality>
-        <api:category>record</api:category>
-        <api:target rdf:resource="&sp;Alert"/>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://smartplatforms.org/terms/api/calls#get_allergies -->
 
     <owl:NamedIndividual rdf:about="&calls;get_allergies">
@@ -6767,22 +6568,6 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
     </owl:NamedIndividual>
     
 
-
-    <!-- http://smartplatforms.org/terms/api/calls#post_alert -->
-
-    <owl:NamedIndividual rdf:about="&calls;post_alert">
-        <rdf:type rdf:resource="&api;Call"/>
-        <api:clientMethodName>post_alert</api:clientMethodName>
-        <api:path>/records/{record_id}/alerts/</api:path>
-        <api:category>record</api:category>
-        <rdfs:comment>Post new Alert for a patient</rdfs:comment>
-        <api:httpMethod>POST</api:httpMethod>
-        <api:cardinality>single</api:cardinality>
-        <api:target rdf:resource="&sp;Alert"/>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://smartplatforms.org/terms/api/calls#put_user_preferences -->
 
     <owl:NamedIndividual rdf:about="&calls;put_user_preferences">
@@ -6985,34 +6770,6 @@ FILTER(?d &lt;= &quot;{date_to}&quot;)</api:filterSparql>
         <api:clientParameterType rdf:resource="&rdfs;Literal"/>
     </owl:NamedIndividual>
     
-
-
-    <!-- http://smartplatforms.org/terms/codes/AlertLevel#info -->
-
-    <owl:NamedIndividual rdf:about="&spcode;AlertLevel#info">
-        <rdf:type rdf:resource="&spcode;AlertLevel"/>
-        <dcterms:title>Info</dcterms:title>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://smartplatforms.org/terms/codes/AlertLevel#severe -->
-
-    <owl:NamedIndividual rdf:about="&spcode;AlertLevel#severe">
-        <rdf:type rdf:resource="&spcode;AlertLevel"/>
-        <dcterms:title>Severe</dcterms:title>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://smartplatforms.org/terms/codes/AlertLevel#warning -->
-
-    <owl:NamedIndividual rdf:about="&spcode;AlertLevel#warning">
-        <rdf:type rdf:resource="&spcode;AlertLevel"/>
-        <dcterms:title>Warning</dcterms:title>
-    </owl:NamedIndividual>
-    
-
 
     <!-- http://smartplatforms.org/terms/codes/BloodPressureMethod#auscultation -->
 
