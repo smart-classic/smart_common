@@ -3,8 +3,6 @@ from rdflib import Namespace, URIRef, Literal, BNode
 from StringIO import StringIO as sIO
 import threading
 
-import rdf_ontology
-
 lock = threading.Lock()
 
 rdflib.plugin.register('sparql', rdflib.query.Processor,
@@ -93,6 +91,10 @@ default_ns = {}
 for k,v in NS.iteritems():
       default_ns[k] = v
 
+# This import needs to happen after LookupType to avoid
+# a cross-import blocking situation
+import rdf_ontology
+      
 def anonymize_smart_rdf (rdfres):
     for t in rdf_ontology.api_types:
         if t.is_statement or t.uri == rdf_ontology.sp.MedicalRecord:
