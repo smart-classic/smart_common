@@ -529,12 +529,6 @@
     
 
 
-    <!-- http://smartplatforms.org/terms#specimenCollected -->
-
-    <owl:ObjectProperty rdf:about="&sp;specimenCollected"/>
-    
-
-
     <!-- http://smartplatforms.org/terms#systolic -->
 
     <owl:ObjectProperty rdf:about="&sp;systolic"/>
@@ -6380,7 +6374,7 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
     <owl:NamedIndividual rdf:about="&calls;get_lab_results">
         <rdf:type rdf:resource="&api;Call"/>
         <api:cardinality>multiple</api:cardinality>
-        <api:defaultSort>sp:specimenCollected/sp:startDate</api:defaultSort>
+        <api:defaultSort>dcterms:date</api:defaultSort>
         <api:path>/records/{record_id}/lab_results/</api:path>
         <rdfs:comment>Get all Lab Results for a patient</rdfs:comment>
         <api:httpMethod>GET</api:httpMethod>
@@ -6638,7 +6632,7 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
     <owl:NamedIndividual rdf:about="http://smartplatforms.org/terms/api/filters#lab_results_by_date">
         <rdf:type rdf:resource="&api;Filter"/>
         <api:clientParameterName>date_from</api:clientParameterName>
-        <api:filterSparql>?v sp:specimenCollected/sp:startDate ?d . 
+        <api:filterSparql>?v dcterms:date ?d . 
 FILTER(?d &gt;= &quot;%s&quot;)</api:filterSparql>
     </owl:NamedIndividual>
     
@@ -6660,7 +6654,7 @@ FILTER (?c = uri(&lt;http://purl.bioontology.org/ontology/LNC/{loinc}&gt;))</api
     <owl:NamedIndividual rdf:about="http://smartplatforms.org/terms/api/filters#lab_results_from_date">
         <rdf:type rdf:resource="&api;Filter"/>
         <api:clientParameterName>date_from</api:clientParameterName>
-        <api:filterSparql>?v sp:specimenCollected/sp:startDate ?d .
+        <api:filterSparql>?v dcterms:date ?d .
 FILTER(?d &gt;= &quot;{date_from}&quot;)</api:filterSparql>
     </owl:NamedIndividual>
     
