@@ -6670,9 +6670,9 @@ FILTER(?d &gt;= &quot;{date_from}&quot;)</api:filterSparql>
 
     <owl:NamedIndividual rdf:about="http://smartplatforms.org/terms/api/filters#vital_sign_sets_by_encounter_type">
         <rdf:type rdf:resource="&api;Filter"/>
-        <api:clientParameterName>encounterType</api:clientParameterName>
+        <api:clientParameterName>encounter_type</api:clientParameterName>
         <api:filterSparql>?v sp:encounter/sp:encounterType/sp:code ?c .
-FILTER(?c=uri(&lt;http://smartplatforms.org/terms/codes/EncounterType#{encountertype}&gt;))</api:filterSparql>
+FILTER(?c=uri(&lt;http://smartplatforms.org/terms/codes/EncounterType#{encounter_type}&gt;))</api:filterSparql>
     </owl:NamedIndividual>
     
 
