@@ -4614,7 +4614,7 @@ For a medication with a simple dosing schedule, record the amount to take with e
                 </owl:allValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <api:base_path>/records/{record_id}/vital_sign_set/{vital_sign_set_id}</api:base_path>
+        <api:base_path>/records/{record_id}/vital_sign_sets/{vital_sign_set_id}</api:base_path>
         <api:namePlural>Vital Sign Sets</api:namePlural>
         <api:description>Each Vital Sign Set element represent a set of vital signs collected together.</api:description>
         <api:example>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
