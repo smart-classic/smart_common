@@ -963,9 +963,9 @@
     
 
 
-    <!-- http://purl.org/dc/terms/title#SmokingStatus -->
+    <!-- http://smartplatforms.org/terms/codes/SmokingStatus -->
 
-    <owl:Class rdf:about="&dcterms;title#SmokingStatus">
+    <owl:Class rdf:about="&spcode;SmokingStatus">
         <owl:equivalentClass>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
@@ -4061,7 +4061,7 @@ For a medication with a simple dosing schedule, record the amount to take with e
                             <rdf:Description rdf:about="&sp;CodedValue"/>
                             <owl:Restriction>
                                 <owl:onProperty rdf:resource="&sp;code"/>
-                                <owl:allValuesFrom rdf:resource="&dcterms;title#SmokingStatus"/>
+                                <owl:allValuesFrom rdf:resource="&spcode;SmokingStatus"/>
                             </owl:Restriction>
                         </owl:intersectionOf>
                     </owl:Class>
@@ -5817,7 +5817,7 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
     <!-- http://purl.bioontology.org/ontology/SNOMEDCT/230059006 -->
 
     <owl:NamedIndividual rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/230059006">
-        <rdf:type rdf:resource="&dcterms;title#SmokingStatus"/>
+        <rdf:type rdf:resource="&spcode;SmokingStatus"/>
         <dcterms:title>Current some day smoker</dcterms:title>
     </owl:NamedIndividual>
     
@@ -5853,7 +5853,7 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
     <!-- http://purl.bioontology.org/ontology/SNOMEDCT/266919005 -->
 
     <owl:NamedIndividual rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/266919005">
-        <rdf:type rdf:resource="&dcterms;title#SmokingStatus"/>
+        <rdf:type rdf:resource="&spcode;SmokingStatus"/>
         <dcterms:title>Never smoker</dcterms:title>
     </owl:NamedIndividual>
     
@@ -5862,7 +5862,7 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
     <!-- http://purl.bioontology.org/ontology/SNOMEDCT/266927001 -->
 
     <owl:NamedIndividual rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/266927001">
-        <rdf:type rdf:resource="&dcterms;title#SmokingStatus"/>
+        <rdf:type rdf:resource="&spcode;SmokingStatus"/>
         <dcterms:title>Smoker, current status unknown</dcterms:title>
     </owl:NamedIndividual>
     
@@ -5934,7 +5934,7 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
     <!-- http://purl.bioontology.org/ontology/SNOMEDCT/405746006 -->
 
     <owl:NamedIndividual rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/405746006">
-        <rdf:type rdf:resource="&dcterms;title#SmokingStatus"/>
+        <rdf:type rdf:resource="&spcode;SmokingStatus"/>
         <dcterms:title>Unknown if ever smoked</dcterms:title>
     </owl:NamedIndividual>
     
@@ -6015,7 +6015,7 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
     <!-- http://purl.bioontology.org/ontology/SNOMEDCT/449868002 -->
 
     <owl:NamedIndividual rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/449868002">
-        <rdf:type rdf:resource="&dcterms;title#SmokingStatus"/>
+        <rdf:type rdf:resource="&spcode;SmokingStatus"/>
         <dcterms:title>Current every day smoker</dcterms:title>
     </owl:NamedIndividual>
     
@@ -6051,7 +6051,7 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
     <!-- http://purl.bioontology.org/ontology/SNOMEDCT/8517006 -->
 
     <owl:NamedIndividual rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/8517006">
-        <rdf:type rdf:resource="&dcterms;title#SmokingStatus"/>
+        <rdf:type rdf:resource="&spcode;SmokingStatus"/>
         <dcterms:title>Former smoker</dcterms:title>
     </owl:NamedIndividual>
     
