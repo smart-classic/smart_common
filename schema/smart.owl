@@ -1708,6 +1708,7 @@ The formatted data, in turn, comprises a MIME type and either supply the value i
         <api:base_path>/records/{record_id}/clinical_notes/{clinical_note_id}</api:base_path>
         <api:example>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
 &lt;rdf:RDF xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;
+  xmlns:rdfs=&quot;http://www.w3.org/2000/01/rdf-schema#&quot;
   xmlns:sp=&quot;http://smartplatforms.org/terms#&quot;
   xmlns:dcterms=&quot;http://purl.org/dc/terms/&quot;
   xmlns:v=&quot;http://www.w3.org/2006/vcard/ns#&quot;
