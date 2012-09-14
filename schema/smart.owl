@@ -949,9 +949,9 @@
     
 
 
-    <!-- http://purl.org/dc/terms/title#MediaTypeOrExtent -->
+    <!-- http://purl.org/dc/terms/MediaTypeOrExtent -->
 
-    <owl:Class rdf:about="&dcterms;title#MediaTypeOrExtent">
+    <owl:Class rdf:about="&dcterms;MediaTypeOrExtent">
         <rdfs:subClassOf rdf:resource="&sp;DataType"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -2046,7 +2046,7 @@ The formatted data, in turn, comprises a MIME type and either supply the value i
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&dcterms;format"/>
-                <owl:allValuesFrom rdf:resource="&dcterms;title#MediaTypeOrExtent"/>
+                <owl:allValuesFrom rdf:resource="&dcterms;MediaTypeOrExtent"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -2063,7 +2063,7 @@ Examples include:
         <owl:annotatedTarget>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&dcterms;format"/>
-                <owl:allValuesFrom rdf:resource="&dcterms;title#MediaTypeOrExtent"/>
+                <owl:allValuesFrom rdf:resource="&dcterms;MediaTypeOrExtent"/>
             </owl:Restriction>
         </owl:annotatedTarget>
     </owl:Axiom>
@@ -6161,7 +6161,7 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
     <!-- http://purl.org/NET/mediatypes/application/pdf -->
 
     <owl:NamedIndividual rdf:about="&mime;application/pdf">
-        <rdf:type rdf:resource="&dcterms;title#MediaTypeOrExtent"/>
+        <rdf:type rdf:resource="&dcterms;MediaTypeOrExtent"/>
         <rdfs:label>application/pdf</rdfs:label>
     </owl:NamedIndividual>
     
@@ -6170,7 +6170,7 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
     <!-- http://purl.org/NET/mediatypes/text/html -->
 
     <owl:NamedIndividual rdf:about="&mime;text/html">
-        <rdf:type rdf:resource="&dcterms;title#MediaTypeOrExtent"/>
+        <rdf:type rdf:resource="&dcterms;MediaTypeOrExtent"/>
         <rdfs:label>text/html</rdfs:label>
     </owl:NamedIndividual>
     
@@ -6179,7 +6179,7 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
     <!-- http://purl.org/NET/mediatypes/text/plain -->
 
     <owl:NamedIndividual rdf:about="&mime;text/plain">
-        <rdf:type rdf:resource="&dcterms;title#MediaTypeOrExtent"/>
+        <rdf:type rdf:resource="&dcterms;MediaTypeOrExtent"/>
         <rdfs:label>text/plain</rdfs:label>
     </owl:NamedIndividual>
     
