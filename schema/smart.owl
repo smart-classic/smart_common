@@ -5317,6 +5317,15 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
     <!-- http://smartplatforms.org/terms/codes/ProblemStatus -->
 
     <owl:Class rdf:about="&spcode;ProblemStatus">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/413322009"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/55561003"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/73425007"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="&spcode;SNOMED"/>
     </owl:Class>
     
