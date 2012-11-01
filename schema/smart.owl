@@ -1701,6 +1701,19 @@ While it might seem inelegant to expose explicit AllergyExclusion statements, th
                 <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&sp;provider"/>
+                <owl:onClass rdf:resource="&sp;Provider"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&sp;provider"/>
+                <owl:allValuesFrom rdf:resource="&sp;Provider"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment rdf:datatype="&rdf;XMLLiteral">The SMART Clinical Note model encapsulates a simple clinical note with a date, author, title, and one or more instances of formatted data (as sp:DocumentWithFormat nodes) ,  
 
 The formatted data, in turn, comprises a MIME type and either supply the value inline (via the rdf:value property) or as a URI at which the content can be found (by assigning a URI to the sp:DocumentWithFormat).</rdfs:comment>
@@ -1736,6 +1749,17 @@ The formatted data, in turn, comprises a MIME type and either supply the value i
  &lt;/sp:ClinicalNote&gt;
 &lt;/rdf:RDF&gt;</api:example>
     </owl:Class>
+    <owl:Axiom>
+        <rdfs:comment>Provider responsible for clinical note</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&sp;ClinicalNote"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&sp;provider"/>
+                <owl:allValuesFrom rdf:resource="&sp;Provider"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
     <owl:Axiom>
         <rdfs:comment>Date on which the note was written, as an ISO-8601 string.</rdfs:comment>
         <owl:annotatedSource rdf:resource="&sp;ClinicalNote"/>
