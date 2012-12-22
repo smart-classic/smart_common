@@ -1294,7 +1294,7 @@ For instance, below are two allergies: first, an allergy to the entire class of 
         </owl:annotatedTarget>
     </owl:Axiom>
     <owl:Axiom>
-        <rdfs:comment>Substance acting as a food, environmenta, or other allergen.  For environmental and food substance is a UNII.</rdfs:comment>
+        <rdfs:comment>Substance acting as a food, environmental, or other allergen.  For environmental and food substance is a UNII.</rdfs:comment>
         <owl:annotatedSource rdf:resource="&sp;Allergy"/>
         <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
         <owl:annotatedTarget>
@@ -1733,7 +1733,11 @@ The formatted data, in turn, comprises a MIME type and either supply the value i
     &lt;dcterms:title&gt;Cardiology clinic follow-up&lt;/dcterms:title&gt;
     &lt;dcterms:hasFormat&gt;
          &lt;sp:DocumentWithFormat rdf:about=&quot;http://url.of.raw.note/content&quot;&gt;
-            &lt;dcterms:format rdf:resoruce=&quot;http://purl.org/NET/mediatypes/text/html&quot;/&gt;
+            &lt;dcterms:format&gt;
+                &lt;dcterms:MediaTypeOrExtent rdf:about=&quot;http://purl.org/NET/mediatypes/text/html&quot;&gt;
+                    &lt;rdfs:label&gt;text/html&lt;/rdfs:label&gt;
+                &lt;/dcterms:MediaTypeOrExtent&gt;
+            &lt;/dcterms:format&gt;
          &lt;/sp:DocumentWithFormat&gt;
     &lt;/dcterms:hasFormat&gt;
     &lt;sp:provider&gt;
