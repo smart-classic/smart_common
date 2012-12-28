@@ -4825,8 +4825,8 @@ A single fulfillment event (that is, the medication was dispensed to the patient
             &lt;/sp:code&gt;
           &lt;/sp:CodedValue&gt;
         &lt;/sp:vitalName&gt;
-        &lt;sp:value&gt;70&lt;/sp:value&gt;
-        &lt;sp:unit&gt;{beats}/min&lt;/sp:unit&gt;
+        &lt;sp:value&gt;56.4&lt;/sp:value&gt;
+        &lt;sp:unit&gt;cm&lt;/sp:unit&gt;
       &lt;/sp:VitalSign&gt;
     &lt;/sp:headCircumference&gt;
     &lt;sp:oxygenSaturation&gt;
@@ -5474,6 +5474,7 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.bioontology.org/ontology/LNC/8462-4"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/LNC/8287-5"/>
                     <rdf:Description rdf:about="http://purl.bioontology.org/ontology/LNC/9279-1"/>
                     <rdf:Description rdf:about="http://purl.bioontology.org/ontology/LNC/39156-5"/>
                     <rdf:Description rdf:about="http://purl.bioontology.org/ontology/LNC/8310-5"/>
@@ -5859,6 +5860,15 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
     <owl:NamedIndividual rdf:about="http://purl.bioontology.org/ontology/LNC/8462-4">
         <rdf:type rdf:resource="&spcode;VitalSign"/>
         <dcterms:title>Intravascular diastolic</dcterms:title>
+    </owl:NamedIndividual>
+    
+    
+    
+    <!-- http://purl.bioontology.org/ontology/LNC/8287-5 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.bioontology.org/ontology/LNC/8287-5">
+        <rdf:type rdf:resource="&spcode;VitalSign"/>
+        <dcterms:title>Head circumference</dcterms:title>
     </owl:NamedIndividual>
     
 
