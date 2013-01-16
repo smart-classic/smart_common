@@ -4171,11 +4171,11 @@ A single fulfillment event (that is, the medication was dispensed to the patient
         <rdfs:comment>A patient&apos;s smoking status according the Meaningful Use classification.  This must be one of six prespecified LOINC codes: 
 
 449868002
-230059006
+428041000124106
 8517006
 266919005
 266927001
-405746006
+266927001
 
 </rdfs:comment>
         <owl:annotatedSource rdf:resource="&sp;SocialHistory"/>
@@ -5429,9 +5429,9 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
                 <owl:oneOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/449868002"/>
                     <rdf:Description rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/266927001"/>
-                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/230059006"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/428041000124106"/>
                     <rdf:Description rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/8517006"/>
-                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/405746006"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/266927001"/>
                     <rdf:Description rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/266919005"/>
                 </owl:oneOf>
             </owl:Class>
@@ -5927,9 +5927,9 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
     
 
 
-    <!-- http://purl.bioontology.org/ontology/SNOMEDCT/230059006 -->
+    <!-- http://purl.bioontology.org/ontology/SNOMEDCT/428041000124106 -->
 
-    <owl:NamedIndividual rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/230059006">
+    <owl:NamedIndividual rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/428041000124106">
         <rdf:type rdf:resource="&spcode;SmokingStatus"/>
         <dcterms:title>Current some day smoker</dcterms:title>
     </owl:NamedIndividual>
@@ -6044,9 +6044,9 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
     
 
 
-    <!-- http://purl.bioontology.org/ontology/SNOMEDCT/405746006 -->
+    <!-- http://purl.bioontology.org/ontology/SNOMEDCT/266927001 -->
 
-    <owl:NamedIndividual rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/405746006">
+    <owl:NamedIndividual rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/266927001">
         <rdf:type rdf:resource="&spcode;SmokingStatus"/>
         <dcterms:title>Unknown if ever smoked</dcterms:title>
     </owl:NamedIndividual>
