@@ -6,14 +6,8 @@
 
 # Standard module imports
 from jsonschema import Draft3Validator
-import string
-import re
 
-def isurl (str):
-    if isinstance(str, basestring) and (str.startswith("http://") or str.startswith("https://")):
-        return True
-    else:
-        return False
+URLPATTERN = "^(http|https)\://[a-zA-Z0-9\-\.]+(:[a-zA-Z0-9]*)?/?([a-zA-Z0-9\-\._\?\,\'/\\\+&amp;%\$#\=~])*[^\.\,\)\(\s]$"
   
 def app_manifest_structure_validator (manifest):
     '''A structure test for an app manifest's JSON'''
@@ -21,98 +15,110 @@ def app_manifest_structure_validator (manifest):
     messages = []
     schema = {
             "type":"object",
-            "$schema": "http://json-schema.org/draft-03/schema",
-            "id": "#",
-            "required":False,
             "properties":{
                 "author": {
-                    "type":"string",
-                    "id": "author",
-                    "required":False
+                    "type":"string"
                 },
                 "description": {
                     "type":"string",
-                    "id": "description",
                     "required":True
                 },
                 "icon": {
                     "type":"string",
-                    "id": "icon",
-                    "required":False
+                    "pattern":URLPATTERN
                 },
                 "id": {
                     "type":"string",
-                    "id": "id",
                     "required":True
                 },
                 "index": {
                     "type":"string",
-                    "id": "index",
-                    "required":False
+                    "pattern":URLPATTERN
                 },
                 "mode": {
                     "type":"string",
-                    "enum" : ["ui","background","frame_ui"],
-                    "id": "mode",
+                    "enum":["ui","background","frame_ui"],
                     "required":True
                 },
                 "name": {
                     "type":"string",
-                    "id": "name",
                     "required":True
                 },
                 "optimalBrowserEnvironments": {
                     "type":"array",
-                    "id": "optimalBrowserEnvironments",
-                    "required":False,
-                    "items":
-                        {
+                    "items":{
                             "type":"string",
-                            "id": "0",
-                            "required":False
-                        }
-                    
-
+                            "enum":["desktop","tablet","mobile"]
+                    },
+                    "uniqueItems":True
                 },
                 "requires": {
                     "type":"object",
-                    "id": "requires",
-                    "required":False
+                    "patternProperties": {
+                        URLPATTERN: {
+                            "type":"object",
+                            "properties":{
+                                "codes":{
+                                    "type":"array",
+                                    "items":{
+                                            "type":"string",
+                                            "pattern":URLPATTERN
+                                    },
+                                    "uniqueItems":True
+                                },
+                                "methods":{
+                                    "type":"array",
+                                    "items":{
+                                            "type":"string",
+                                            "enum":["GET","PUT","POST","DELETE"]
+                                    },
+                                    "uniqueItems":True
+                                }
+                            },
+                            "additionalProperties":False
+                        }
+                    },
+                    "additionalProperties":False
                 },
                 "scope": {
                     "type":"string",
-                    "id": "scope",
-                    "required":False
+                    "enum":["record"]
                 },
                 "smart_version": {
                     "type":"string",
-                    "id": "smart_version",
-                    "required":False
+                    "pattern":"^[\d]+(?:\.[\d]+){0,2}$"
                 },
                 "supportedBrowserEnvironments": {
                     "type":"array",
-                    "id": "supportedBrowserEnvironments",
-                    "required":False,
-                    "items":
-                        {
-                            "type":"string",
-                            "id": "0",
-                            "required":False
-                        }
-                    
-
+                    "items": {
+                        "type":"string",
+                        "enum":["desktop","tablet","mobile"]
+                    },
+                    "uniqueItems":True
                 },
                 "version": {
-                    "type":"string",
-                    "id": "version",
-                    "required":False
+                    "type":"string"
                 }
-            }
+            },
+            "additionalProperties":False
         }
         
     v = Draft3Validator(schema)
     for error in sorted(v.iter_errors(manifest), key=str):
         messages.append(str(error))
+     
+    #custom validation (not possible with JSON Schema)
+    if len(messages) == 0:
+        keys = manifest.keys()
+
+        if manifest["mode"] in ("ui","frame_ui"):
+            if "icon" not in keys:
+                messages.append ("There should be an 'icon' propery for non-background apps")
+            if "index" not in keys:
+                messages.append ("There should be an 'index' propery for non-background apps")
+        elif manifest["mode"] == "background":
+            if "icon" in keys or "index" in keys or "optimalBrowserEnvironments" in keys or "supportedBrowserEnvironments" in keys:
+                messages.append ("Background apps should not have 'icon', 'index', 'supportedBrowserEnvironments', or 'optimalBrowserEnvironments' properties in their manifest")
 
     return messages
     
@@ -122,63 +128,82 @@ def container_manifest_structure_validator (manifest):
     messages = []
     schema = {
         "type":"object",
-        "$schema": "http://json-schema.org/draft-03/schema",
-        "id": "#",
-        "required":False,
         "properties":{
             "admin": {
                 "type":"string",
-                "id": "admin",
                 "required":True
             },
             "api_base": {
                 "type":"string",
-                "id": "api_base",
+                "pattern":URLPATTERN,
                 "required":True
             },
             "capabilities": {
                 "type":"object",
-                "id": "capabilities",
                 "required":True,
+                "patternProperties": {
+                    URLPATTERN: {
+                        "type":"object",
+                        "properties":{
+                            "codes":{
+                                "type":"array",
+                                "items":{
+                                        "type":"string",
+                                        "pattern":URLPATTERN
+                                },
+                                "uniqueItems":True
+                            },
+                            "methods":{
+                                "type":"array",
+                                "items":{
+                                        "type":"string",
+                                        "enum":["GET","PUT","POST","DELETE"]
+                                },
+                                "uniqueItems":True
+                            }
+                        },
+                        "additionalProperties":False
+                    }
+                },
+                "additionalProperties":False
             },
             "description": {
                 "type":"string",
-                "id": "description",
                 "required":True
             },
             "launch_urls": {
                 "type":"object",
-                "id": "launch_urls",
                 "required":True,
                 "properties":{
                     "authorize_token": {
                         "type":"string",
-                        "id": "authorize_token",
+                        "pattern":URLPATTERN,
                         "required":True
                     },
                     "exchange_token": {
                         "type":"string",
-                        "id": "exchange_token",
+                        "pattern":URLPATTERN,
                         "required":True
                     },
                     "request_token": {
                         "type":"string",
-                        "id": "request_token",
+                        "pattern":URLPATTERN,
                         "required":True
                     }
-                }
+                },
+                "additionalProperties":False
             },
             "name": {
                 "type":"string",
-                "id": "name",
                 "required":True
             },
             "smart_version": {
                 "type":"string",
-                "id": "smart_version",
+                "pattern":"^[\d]+(?:\.[\d]+){0,2}$",
                 "required":True
             }
-        }
+        },
+        "additionalProperties":False
     }
         
     v = Draft3Validator(schema)
