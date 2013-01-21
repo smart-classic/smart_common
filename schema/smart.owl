@@ -4270,6 +4270,12 @@ A single fulfillment event (that is, the medication was dispensed to the patient
         <rdfs:label>User Preferences</rdfs:label>
     </owl:Class>
     
+    <!-- http://smartplatforms.org/terms#ScratchpadData -->
+
+    <owl:Class rdf:about="&sp;ScratchpadData">
+        <rdfs:label>Scratchpad Data</rdfs:label>
+    </owl:Class>
+    
 
 
     <!-- http://smartplatforms.org/terms#VCardLabels -->
@@ -6246,6 +6252,20 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
         <api:target rdf:resource="&sp;UserPreferences"/>
     </owl:NamedIndividual>
     
+    
+    
+    <!-- http://smartplatforms.org/terms/api/calls#delete_scratchpad_data -->
+
+    <owl:NamedIndividual rdf:about="&calls;delete_scratchpad_data">
+        <rdf:type rdf:resource="&api;Call"/>
+        <rdfs:comment>Delete scratchpad data for an app</rdfs:comment>
+        <api:clientMethodName>delete_scratchpad_data</api:clientMethodName>
+        <api:path>/records/{record_id}/apps/{smart_app_id}/scratchpad</api:path>
+        <api:cardinality>single</api:cardinality>
+        <api:httpMethod>DELETE</api:httpMethod>
+        <api:category>user</api:category>
+        <api:target rdf:resource="&sp;ScratchpadData"/>
+    </owl:NamedIndividual>
 
 
     <!-- http://smartplatforms.org/terms/api/calls#get_allergies -->
@@ -6677,6 +6697,21 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
         <api:target rdf:resource="&sp;UserPreferences"/>
     </owl:NamedIndividual>
     
+    
+    
+    <!-- http://smartplatforms.org/terms/api/calls#get_scratchpad_data -->
+
+    <owl:NamedIndividual rdf:about="&calls;get_scratchpad_data">
+        <rdf:type rdf:resource="&api;Call"/>
+        <api:path>/records/{record_id}/apps/{smart_app_id}/scratchpad</api:path>
+        <api:cardinality>single</api:cardinality>
+        <rdfs:comment>Get scratchpad data for an app</rdfs:comment>
+        <api:clientMethodName>get_scratchpad_data</api:clientMethodName>
+        <api:category>user</api:category>
+        <api:httpMethod>GET</api:httpMethod>
+        <api:target rdf:resource="&sp;ScratchpadData"/>
+    </owl:NamedIndividual>
+    
 
 
     <!-- http://smartplatforms.org/terms/api/calls#get_vital_sign_set -->
@@ -6724,6 +6759,21 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
         <api:clientMethodName>put_user_preferences</api:clientMethodName>
         <api:httpMethod>PUT</api:httpMethod>
         <api:target rdf:resource="&sp;UserPreferences"/>
+    </owl:NamedIndividual>
+    
+    
+    
+    <!-- http://smartplatforms.org/terms/api/calls#put_scratchpad_data -->
+
+    <owl:NamedIndividual rdf:about="&calls;put_scratchpad_data">
+        <rdf:type rdf:resource="&api;Call"/>
+        <api:category>user</api:category>
+        <api:path>/records/{record_id}/apps/{smart_app_id}/scratchpad</api:path>
+        <api:cardinality>single</api:cardinality>
+        <rdfs:comment>Set new scratchpad data for an app</rdfs:comment>
+        <api:clientMethodName>put_scratchpad_data</api:clientMethodName>
+        <api:httpMethod>PUT</api:httpMethod>
+        <api:target rdf:resource="&sp;ScratchpadData"/>
     </owl:NamedIndividual>
     
 
@@ -6836,6 +6886,13 @@ FILTER(?d &lt;= &quot;{date_to}&quot;)</api:filterSparql>
     <!-- http://smartplatforms.org/terms/api/parameter_sets#put_preferences_params_0 -->
 
     <owl:NamedIndividual rdf:about="http://smartplatforms.org/terms/api/parameter_sets#put_preferences_params_0">
+        <rdf:type rdf:resource="&api;ParameterSet"/>
+    </owl:NamedIndividual>
+    
+    
+    <!-- http://smartplatforms.org/terms/api/parameter_sets#put_scratchpad_data_0 -->
+
+    <owl:NamedIndividual rdf:about="http://smartplatforms.org/terms/api/parameter_sets#put_scratchpad_data_0">
         <rdf:type rdf:resource="&api;ParameterSet"/>
     </owl:NamedIndividual>
     
