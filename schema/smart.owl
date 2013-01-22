@@ -2041,7 +2041,11 @@ The formatted data, in turn, comprises a MIME type and either supply the value i
      &lt;foaf:gender&gt;male&lt;/foaf:gender&gt;
      &lt;v:bday&gt;1959-12-25&lt;/v:bday&gt;
      &lt;v:email&gt;bob.odenkirk@example.com&lt;/v:email&gt;
-
+     
+     &lt;sp:ethnicity&gt;Welsh&lt;/sp:ethnicity&gt;
+     &lt;sp:race&gt;Caucasian&lt;/sp:race&gt;
+     &lt;sp:preferredLanguage&gt;English&lt;/sp:preferredLanguage&gt;
+     
      &lt;sp:medicalRecordNumber&gt;
        &lt;sp:Code&gt;
         &lt;dcterms:title&gt;My Hospital Record 2304575&lt;/dcterms:title&gt; 
@@ -3716,6 +3720,7 @@ A single fulfillment event (that is, the medication was dispensed to the patient
       &lt;/sp:problemName&gt;
       &lt;sp:startDate&gt;2007-06-12&lt;/sp:startDate&gt;
       &lt;sp:endDate&gt;2007-08-01&lt;/sp:endDate&gt;
+      &lt;sp:notes&gt;also suggested some home exercises&lt;/sp:notes&gt;
     &lt;/sp:Problem&gt;
 &lt;/rdf:RDF&gt;
 </api:example>
@@ -3904,6 +3909,7 @@ A single fulfillment event (that is, the medication was dispensed to the patient
         &lt;/v:n&gt;
       &lt;/sp:Provider&gt;
     &lt;/sp:provider&gt;
+    &lt;sp:notes&gt;Patient claimed to have already had an appendectomy&lt;/sp:notes&gt;
  &lt;/sp:Procedure&gt;
 &lt;/rdf:RDF&gt;</api:example>
         <api:base_path>/records/{record_id}/procedures/{procedure_id}</api:base_path>
