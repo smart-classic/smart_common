@@ -6351,6 +6351,21 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
     
 
 
+    <!-- http://smartplatforms.org/terms/api/calls#post_clinical_note -->
+
+    <owl:NamedIndividual rdf:about="&calls;post_clinical_note">
+        <rdf:type rdf:resource="&api;Call"/>
+        <api:cardinality>single</api:cardinality>
+        <api:path>/records/{record_id}/clinical_notes/</api:path>
+        <api:clientMethodName>post_clinical_note</api:clientMethodName>
+        <api:httpMethod>POST</api:httpMethod>
+        <rdfs:comment>Post a Clinical Note for a patient</rdfs:comment>
+        <api:category>record</api:category>
+        <api:target rdf:resource="&sp;ClinicalNote"/>
+    </owl:NamedIndividual>
+
+
+
     <!-- http://smartplatforms.org/terms/api/calls#get_clinical_notes -->
 
     <owl:NamedIndividual rdf:about="&calls;get_clinical_notes">
