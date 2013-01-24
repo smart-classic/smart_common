@@ -567,12 +567,6 @@
     
 
 
-    <!-- http://smartplatforms.org/terms#unit -->
-
-    <owl:ObjectProperty rdf:about="http://smartplatforms.org/terms#unit"/>
-    
-
-
     <!-- http://smartplatforms.org/terms#valueAndUnit -->
 
     <owl:ObjectProperty rdf:about="http://smartplatforms.org/terms#valueAndUnit"/>
