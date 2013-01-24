@@ -4247,7 +4247,6 @@ A single fulfillment event (that is, the medication was dispensed to the patient
 8517006
 266919005
 266927001
-266927001
 
 </rdfs:comment>
         <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#SocialHistory"/>
@@ -6038,7 +6037,6 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
 
     <owl:NamedIndividual rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/266927001">
         <rdf:type rdf:resource="&spcode;SmokingStatus"/>
-        <dcterms:title>Smoker, current status unknown</dcterms:title>
         <dcterms:title>Unknown if ever smoked</dcterms:title>
     </owl:NamedIndividual>
     
