@@ -869,7 +869,7 @@
     <!-- http://www.w3.org/2006/vcard/ns#bday -->
 
     <owl:DatatypeProperty rdf:about="&v;bday">
-        <rdfs:label>birthday</rdfs:label>
+        <rdfs:label>dateOfBirth</rdfs:label>
     </owl:DatatypeProperty>
     
     
@@ -6872,13 +6872,13 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
         <rdf:type rdf:resource="&api;Call"/>
         <api:path>/records/search</api:path>
         <api:clientMethodName>search_records</api:clientMethodName>
-        <rdfs:comment>Get an RDF graph of sp:Demographics elements for all patients that match the query.  Matching treats family_name and given_name as the *beginning* of a name.  For instance given_name=&#39;J&#39; matches /^J/i and thus matchs &#39;Josh&#39;. Birthday is an ISO8601 string like &quot;2008-03-21&quot;; gender is &quot;male&quot; or &quot;female&quot;.  Gender, birthday, zipcode, and medical_record_number must match exactly.
+        <rdfs:comment>Get an RDF graph of sp:Demographics elements for all patients that match the query.  Matching treats family_name and given_name as the *beginning* of a name.  For instance given_name=&#39;J&#39; matches /^J/i and thus matchs &#39;Josh&#39;. Date of birth is an ISO8601 string like &quot;2008-03-21&quot;; gender is &quot;male&quot; or &quot;female&quot;.  Gender, date_of_birth, zipcode, and medical_record_number must match exactly.
 	</rdfs:comment>
         <api:httpMethod>GET</api:httpMethod>
         <api:category>container</api:category>
         <api:cardinality>multiple</api:cardinality>
         <api:target rdf:resource="http://smartplatforms.org/terms#Demographics"/>
-        <api:hasParameter rdf:resource="&parameters;birthday"/>
+        <api:hasParameter rdf:resource="&parameters;date_of_birth"/>
         <api:hasParameter rdf:resource="&parameters;family_name"/>
         <api:hasParameter rdf:resource="&parameters;gender"/>
         <api:hasParameter rdf:resource="&parameters;given_name"/>
@@ -6987,12 +6987,12 @@ FILTER(?d &lt;= &quot;{date_to}&quot;)</api:filterSparql>
     
 
 
-    <!-- http://smartplatforms.org/terms/api/parameters#birthday -->
+    <!-- http://smartplatforms.org/terms/api/parameters#date_of_birth -->
 
-    <owl:NamedIndividual rdf:about="&parameters;birthday">
+    <owl:NamedIndividual rdf:about="&parameters;date_of_birth">
         <rdf:type rdf:resource="&api;Parameter"/>
         <api:clientParameterType>query</api:clientParameterType>
-        <api:clientParameterName>birthday</api:clientParameterName>
+        <api:clientParameterName>date_of_birth</api:clientParameterName>
     </owl:NamedIndividual>
     
 
