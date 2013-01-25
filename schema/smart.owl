@@ -873,10 +873,10 @@
     </owl:DatatypeProperty>
     
     
-    <!-- http://www.w3.org/2006/vcard/ns#dday -->
+    <!-- http://www.w3.org/2006/vcard/ns#deathdate -->
 
-    <owl:DatatypeProperty rdf:about="&v;dday">
-        <rdfs:label>dayOfDeath</rdfs:label>
+    <owl:DatatypeProperty rdf:about="&v;deathdate">
+        <rdfs:label>dateOfDeath</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -2083,7 +2083,7 @@ The formatted data, in turn, comprises a MIME type and either supply the value i
 
      &lt;foaf:gender&gt;male&lt;/foaf:gender&gt;
      &lt;v:bday&gt;1959-12-25&lt;/v:bday&gt;
-     &lt;v:dday&gt;2012-11-18&lt;/v:dday&gt;
+     &lt;v:deathdate&gt;2012-11-18&lt;/v:deathdate&gt;
      &lt;v:email&gt;bob.odenkirk@example.com&lt;/v:email&gt;
      
      &lt;sp:ethnicity&gt;Welsh&lt;/sp:ethnicity&gt;
@@ -5801,7 +5801,7 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&v;dday"/>
+                <owl:onProperty rdf:resource="&v;deathdate"/>
                 <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -5825,7 +5825,7 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&v;dday"/>
+                <owl:onProperty rdf:resource="&v;deathdate"/>
                 <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -5848,12 +5848,12 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
         </owl:annotatedTarget>
     </owl:Axiom>
     <owl:Axiom>
-        <rdfs:comment>Day of death as an ISO-8601 string</rdfs:comment>
+        <rdfs:comment>Date of death as an ISO-8601 string</rdfs:comment>
         <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
         <owl:annotatedSource rdf:resource="&v;VCard"/>
         <owl:annotatedTarget>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&v;dday"/>
+                <owl:onProperty rdf:resource="&v;deathdate"/>
                 <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
             </owl:Restriction>
         </owl:annotatedTarget>
