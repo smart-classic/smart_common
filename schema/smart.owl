@@ -5837,7 +5837,7 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
         </rdfs:subClassOf>
     </owl:Class>
     <owl:Axiom>
-        <rdfs:comment>Birthday as an ISO-8601 string</rdfs:comment>
+        <rdfs:comment>Date of birth as an ISO-8601 string</rdfs:comment>
         <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
         <owl:annotatedSource rdf:resource="&v;VCard"/>
         <owl:annotatedTarget>
