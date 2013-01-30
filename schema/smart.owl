@@ -4717,7 +4717,7 @@ For a medication with a simple dosing schedule, record the amount to take with e
                 <owl:allValuesFrom>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://smartplatforms.org/terms#unit"/>
-                        <owl:hasValue>m</owl:hasValue>
+                        <owl:hasValue>cm</owl:hasValue>
                     </owl:Restriction>
                 </owl:allValuesFrom>
             </owl:Restriction>
@@ -4794,8 +4794,8 @@ For a medication with a simple dosing schedule, record the amount to take with e
             &lt;/sp:code&gt;
           &lt;/sp:CodedValue&gt;
         &lt;/sp:vitalName&gt;
-        &lt;sp:value&gt;1.80&lt;/sp:value&gt;
-        &lt;sp:unit&gt;m&lt;/sp:unit&gt;
+        &lt;sp:value&gt;180&lt;/sp:value&gt;
+        &lt;sp:unit&gt;cm&lt;/sp:unit&gt;
       &lt;/sp:VitalSign&gt;
     &lt;/sp:height&gt;
     &lt;sp:weight&gt;
@@ -5048,7 +5048,7 @@ For a medication with a simple dosing schedule, record the amount to take with e
         </owl:annotatedTarget>
     </owl:Axiom>
     <owl:Axiom>
-        <rdfs:comment>Patient&#39;s height in meters.  </rdfs:comment>
+        <rdfs:comment>Patient&#39;s height in centimeters.  </rdfs:comment>
         <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#VitalSignSet"/>
         <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
         <owl:annotatedTarget>
