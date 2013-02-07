@@ -35,6 +35,10 @@ def app_manifest_structure_validator (manifest):
                     "type":"string",
                     "pattern":URLPATTERN
                 },
+                "oauth_callback": {
+                    "type":"string",
+                    "pattern":URLPATTERN
+                },
                 "mode": {
                     "type":"string",
                     "enum":["ui","background","frame_ui"],
@@ -107,7 +111,7 @@ def app_manifest_structure_validator (manifest):
     for error in sorted(v.iter_errors(manifest), key=str):
         messages.append(str(error))
      
-    #custom validation (not possible with JSON Schema)
+    # custom validation (not possible with JSON Schema)
     if len(messages) == 0:
         keys = manifest.keys()
 
@@ -117,8 +121,8 @@ def app_manifest_structure_validator (manifest):
             if "index" not in keys:
                 messages.append ("There should be an 'index' propery for non-background apps")
         elif manifest["mode"] == "background":
-            if "icon" in keys or "index" in keys or "optimalBrowserEnvironments" in keys or "supportedBrowserEnvironments" in keys:
-                messages.append ("Background apps should not have 'icon', 'index', 'supportedBrowserEnvironments', or 'optimalBrowserEnvironments' properties in their manifest")
+            if "index" in keys or "oauth_callback" in keys or "optimalBrowserEnvironments" in keys or "supportedBrowserEnvironments" in keys:
+                messages.append ("Background apps should not have 'index', 'oauth_callback', 'supportedBrowserEnvironments', or 'optimalBrowserEnvironments' properties in their manifest")
 
     return messages
     
