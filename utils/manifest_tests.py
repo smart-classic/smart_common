@@ -86,7 +86,7 @@ def app_manifest_structure_validator (manifest):
                 },
                 "scope": {
                     "type":"string",
-                    "enum":["record"]
+                    "enum":["record","container"]
                 },
                 "smart_version": {
                     "type":"string",
