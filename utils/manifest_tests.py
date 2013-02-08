@@ -7,7 +7,7 @@
 # Standard module imports
 from jsonschema import Draft3Validator
 
-URLPATTERN = "^(http|https)\://[a-zA-Z0-9\-\.]+(:[a-zA-Z0-9]*)?/?([a-zA-Z0-9\-\._\?\,\'/\\\+&amp;%\$#\=~])*[^\.\,\)\(\s]$"
+URLPATTERN = "^[\w\-_]+\://([a-zA-Z0-9\-\.]+(:[a-zA-Z0-9]*)?)?/?([a-zA-Z0-9\-\._\?\,\'/\\\+&amp;%\$#\=~])*[^\.\,\)\(\s]$"
   
 def app_manifest_structure_validator (manifest):
     '''A structure test for an app manifest's JSON'''
