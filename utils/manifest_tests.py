@@ -44,6 +44,9 @@ def app_manifest_structure_validator (manifest):
                     "enum":["ui","background","frame_ui"],
                     "required":True
                 },
+                "standalone": {
+                    "type":"boolean"
+                },
                 "name": {
                     "type":"string",
                     "required":True
