@@ -2292,7 +2292,7 @@ The formatted data, in turn, comprises a MIME type and either supply the value i
       &lt;sp:belongsTo  rdf:resource=&quot;http://sandbox-api.smartplatforms.org/records/2169591&quot; /&gt;
       &lt;sp:fileName&gt;reportScan.png&lt;/sp:fileName&gt;
       &lt;dcterms:title&gt;Image of a report received from NGD about the patient&lt;/dcterms:title&gt;
-      &lt;dc:date&gt;2010-05-12T04:00:00Z&lt;/dc:date&gt;
+      &lt;dcterms:date&gt;2010-05-12T04:00:00Z&lt;/dcterms:date&gt;
       &lt;dcterms:hasFormat&gt;
          &lt;sp:DocumentWithFormat&gt;
             &lt;dcterms:format&gt;
