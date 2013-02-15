@@ -1,41 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1360963484045" name="http://smartplatforms.org/terms" uri="smart.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1360963484045" name="shadowed:http://smartplatforms.org/terms" uri="SMART/Projects/Direct/demo/background/smart_client/common/schema/smart.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1360963484045" name="shadowed:http://smartplatforms.org/terms" uri="SMART/Servers/smart_sample_patients/bin/common/schema/smart.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1360963484045" name="shadowed:http://smartplatforms.org/terms" uri="SMART/Servers/smart_client_python/common/schema/smart.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1360963484045" name="shadowed:http://smartplatforms.org/terms" uri="SMART/Servers/smart_client_java/bin/smart.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1360963484045" name="shadowed:http://smartplatforms.org/terms" uri="SMART/Servers/smart-docs/smart_common/schema/smart.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1360963484045" name="shadowed:http://smartplatforms.org/terms" uri="SMART/Servers/smart_sample_apps/api_verify/smart_client/common/schema/smart.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1360963484045" name="shadowed:http://smartplatforms.org/terms" uri="SMART/Servers/smart_sample_apps/api_verify/smart_client/common/schema/smart.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1360963484045" name="shadowed:http://smartplatforms.org/terms" uri="SMART/Servers/smart_sample_apps/api_verify/smart_client/common/schema/smart.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1360963484045" name="shadowed:http://smartplatforms.org/terms" uri="SMART/Servers/smart_sample_apps/api_verify/smart_client/common/schema/smart.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1360963484045" name="shadowed:http://smartplatforms.org/terms" uri="SMART/Servers/smart_sample_apps/api_verify/smart_client/common/schema/smart.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1360963484045" name="shadowed:http://smartplatforms.org/terms" uri="SMART/Servers/smart_sample_apps/rx_reminder/smart_client/common/schema/smart.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1360963484045" name="shadowed:http://smartplatforms.org/terms" uri="SMART/Servers/smart_sample_apps/rx_reminder/smart_client/common/schema/smart.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1360963484045" name="shadowed:http://smartplatforms.org/terms" uri="SMART/Servers/smart_sample_apps/rx_reminder/smart_client/common/schema/smart.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1360963484045" name="shadowed:http://smartplatforms.org/terms" uri="SMART/Servers/smart_sample_apps/rx_reminder/smart_client/common/schema/smart.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1360963484045" name="shadowed:http://smartplatforms.org/terms" uri="SMART/Servers/smart_sample_apps/rx_reminder/smart_client/common/schema/smart.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1360963484045" name="shadowed:http://smartplatforms.org/terms" uri="SMART/Servers/smart_sample_apps/mpr_monitor/smart_client/common/schema/smart.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1360963484045" name="shadowed:http://smartplatforms.org/terms" uri="SMART/Servers/smart_sample_apps/mpr_monitor/smart_client/common/schema/smart.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1360963484045" name="shadowed:http://smartplatforms.org/terms" uri="SMART/Servers/smart_sample_apps/mpr_monitor/smart_client/common/schema/smart.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1360963484045" name="shadowed:http://smartplatforms.org/terms" uri="SMART/Servers/smart_sample_apps/mpr_monitor/smart_client/common/schema/smart.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1360963484045" name="shadowed:http://smartplatforms.org/terms" uri="SMART/Servers/smart_sample_apps/mpr_monitor/smart_client/common/schema/smart.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1360963484045" name="shadowed:http://smartplatforms.org/terms" uri="SMART/Servers/smart_sample_apps/direct_apps/smart_client/common/schema/smart.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1360963484045" name="shadowed:http://smartplatforms.org/terms" uri="SMART/Servers/smart_sample_apps/direct_apps/smart_client/common/schema/smart.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1360963484045" name="shadowed:http://smartplatforms.org/terms" uri="SMART/Servers/smart_sample_apps/direct_apps/smart_client/common/schema/smart.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1360963484045" name="shadowed:http://smartplatforms.org/terms" uri="SMART/Servers/smart_sample_apps/direct_apps/smart_client/common/schema/smart.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1360963484045" name="shadowed:http://smartplatforms.org/terms" uri="SMART/Servers/smart_sample_apps/direct_apps/smart_client/common/schema/smart.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1360963484045" name="shadowed:http://smartplatforms.org/terms" uri="SMART/Servers/smart_sample_apps/smart_client/common/schema/smart.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1360963484045" name="shadowed:http://smartplatforms.org/terms" uri="SMART/Servers/smart_sample_apps/smart_client/common/schema/smart.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1360963484045" name="shadowed:http://smartplatforms.org/terms" uri="SMART/Servers/smart_sample_apps/smart_client/common/schema/smart.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1360963484045" name="shadowed:http://smartplatforms.org/terms" uri="SMART/Servers/smart_sample_apps/smart_client/common/schema/smart.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1360963484045" name="shadowed:http://smartplatforms.org/terms" uri="SMART/Servers/smart_sample_apps/smart_client/common/schema/smart.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1360963484045" name="shadowed:http://smartplatforms.org/terms" uri="SMART/Servers/smart_common/schema/smart.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1360963484045" name="shadowed:http://smartplatforms.org/terms" uri="SMART/Servers/smart_server/smart/common/schema/smart.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1360963484045" name="shadowed:http://smartplatforms.org/terms" uri="SMART/Servers/smart_server/smart/common/schema/smart.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1360963484045" name="shadowed:http://smartplatforms.org/terms" uri="SMART/Servers/smart_server/smart/document_processing/schema/smart.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1360963484045" name="shadowed:http://smartplatforms.org/terms" uri="SMART/Servers/smart_server/smart/document_processing/schema/smart.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1360964679719" name="http://smartplatforms.org/terms" uri="smart.owl"/>
     </group>
 </catalog>
