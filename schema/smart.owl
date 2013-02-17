@@ -73,19 +73,19 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <owl:AnnotationProperty rdf:about="&api;filterSparql"/>
     <owl:AnnotationProperty rdf:about="&api;httpMethod"/>
-    <owl:AnnotationProperty rdf:about="&api;clientParameterName"/>
-    <owl:AnnotationProperty rdf:about="&api;clientParameterType"/>
+    <owl:AnnotationProperty rdf:about="&api;filterSparql"/>
     <owl:AnnotationProperty rdf:about="&api;name"/>
-    <owl:AnnotationProperty rdf:about="&api;category"/>
+    <owl:AnnotationProperty rdf:about="&api;clientParameterType"/>
+    <owl:AnnotationProperty rdf:about="&api;clientParameterName"/>
     <owl:AnnotationProperty rdf:about="&api;description"/>
+    <owl:AnnotationProperty rdf:about="&api;category"/>
     <owl:AnnotationProperty rdf:about="&rdfs;label"/>
     <owl:AnnotationProperty rdf:about="&api;responseContentType"/>
     <owl:AnnotationProperty rdf:about="&rdfs;comment"/>
     <owl:AnnotationProperty rdf:about="&api;doc"/>
-    <owl:AnnotationProperty rdf:about="&api;defaultSort"/>
     <owl:AnnotationProperty rdf:about="&api;filterSparqlOperator"/>
+    <owl:AnnotationProperty rdf:about="&api;defaultSort"/>
     <owl:AnnotationProperty rdf:about="&api;example"/>
     <owl:AnnotationProperty rdf:about="&api;base_path"/>
     <owl:AnnotationProperty rdf:about="&api;cardinality"/>
@@ -1051,13 +1051,13 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&rdfs;label"/>
-                <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&rdfs;label"/>
-                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+                <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -1071,48 +1071,8 @@
         <rdfs:subClassOf rdf:resource="http://smartplatforms.org/terms#Statement"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#drugClassAllergen"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#allergicReaction"/>
-                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#category"/>
-                <owl:allValuesFrom>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://smartplatforms.org/terms#code"/>
-                        <owl:allValuesFrom rdf:resource="&spcode;AllergyCategory"/>
-                    </owl:Restriction>
-                </owl:allValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#drugClassAllergen"/>
-                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#endDate"/>
-                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://smartplatforms.org/terms#drugAllergen"/>
-                <owl:allValuesFrom>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://smartplatforms.org/terms#code"/>
-                        <owl:allValuesFrom rdf:resource="&spcode;RxNorm_Ingredient"/>
-                    </owl:Restriction>
-                </owl:allValuesFrom>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1123,6 +1083,36 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#drugAllergen"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#endDate"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#severity"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#otherAllergen"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#drugClassAllergen"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://smartplatforms.org/terms#severity"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
@@ -1135,11 +1125,11 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#severity"/>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#category"/>
                 <owl:allValuesFrom>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://smartplatforms.org/terms#code"/>
-                        <owl:allValuesFrom rdf:resource="&spcode;AllergySeverity"/>
+                        <owl:allValuesFrom rdf:resource="&spcode;AllergyCategory"/>
                     </owl:Restriction>
                 </owl:allValuesFrom>
             </owl:Restriction>
@@ -1157,6 +1147,23 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#drugAllergen"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://smartplatforms.org/terms#code"/>
+                        <owl:allValuesFrom rdf:resource="&spcode;RxNorm_Ingredient"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#allergicReaction"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://smartplatforms.org/terms#otherAllergen"/>
                 <owl:allValuesFrom>
                     <owl:Restriction>
@@ -1168,32 +1175,31 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#startDate"/>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#endDate"/>
+                <owl:allValuesFrom rdf:resource="&xsd;dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#category"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#otherAllergen"/>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#drugClassAllergen"/>
                 <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#otherAllergen"/>
-                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://smartplatforms.org/terms#severity"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#drugAllergen"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://smartplatforms.org/terms#code"/>
+                        <owl:allValuesFrom rdf:resource="&spcode;AllergySeverity"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1209,20 +1215,14 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#category"/>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#otherAllergen"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#startDate"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#drugAllergen"/>
-                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#endDate"/>
-                <owl:allValuesFrom rdf:resource="&xsd;dateTime"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1300,131 +1300,6 @@
   &lt;sp:Allergy&gt;
       &lt;sp:belongsTo rdf:resource=&quot;http://sandbox-api.smartplatforms.org/records/2169591&quot; /&gt;
       &lt;sp:startDate&gt;2007-06-12&lt;/sp:startDate&gt;
-      &lt;sp:drugAllergen&gt;
-      &lt;sp:CodedValue&gt;
-          &lt;dcterms:title&gt;Cephalexin&lt;/dcterms:title&gt;
-        &lt;sp:code&gt;
-        &lt;spcode:RxNorm_Ingredient rdf:about=&quot;http://purl.bioontology.org/ontology/RXNORM/2231&quot;&gt;
-          &lt;rdf:type rdf:resource=&quot;http://smartplatforms.org/terms#Code&quot; /&gt; 
-          &lt;dcterms:title&gt;Cephalexin&lt;/dcterms:title&gt;
-          &lt;sp:system&gt;http://purl.bioontology.org/ontology/RXNORM/&lt;/sp:system&gt;
-          &lt;dcterms:identifier&gt;2231&lt;/dcterms:identifier&gt;
-        &lt;/spcode:RxNorm_Ingredient&gt;
-        &lt;/sp:code&gt;
-      &lt;/sp:CodedValue&gt;
-
-      &lt;/sp:drugAllergen&gt;
-      &lt;sp:severity&gt;
-      &lt;sp:CodedValue&gt;
-          &lt;dcterms:title&gt;Severe&lt;/dcterms:title&gt;
-        &lt;sp:code&gt;
-        &lt;spcode:AllergySeverity rdf:about=&quot;http://purl.bioontology.org/ontology/SNOMEDCT/24484000&quot;&gt;
-          &lt;rdf:type rdf:resource=&quot;http://smartplatforms.org/terms#Code&quot; /&gt; 
-          &lt;dcterms:title&gt;Severe&lt;/dcterms:title&gt;
-          &lt;sp:system&gt;http://purl.bioontology.org/ontology/SNOMEDCT/&lt;/sp:system&gt;
-          &lt;dcterms:identifier&gt;24484000&lt;/dcterms:identifier&gt;
-        &lt;/spcode:AllergySeverity&gt;
-        &lt;/sp:code&gt;
-      &lt;/sp:CodedValue&gt;
-
-      &lt;/sp:severity&gt;
-      &lt;sp:allergicReaction&gt;
-      &lt;sp:CodedValue&gt;
-          &lt;dcterms:title&gt;Anaphylaxis&lt;/dcterms:title&gt;
-        &lt;sp:code&gt;
-        &lt;spcode:SNOMED rdf:about=&quot;http://purl.bioontology.org/ontology/SNOMEDCT/39579001&quot;&gt;
-          &lt;rdf:type rdf:resource=&quot;http://smartplatforms.org/terms#Code&quot; /&gt; 
-          &lt;dcterms:title&gt;Anaphylaxis&lt;/dcterms:title&gt;
-          &lt;sp:system&gt;http://purl.bioontology.org/ontology/SNOMEDCT/&lt;/sp:system&gt;
-          &lt;dcterms:identifier&gt;39579001&lt;/dcterms:identifier&gt;
-        &lt;/spcode:SNOMED&gt;
-        &lt;/sp:code&gt;
-      &lt;/sp:CodedValue&gt;
-
-      &lt;/sp:allergicReaction&gt;
-      &lt;sp:category&gt;
-      &lt;sp:CodedValue&gt;
-          &lt;dcterms:title&gt;Drug allergy&lt;/dcterms:title&gt;   
-        &lt;sp:code&gt;
-        &lt;spcode:AllergyCategory rdf:about=&quot;http://purl.bioontology.org/ontology/SNOMEDCT/416098002&quot;&gt;
-          &lt;rdf:type rdf:resource=&quot;http://smartplatforms.org/terms#Code&quot; /&gt; 
-          &lt;dcterms:title&gt;Drug allergy&lt;/dcterms:title&gt;   
-          &lt;sp:system&gt;http://purl.bioontology.org/ontology/SNOMEDCT/&lt;/sp:system&gt;
-          &lt;dcterms:identifier&gt;416098002&lt;/dcterms:identifier&gt;
-        &lt;/spcode:AllergyCategory&gt;
-        &lt;/sp:code&gt;
-      &lt;/sp:CodedValue&gt;
-
-      &lt;/sp:category&gt;
-   &lt;/sp:Allergy&gt;
-&lt;/rdf:RDF&gt;</api:example>
-        <api:example>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;rdf:RDF
-  xmlns:dcterms=&quot;http://purl.org/dc/terms/&quot;
-  xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;
-  xmlns:sp=&quot;http://smartplatforms.org/terms#&quot;
-  xmlns:spcode=&quot;http://smartplatforms.org/terms/codes/&quot;&gt; 
-      &lt;sp:Allergy rdf:about=&quot;http://sandbox-api.smartplatforms.org/records/2169591/allergies/873252&quot;&gt;
-      &lt;sp:belongsTo rdf:resource=&quot;http://sandbox-api.smartplatforms.org/records/2169591&quot; /&gt;
-      &lt;sp:drugClassAllergen&gt;
-      &lt;sp:CodedValue&gt;
-        &lt;dcterms:title&gt;Sulfonamide Antibacterial&lt;/dcterms:title&gt;
-        &lt;sp:code&gt;
-        &lt;spcode:NDFRT rdf:about=&quot;http://purl.bioontology.org/ontology/NDFRT/N0000175503&quot;&gt;
-          &lt;rdf:type rdf:resource=&quot;http://smartplatforms.org/terms#Code&quot; /&gt; 
-          &lt;dcterms:title&gt;Sulfonamide Antibacterial&lt;/dcterms:title&gt;
-          &lt;sp:system&gt;http://purl.bioontology.org/ontology/NDFRT/&lt;/sp:system&gt;
-          &lt;dcterms:identifier&gt;N0000175503&lt;/dcterms:identifier&gt;
-        &lt;/spcode:NDFRT&gt;
-        &lt;/sp:code&gt;
-      &lt;/sp:CodedValue&gt;
-
-      &lt;/sp:drugClassAllergen&gt;
-      &lt;sp:severity&gt;
-      &lt;sp:CodedValue&gt;
-          &lt;dcterms:title&gt;Severe&lt;/dcterms:title&gt;
-        &lt;sp:code&gt;
-        &lt;spcode:AllergySeverity rdf:about=&quot;http://purl.bioontology.org/ontology/SNOMEDCT/24484000&quot;&gt;
-          &lt;rdf:type rdf:resource=&quot;http://smartplatforms.org/terms#Code&quot; /&gt; 
-          &lt;dcterms:title&gt;Severe&lt;/dcterms:title&gt;
-          &lt;sp:system&gt;http://purl.bioontology.org/ontology/SNOMEDCT/&lt;/sp:system&gt;
-          &lt;dcterms:identifier&gt;24484000&lt;/dcterms:identifier&gt;
-        &lt;/spcode:AllergySeverity&gt;
-        &lt;/sp:code&gt;
-      &lt;/sp:CodedValue&gt;
-      &lt;/sp:severity&gt;
-      &lt;sp:allergicReaction&gt;
-      &lt;sp:CodedValue&gt;
-          &lt;dcterms:title&gt;Anaphylaxis&lt;/dcterms:title&gt;
-        &lt;sp:code&gt;
-        &lt;spcode:SNOMED rdf:about=&quot;http://purl.bioontology.org/ontology/SNOMEDCT/39579001&quot;&gt;
-          &lt;rdf:type rdf:resource=&quot;http://smartplatforms.org/terms#Code&quot; /&gt; 
-          &lt;dcterms:title&gt;Anaphylaxis&lt;/dcterms:title&gt;
-          &lt;sp:system&gt;http://purl.bioontology.org/ontology/SNOMEDCT/&lt;/sp:system&gt;
-          &lt;dcterms:identifier&gt;39579001&lt;/dcterms:identifier&gt;
-        &lt;/spcode:SNOMED&gt;
-        &lt;/sp:code&gt;
-      &lt;/sp:CodedValue&gt;
-
-      &lt;/sp:allergicReaction&gt;
-      &lt;sp:category&gt;
-      &lt;sp:CodedValue&gt;
-          &lt;dcterms:title&gt;Drug allergy&lt;/dcterms:title&gt;   
-        &lt;sp:code&gt;
-        &lt;spcode:AllergyCategory rdf:about=&quot;http://purl.bioontology.org/ontology/SNOMEDCT/416098002&quot;&gt;
-          &lt;rdf:type rdf:resource=&quot;http://smartplatforms.org/terms#Code&quot; /&gt; 
-          &lt;dcterms:title&gt;Drug allergy&lt;/dcterms:title&gt;   
-          &lt;sp:system&gt;http://purl.bioontology.org/ontology/SNOMEDCT/&lt;/sp:system&gt;
-          &lt;dcterms:identifier&gt;416098002&lt;/dcterms:identifier&gt;
-        &lt;/spcode:AllergyCategory&gt;
-        &lt;/sp:code&gt;
-      &lt;/sp:CodedValue&gt;
-
-      &lt;/sp:category&gt;
-   &lt;/sp:Allergy&gt;
-
-  &lt;sp:Allergy&gt;
-      &lt;sp:belongsTo rdf:resource=&quot;http://sandbox-api.smartplatforms.org/records/2169591&quot; /&gt;
       &lt;sp:drugAllergen&gt;
       &lt;sp:CodedValue&gt;
           &lt;dcterms:title&gt;Cephalexin&lt;/dcterms:title&gt;
@@ -1496,13 +1371,13 @@ For instance, below are two allergies: first, an allergy to the entire class of 
         <api:base_path>/records/{record_id}/allergies/{allergy_id}</api:base_path>
     </owl:Class>
     <owl:Axiom>
-        <rdfs:comment>Date on which allergy began as an ISO-8601 string.</rdfs:comment>
+        <rdfs:comment>For drug allergies, an RxNorm Concept at the ingredient level (TTY=&#39;in&#39;).</rdfs:comment>
         <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#Allergy"/>
         <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
         <owl:annotatedTarget>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#startDate"/>
-                <owl:allValuesFrom rdf:resource="&xsd;dateTime"/>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#drugAllergen"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
             </owl:Restriction>
         </owl:annotatedTarget>
     </owl:Axiom>
@@ -1518,13 +1393,46 @@ For instance, below are two allergies: first, an allergy to the entire class of 
         </owl:annotatedTarget>
     </owl:Axiom>
     <owl:Axiom>
-        <rdfs:comment>For drug allergies, an RxNorm Concept at the ingredient level (TTY=&#39;in&#39;).</rdfs:comment>
+        <rdfs:comment>Substance acting as a food, environmental, or other allergen.  For environmental and food substance is a UNII.</rdfs:comment>
         <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#Allergy"/>
         <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
         <owl:annotatedTarget>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#drugAllergen"/>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#otherAllergen"/>
                 <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Date on which allergy ended as an ISO-8601 string.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#Allergy"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#endDate"/>
+                <owl:allValuesFrom rdf:resource="&xsd;dateTime"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Severity of an allergy	</rdfs:comment>
+        <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#Allergy"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#severity"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Date on which allergy began as an ISO-8601 string.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#Allergy"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#startDate"/>
+                <owl:allValuesFrom rdf:resource="&xsd;dateTime"/>
             </owl:Restriction>
         </owl:annotatedTarget>
     </owl:Axiom>
@@ -1551,39 +1459,6 @@ For instance, below are two allergies: first, an allergy to the entire class of 
             </owl:Restriction>
         </owl:annotatedTarget>
     </owl:Axiom>
-    <owl:Axiom>
-        <rdfs:comment>Substance acting as a food, environmental, or other allergen.  For environmental and food substance is a UNII.</rdfs:comment>
-        <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#Allergy"/>
-        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#otherAllergen"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-    </owl:Axiom>
-    <owl:Axiom>
-        <rdfs:comment>Severity of an allergy	</rdfs:comment>
-        <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#Allergy"/>
-        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#severity"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-    </owl:Axiom>
-    <owl:Axiom>
-        <rdfs:comment>Date on which allergy ended as an ISO-8601 string.</rdfs:comment>
-        <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#Allergy"/>
-        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#endDate"/>
-                <owl:allValuesFrom rdf:resource="&xsd;dateTime"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-    </owl:Axiom>
     
 
 
@@ -1594,7 +1469,7 @@ For instance, below are two allergies: first, an allergy to the entire class of 
         <rdfs:subClassOf rdf:resource="http://smartplatforms.org/terms#Statement"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&dcterms;date"/>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#allergyExclusionName"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -1602,6 +1477,12 @@ For instance, below are two allergies: first, an allergy to the entire class of 
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&dcterms;date"/>
                 <owl:allValuesFrom rdf:resource="&xsd;dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&dcterms;date"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1619,12 +1500,6 @@ For instance, below are two allergies: first, an allergy to the entire class of 
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://smartplatforms.org/terms#allergyExclusionName"/>
                 <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#allergyExclusionName"/>
-                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <api:example>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
@@ -1702,12 +1577,6 @@ While it might seem inelegant to expose explicit AllergyExclusion statements, th
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#startDate"/>
-                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://smartplatforms.org/terms#participant"/>
                 <owl:onClass rdf:resource="http://smartplatforms.org/terms#Participant"/>
                 <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
@@ -1715,7 +1584,7 @@ While it might seem inelegant to expose explicit AllergyExclusion statements, th
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#endDate"/>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#startDate"/>
                 <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -1729,6 +1598,12 @@ While it might seem inelegant to expose explicit AllergyExclusion statements, th
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://smartplatforms.org/terms#endDate"/>
                 <owl:allValuesFrom rdf:resource="&xsd;dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#endDate"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -1774,8 +1649,31 @@ While it might seem inelegant to expose explicit AllergyExclusion statements, th
         <rdfs:subClassOf rdf:resource="http://smartplatforms.org/terms#Component"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#bodyPosition"/>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#diastolic"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#VitalSign"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#systolic"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#bodySite"/>
                 <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#method"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://smartplatforms.org/terms#code"/>
+                        <owl:allValuesFrom rdf:resource="&spcode;BloodPressureMethod"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1786,42 +1684,32 @@ While it might seem inelegant to expose explicit AllergyExclusion statements, th
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#method"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#diastolic"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://smartplatforms.org/terms#systolic"/>
-                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#diastolic"/>
-                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#diastolic"/>
-                <owl:allValuesFrom>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://smartplatforms.org/terms#unit"/>
-                        <owl:hasValue>mm[Hg]</owl:hasValue>
-                    </owl:Restriction>
-                </owl:allValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#diastolic"/>
                 <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#VitalSign"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#systolic"/>
-                <owl:allValuesFrom>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://smartplatforms.org/terms#unit"/>
-                        <owl:hasValue>mm[Hg]</owl:hasValue>
-                    </owl:Restriction>
-                </owl:allValuesFrom>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#bodyPosition"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#bodyPosition"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1833,6 +1721,23 @@ While it might seem inelegant to expose explicit AllergyExclusion statements, th
                         <owl:allValuesFrom rdf:resource="&spcode;BloodPressureBodySite"/>
                     </owl:Restriction>
                 </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#diastolic"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://smartplatforms.org/terms#unit"/>
+                        <owl:hasValue>mm[Hg]</owl:hasValue>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#method"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1849,56 +1754,15 @@ While it might seem inelegant to expose explicit AllergyExclusion statements, th
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://smartplatforms.org/terms#systolic"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#VitalSign"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#method"/>
                 <owl:allValuesFrom>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://smartplatforms.org/terms#code"/>
-                        <owl:allValuesFrom rdf:resource="&spcode;BloodPressureMethod"/>
+                        <owl:onProperty rdf:resource="http://smartplatforms.org/terms#unit"/>
+                        <owl:hasValue>mm[Hg]</owl:hasValue>
                     </owl:Restriction>
                 </owl:allValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#method"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#bodySite"/>
-                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#bodyPosition"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#method"/>
-                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
     </owl:Class>
-    <owl:Axiom>
-        <rdfs:comment>diastolic blood pressure in mmHG. </rdfs:comment>
-        <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#BloodPressure"/>
-        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#diastolic"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#VitalSign"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-    </owl:Axiom>
     <owl:Axiom>
         <rdfs:comment>systolic blood pressure in mmHG.</rdfs:comment>
         <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#BloodPressure"/>
@@ -1907,6 +1771,17 @@ While it might seem inelegant to expose explicit AllergyExclusion statements, th
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://smartplatforms.org/terms#systolic"/>
                 <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#VitalSign"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Method by which blood pressure was recorded.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#BloodPressure"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#method"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
             </owl:Restriction>
         </owl:annotatedTarget>
     </owl:Axiom>
@@ -1927,17 +1802,6 @@ While it might seem inelegant to expose explicit AllergyExclusion statements, th
         </owl:annotatedTarget>
     </owl:Axiom>
     <owl:Axiom>
-        <rdfs:comment>Method by which blood pressure was recorded.</rdfs:comment>
-        <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#BloodPressure"/>
-        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#method"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-    </owl:Axiom>
-    <owl:Axiom>
         <rdfs:comment>Site on patient&#39;s body where blood pressure was recorded</rdfs:comment>
         <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#BloodPressure"/>
         <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
@@ -1945,6 +1809,17 @@ While it might seem inelegant to expose explicit AllergyExclusion statements, th
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://smartplatforms.org/terms#bodySite"/>
                 <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>diastolic blood pressure in mmHG. </rdfs:comment>
+        <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#BloodPressure"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#diastolic"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#VitalSign"/>
             </owl:Restriction>
         </owl:annotatedTarget>
     </owl:Axiom>
@@ -1958,8 +1833,8 @@ While it might seem inelegant to expose explicit AllergyExclusion statements, th
         <rdfs:subClassOf rdf:resource="http://smartplatforms.org/terms#Statement"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&dcterms;date"/>
-                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+                <owl:onProperty rdf:resource="&dcterms;hasFormat"/>
+                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1971,12 +1846,6 @@ While it might seem inelegant to expose explicit AllergyExclusion statements, th
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&dcterms;title"/>
-                <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&dcterms;title"/>
                 <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -1984,12 +1853,6 @@ While it might seem inelegant to expose explicit AllergyExclusion statements, th
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&dcterms;date"/>
                 <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&dcterms;hasFormat"/>
-                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -2003,6 +1866,18 @@ While it might seem inelegant to expose explicit AllergyExclusion statements, th
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://smartplatforms.org/terms#provider"/>
                 <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#Provider"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&dcterms;title"/>
+                <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&dcterms;date"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment rdf:datatype="&rdf;XMLLiteral">The SMART Clinical Note model encapsulates a simple clinical note with a date, author, title, and one or more instances of formatted data (as sp:DocumentWithFormat nodes) ,  
@@ -2056,17 +1931,6 @@ The formatted data, in turn, comprises a MIME type and either supply the value i
         </owl:annotatedTarget>
     </owl:Axiom>
     <owl:Axiom>
-        <rdfs:comment>Provider responsible for clinical note</rdfs:comment>
-        <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#ClinicalNote"/>
-        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#provider"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#Provider"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-    </owl:Axiom>
-    <owl:Axiom>
         <rdfs:comment>Date on which the note was written, as an ISO-8601 string.</rdfs:comment>
         <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#ClinicalNote"/>
         <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
@@ -2088,6 +1952,17 @@ The formatted data, in turn, comprises a MIME type and either supply the value i
             </owl:Restriction>
         </owl:annotatedTarget>
     </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Provider responsible for clinical note</rdfs:comment>
+        <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#ClinicalNote"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#provider"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#Provider"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
     
 
 
@@ -2098,12 +1973,6 @@ The formatted data, in turn, comprises a MIME type and either supply the value i
         <rdfs:subClassOf rdf:resource="http://smartplatforms.org/terms#DataType"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&dcterms;title"/>
-                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="&dcterms;identifier"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
@@ -2111,6 +1980,12 @@ The formatted data, in turn, comprises a MIME type and either supply the value i
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://smartplatforms.org/terms#system"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&dcterms;title"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -2124,38 +1999,38 @@ The formatted data, in turn, comprises a MIME type and either supply the value i
         <rdfs:subClassOf rdf:resource="http://smartplatforms.org/terms#Component"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#translationFidelity"/>
-                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#sourceCode"/>
-                <owl:allValuesFrom rdf:resource="&xsd;anyURI"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#sourceCode"/>
-                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&dcterms;title"/>
-                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="&dcterms;title"/>
                 <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#sourceCode"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&dcterms;title"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#translationFidelity"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://smartplatforms.org/terms#translationFidelity"/>
                 <owl:allValuesFrom rdf:resource="&spcode;TranslationFidelity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#sourceCode"/>
+                <owl:allValuesFrom rdf:resource="&xsd;anyURI"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -2167,12 +2042,6 @@ The formatted data, in turn, comprises a MIME type and either supply the value i
     <owl:Class rdf:about="http://smartplatforms.org/terms#CodedValue">
         <rdfs:label>Coded Value</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://smartplatforms.org/terms#DataType"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#provenance"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodeProvenance"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://smartplatforms.org/terms#code"/>
@@ -2189,6 +2058,12 @@ The formatted data, in turn, comprises a MIME type and either supply the value i
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://smartplatforms.org/terms#code"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#provenance"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodeProvenance"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -2249,13 +2124,13 @@ The formatted data, in turn, comprises a MIME type and either supply the value i
         <rdfs:subClassOf rdf:resource="http://smartplatforms.org/terms#Component"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#encoding"/>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#value"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#value"/>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#encoding"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -2279,35 +2154,6 @@ The formatted data, in turn, comprises a MIME type and either supply the value i
         <rdfs:subClassOf rdf:resource="http://smartplatforms.org/terms#Statement"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#gestationalAgeAtBirth"/>
-                <owl:allValuesFrom>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://smartplatforms.org/terms#unit"/>
-                        <owl:hasValue>wk</owl:hasValue>
-                    </owl:Restriction>
-                </owl:allValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&v;bday"/>
-                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#medicalRecordNumber"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#Code"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#gestationalAgeAtBirth"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#ValueAndUnit"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="&foaf;gender"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
@@ -2322,6 +2168,35 @@ The formatted data, in turn, comprises a MIME type and either supply the value i
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://smartplatforms.org/terms#medicalRecordNumber"/>
                 <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#gestationalAgeAtBirth"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://smartplatforms.org/terms#unit"/>
+                        <owl:hasValue>wk</owl:hasValue>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#gestationalAgeAtBirth"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#ValueAndUnit"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&v;bday"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#medicalRecordNumber"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#Code"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>In RDF/XML, patient Bob Odenkirk looks like this: </rdfs:comment>
@@ -2409,9 +2284,14 @@ The formatted data, in turn, comprises a MIME type and either supply the value i
         <rdfs:subClassOf rdf:resource="http://smartplatforms.org/terms#Statement"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#resource"/>
-                <owl:onClass rdf:resource="http://smartplatforms.org/terms#Resource"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onProperty rdf:resource="&dcterms;title"/>
+                <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&dcterms;date"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -2428,46 +2308,28 @@ The formatted data, in turn, comprises a MIME type and either supply the value i
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&dcterms;title"/>
-                <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&dcterms;hasFormat"/>
-                <owl:onClass rdf:resource="http://smartplatforms.org/terms#DocumentWithFormat"/>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#fileSize"/>
+                <owl:onClass rdf:resource="http://smartplatforms.org/terms#ValueAndUnit"/>
                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#fileName"/>
-                <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&dcterms;date"/>
-                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#fileName"/>
-                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#provider"/>
-                <owl:onClass rdf:resource="http://smartplatforms.org/terms#Provider"/>
-                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#resource"/>
+                <owl:onClass rdf:resource="http://smartplatforms.org/terms#Resource"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://smartplatforms.org/terms#provider"/>
                 <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#Provider"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#fileName"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -2483,8 +2345,21 @@ The formatted data, in turn, comprises a MIME type and either supply the value i
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#fileSize"/>
-                <owl:onClass rdf:resource="http://smartplatforms.org/terms#ValueAndUnit"/>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#provider"/>
+                <owl:onClass rdf:resource="http://smartplatforms.org/terms#Provider"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#fileName"/>
+                <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&dcterms;hasFormat"/>
+                <owl:onClass rdf:resource="http://smartplatforms.org/terms#DocumentWithFormat"/>
                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -2559,6 +2434,12 @@ The formatted data, in turn, comprises a MIME type and either supply the value i
         <rdfs:subClassOf rdf:resource="http://smartplatforms.org/terms#Component"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="&rdf;value"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="&dcterms;format"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
@@ -2567,12 +2448,6 @@ The formatted data, in turn, comprises a MIME type and either supply the value i
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&dcterms;format"/>
                 <owl:allValuesFrom rdf:resource="&dcterms;MediaTypeOrExtent"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&rdf;value"/>
-                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -2603,9 +2478,14 @@ Examples include:
         <rdfs:subClassOf rdf:resource="http://smartplatforms.org/terms#Statement"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#encounterType"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://smartplatforms.org/terms#provider"/>
-                <owl:onClass rdf:resource="http://smartplatforms.org/terms#Provider"/>
-                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#Provider"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -2613,24 +2493,6 @@ Examples include:
                 <owl:onProperty rdf:resource="http://smartplatforms.org/terms#facility"/>
                 <owl:onClass rdf:resource="http://smartplatforms.org/terms#Organization"/>
                 <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#endDate"/>
-                <owl:allValuesFrom rdf:resource="&xsd;dateTime"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#startDate"/>
-                <owl:allValuesFrom rdf:resource="&xsd;dateTime"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#encounterType"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -2646,14 +2508,14 @@ Examples include:
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#provider"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#Provider"/>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#facility"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#Organization"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#encounterType"/>
-                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#endDate"/>
+                <owl:allValuesFrom rdf:resource="&xsd;dateTime"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -2664,14 +2526,27 @@ Examples include:
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#provider"/>
+                <owl:onClass rdf:resource="http://smartplatforms.org/terms#Provider"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#startDate"/>
+                <owl:allValuesFrom rdf:resource="&xsd;dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://smartplatforms.org/terms#endDate"/>
                 <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#facility"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#Organization"/>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#encounterType"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <api:base_path>/records/{record_id}/encounters/{encounter_id}</api:base_path>
@@ -2726,17 +2601,6 @@ Examples include:
         </owl:annotatedTarget>
     </owl:Axiom>
     <owl:Axiom>
-        <rdfs:comment>Type of encounter</rdfs:comment>
-        <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#Encounter"/>
-        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#encounterType"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-    </owl:Axiom>
-    <owl:Axiom>
         <rdfs:comment>Facility where encounter occurred</rdfs:comment>
         <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#Encounter"/>
         <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
@@ -2758,6 +2622,17 @@ Examples include:
             </owl:Restriction>
         </owl:annotatedTarget>
     </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Type of encounter</rdfs:comment>
+        <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#Encounter"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#encounterType"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
     
 
 
@@ -2768,19 +2643,13 @@ Examples include:
         <rdfs:subClassOf rdf:resource="http://smartplatforms.org/terms#Statement"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#height"/>
+                <owl:onProperty rdf:resource="&v;bday"/>
                 <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#aboutRelative"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#aboutRelative"/>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#hasProblem"/>
                 <owl:allValuesFrom>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://smartplatforms.org/terms#code"/>
@@ -2791,8 +2660,8 @@ Examples include:
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#hasProblem"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
+                <owl:onProperty rdf:resource="&v;bday"/>
+                <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -2803,19 +2672,49 @@ Examples include:
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&v;deathdate"/>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#hasProblem"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#aboutRelative"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#height"/>
+                <owl:allValuesFrom rdf:resource="&spcode;VitalSign"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#aboutRelative"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#height"/>
                 <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#hasProblem"/>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#aboutRelative"/>
                 <owl:allValuesFrom>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://smartplatforms.org/terms#code"/>
                         <owl:allValuesFrom rdf:resource="&spcode;SNOMED"/>
                     </owl:Restriction>
                 </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&v;deathdate"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -2827,30 +2726,6 @@ Examples include:
                         <owl:hasValue>cm</owl:hasValue>
                     </owl:Restriction>
                 </owl:allValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#height"/>
-                <owl:allValuesFrom rdf:resource="&spcode;VitalSign"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&v;bday"/>
-                <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#aboutRelative"/>
-                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&v;bday"/>
-                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <api:namePlural>Family Histories</api:namePlural>
@@ -2931,7 +2806,37 @@ Examples include:
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://smartplatforms.org/terms#pharmacy"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#provider"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#pharmacy"/>
                 <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#Pharmacy"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#pbm"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#quantityDispensed"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#ValueAndUnit"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#medication"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#Medication"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -2942,14 +2847,8 @@ Examples include:
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&dcterms;date"/>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#dispenseDaysSupply"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#quantityDispensed"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#ValueAndUnit"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -2966,32 +2865,8 @@ Examples include:
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#medication"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#Medication"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#pbm"/>
-                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#dispenseDaysSupply"/>
+                <owl:onProperty rdf:resource="&dcterms;date"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#pharmacy"/>
-                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#provider"/>
-                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <api:example>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
@@ -3044,28 +2919,6 @@ Examples include:
         <api:base_path>/records/{record_id}/fulfillments/{fulfillment_id}</api:base_path>
     </owl:Class>
     <owl:Axiom>
-        <rdfs:comment>Clinician who prescribed the medication</rdfs:comment>
-        <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#Fulfillment"/>
-        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#provider"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#Provider"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-    </owl:Axiom>
-    <owl:Axiom>
-        <rdfs:comment>The pharmacy that dispensed the medication</rdfs:comment>
-        <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#Fulfillment"/>
-        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#pharmacy"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#Pharmacy"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-    </owl:Axiom>
-    <owl:Axiom>
         <rdfs:comment>Date on which medication was dispensed, as an ISO-8601 string</rdfs:comment>
         <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#Fulfillment"/>
         <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
@@ -3077,13 +2930,13 @@ Examples include:
         </owl:annotatedTarget>
     </owl:Axiom>
     <owl:Axiom>
-        <rdfs:comment>The number of days&#39; supply dispensed</rdfs:comment>
+        <rdfs:comment>Quantity dispensed, with units</rdfs:comment>
         <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#Fulfillment"/>
         <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
         <owl:annotatedTarget>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#dispenseDaysSupply"/>
-                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#quantityDispensed"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#ValueAndUnit"/>
             </owl:Restriction>
         </owl:annotatedTarget>
     </owl:Axiom>
@@ -3099,13 +2952,35 @@ Examples include:
         </owl:annotatedTarget>
     </owl:Axiom>
     <owl:Axiom>
-        <rdfs:comment>Quantity dispensed, with units</rdfs:comment>
+        <rdfs:comment>Clinician who prescribed the medication</rdfs:comment>
         <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#Fulfillment"/>
         <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
         <owl:annotatedTarget>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#quantityDispensed"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#ValueAndUnit"/>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#provider"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#Provider"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>The number of days&#39; supply dispensed</rdfs:comment>
+        <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#Fulfillment"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#dispenseDaysSupply"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>The pharmacy that dispensed the medication</rdfs:comment>
+        <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#Fulfillment"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#pharmacy"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#Pharmacy"/>
             </owl:Restriction>
         </owl:annotatedTarget>
     </owl:Axiom>
@@ -3118,13 +2993,13 @@ Examples include:
         <rdfs:subClassOf rdf:resource="http://smartplatforms.org/terms#Component"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#value"/>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#algorithm"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#algorithm"/>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#value"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -3139,13 +3014,26 @@ Examples include:
         <rdfs:subClassOf rdf:resource="http://smartplatforms.org/terms#Statement"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="&dcterms;date"/>
+                <owl:allValuesFrom rdf:resource="&xsd;dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#productName"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://smartplatforms.org/terms#refusalReason"/>
-                <owl:allValuesFrom>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://smartplatforms.org/terms#code"/>
-                        <owl:allValuesFrom rdf:resource="&spcode;ImmunizationRefusalReason"/>
-                    </owl:Restriction>
-                </owl:allValuesFrom>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&dcterms;date"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -3161,20 +3049,13 @@ Examples include:
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#refusalReason"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&dcterms;date"/>
-                <owl:allValuesFrom rdf:resource="&xsd;dateTime"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#productClass"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#administrationStatus"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://smartplatforms.org/terms#code"/>
+                        <owl:allValuesFrom rdf:resource="&spcode;ImmunizationAdministrationStatus"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -3191,8 +3072,20 @@ Examples include:
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#productClass"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://smartplatforms.org/terms#administrationStatus"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#productName"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -3208,31 +3101,13 @@ Examples include:
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&dcterms;date"/>
-                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#administrationStatus"/>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#refusalReason"/>
                 <owl:allValuesFrom>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://smartplatforms.org/terms#code"/>
-                        <owl:allValuesFrom rdf:resource="&spcode;ImmunizationAdministrationStatus"/>
+                        <owl:allValuesFrom rdf:resource="&spcode;ImmunizationRefusalReason"/>
                     </owl:Restriction>
                 </owl:allValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#productName"/>
-                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#productName"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <api:example>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
@@ -3309,6 +3184,17 @@ Examples include:
         <api:base_path>/records/{record_id}/immunizations/{immunization_id}</api:base_path>
     </owl:Class>
     <owl:Axiom>
+        <rdfs:comment>If the administration status indicates this vaccination was refused, refusalReason is a CodedValue whose code is belongs to a controlled vocabulary of refusal reasons.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#Immunization"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#refusalReason"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
         <rdfs:comment>coded describing the product according to the set of codes in the CVX for immunizations controlled vocabulary.  CVX Code URIs should be represented as:
 
 http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#{code}
@@ -3356,17 +3242,6 @@ http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=vg#ROTAVIRUS</rdfs:co
             </owl:Restriction>
         </owl:annotatedTarget>
     </owl:Axiom>
-    <owl:Axiom>
-        <rdfs:comment>If the administration status indicates this vaccination was refused, refusalReason is a CodedValue whose code is belongs to a controlled vocabulary of refusal reasons.</rdfs:comment>
-        <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#Immunization"/>
-        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#refusalReason"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-    </owl:Axiom>
     
 
 
@@ -3383,9 +3258,13 @@ http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=vg#ROTAVIRUS</rdfs:co
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#labResult"/>
-                <owl:onClass rdf:resource="http://smartplatforms.org/terms#LabResult"/>
-                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#labName"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://smartplatforms.org/terms#code"/>
+                        <owl:allValuesFrom rdf:resource="&spcode;LOINC"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -3396,13 +3275,9 @@ http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=vg#ROTAVIRUS</rdfs:co
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#labName"/>
-                <owl:allValuesFrom>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://smartplatforms.org/terms#code"/>
-                        <owl:allValuesFrom rdf:resource="&spcode;LOINC"/>
-                    </owl:Restriction>
-                </owl:allValuesFrom>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#labResult"/>
+                <owl:onClass rdf:resource="http://smartplatforms.org/terms#LabResult"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -3449,8 +3324,20 @@ No example yet.</api:example>
         <rdfs:subClassOf rdf:resource="http://smartplatforms.org/terms#Statement"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#notes"/>
-                <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#abnormalInterpretation"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#labStatus"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#accessionNumber"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -3466,8 +3353,73 @@ No example yet.</api:example>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#accessionNumber"/>
+                <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#notes"/>
+                <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#labStatus"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#notes"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#labName"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#narrativeResult"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#NarrativeResult"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#quantitativeResult"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&dcterms;date"/>
+                <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#abnormalInterpretation"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://smartplatforms.org/terms#code"/>
+                        <owl:allValuesFrom rdf:resource="&spcode;LabResultInterpretation"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://smartplatforms.org/terms#labName"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#narrativeResult"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -3495,85 +3447,8 @@ No example yet.</api:example>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#labStatus"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#accessionNumber"/>
-                <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&dcterms;date"/>
-                <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#accessionNumber"/>
-                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://smartplatforms.org/terms#abnormalInterpretation"/>
                 <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#narrativeResult"/>
-                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#abnormalInterpretation"/>
-                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#labName"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#quantitativeResult"/>
-                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#narrativeResult"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#NarrativeResult"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#notes"/>
-                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#abnormalInterpretation"/>
-                <owl:allValuesFrom>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://smartplatforms.org/terms#code"/>
-                        <owl:allValuesFrom rdf:resource="&spcode;LabResultInterpretation"/>
-                    </owl:Restriction>
-                </owl:allValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#labStatus"/>
-                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <api:namePlural>Lab Results</api:namePlural>
@@ -3686,24 +3561,13 @@ No example yet.</api:example>
         <api:base_path>/records/{record_id}/lab_results/{lab_result_id}</api:base_path>
     </owl:Class>
     <owl:Axiom>
-        <rdfs:comment>Free-text notes about this result.</rdfs:comment>
+        <rdfs:comment>Workflow status of this lab value (e.g. &quot;finalized&quot;)</rdfs:comment>
         <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#LabResult"/>
         <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
         <owl:annotatedTarget>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#notes"/>
-                <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-    </owl:Axiom>
-    <owl:Axiom>
-        <rdfs:comment>External accession number for a lab result</rdfs:comment>
-        <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#LabResult"/>
-        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#accessionNumber"/>
-                <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#labStatus"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
             </owl:Restriction>
         </owl:annotatedTarget>
     </owl:Axiom>
@@ -3719,13 +3583,13 @@ No example yet.</api:example>
         </owl:annotatedTarget>
     </owl:Axiom>
     <owl:Axiom>
-        <rdfs:comment>LOINC Coded Value for result (e.g. with title=&#39;Serum Sodium&#39; and code=http://purl.bioontology.org/ontology/LNC/2951-2</rdfs:comment>
+        <rdfs:comment>Free-text notes about this result.</rdfs:comment>
         <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#LabResult"/>
         <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
         <owl:annotatedTarget>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#labName"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#notes"/>
+                <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
             </owl:Restriction>
         </owl:annotatedTarget>
     </owl:Axiom>
@@ -3741,13 +3605,13 @@ No example yet.</api:example>
         </owl:annotatedTarget>
     </owl:Axiom>
     <owl:Axiom>
-        <rdfs:comment>Narrative result, if any.</rdfs:comment>
+        <rdfs:comment>LOINC Coded Value for result (e.g. with title=&#39;Serum Sodium&#39; and code=http://purl.bioontology.org/ontology/LNC/2951-2</rdfs:comment>
         <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#LabResult"/>
         <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
         <owl:annotatedTarget>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#narrativeResult"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#NarrativeResult"/>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#labName"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
             </owl:Restriction>
         </owl:annotatedTarget>
     </owl:Axiom>
@@ -3763,13 +3627,24 @@ No example yet.</api:example>
         </owl:annotatedTarget>
     </owl:Axiom>
     <owl:Axiom>
-        <rdfs:comment>Workflow status of this lab value (e.g. &quot;finalized&quot;)</rdfs:comment>
+        <rdfs:comment>Narrative result, if any.</rdfs:comment>
         <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#LabResult"/>
         <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
         <owl:annotatedTarget>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#labStatus"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#narrativeResult"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#NarrativeResult"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>External accession number for a lab result</rdfs:comment>
+        <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#LabResult"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#accessionNumber"/>
+                <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
             </owl:Restriction>
         </owl:annotatedTarget>
     </owl:Axiom>
@@ -3798,32 +3673,56 @@ No example yet.</api:example>
         <rdfs:subClassOf rdf:resource="http://smartplatforms.org/terms#Statement"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#quantity"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#ValueAndUnit"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#drugName"/>
-                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://smartplatforms.org/terms#drugName"/>
                 <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#frequency"/>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#instructions"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#quantity"/>
                 <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#ValueAndUnit"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#instructions"/>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#endDate"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#quantity"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#startDate"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#startDate"/>
+                <owl:allValuesFrom rdf:resource="&xsd;dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#provenance"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#Code"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#fulfillment"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#Fulfillment"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -3839,8 +3738,14 @@ No example yet.</api:example>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#startDate"/>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#endDate"/>
                 <owl:allValuesFrom rdf:resource="&xsd;dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#frequency"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#ValueAndUnit"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -3851,38 +3756,8 @@ No example yet.</api:example>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#fulfillment"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#Fulfillment"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#startDate"/>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#drugName"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#provenance"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#Code"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#endDate"/>
-                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#endDate"/>
-                <owl:allValuesFrom rdf:resource="&xsd;dateTime"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#quantity"/>
-                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment rdf:datatype="&rdf;XMLLiteral">The SMART medication type expresses a medication at the level of an
@@ -3933,43 +3808,6 @@ In RDF/XML notation, a patient on oral amitriptyline 50 mg tablets might provide
     </owl:Class>
     <owl:Axiom>
         <rdfs:comment rdf:datatype="&rdf;XMLLiteral">
-A single fulfillment event (that is, the medication was dispensed to the patient by a pharmacy)
-	</rdfs:comment>
-        <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#Medication"/>
-        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#fulfillment"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#Fulfillment"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-    </owl:Axiom>
-    <owl:Axiom>
-        <rdfs:comment rdf:datatype="&rdf;XMLLiteral">RxNorm Concept ID for this medication.  Note: the RxNorm CUI for a SMART medication should have one of the following four types:  SCD (Semantic Clinical Drug), SBD (Semantic Branded Drug), GPCK (Generic Pack), BPCK (Brand Name Pack).   Restricting medications to these four RxNorm types can also be expressed as &quot;TTY in (&#39;SCD&#39;,&#39;SBD&#39;,&#39;GPCK&#39;,&#39;BPCK&#39;)&quot; -- and this restriction ensures that SMART medications use concepts of the appropriate specificity:  concepts like &quot;650 mg generic acetaminophen&quot; or &quot;20 mg brand-name Claritin&quot;.   Please note that SMART medications do not include explicit structured data about pill strength, concentration, or precise ingredients.  These data are available through RxNorm, including through the free [http://rxnav.nlm.nih.gov/RxNormRestAPI.html RxNav REST API].  Code element with code drawn from http://purl.bioontology.org/ontology/RXNORM/{rxcui}</rdfs:comment>
-        <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#Medication"/>
-        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#drugName"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-    </owl:Axiom>
-    <owl:Axiom>
-        <rdfs:comment rdf:datatype="&rdf;XMLLiteral">
-	Clinician-supplied instructions from the prescription signature 
-	</rdfs:comment>
-        <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#Medication"/>
-        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#instructions"/>
-                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-    </owl:Axiom>
-    <owl:Axiom>
-        <rdfs:comment rdf:datatype="&rdf;XMLLiteral">
 For a medication with a simple dosing schedule, record the amount to take with each administration.  The quantity should be recorded as a [http://www.unitsofmeasure.org/ UCUM] expression.  For some medications, the appoporiate quantity will be a volume (e.g. &quot;5 mL&quot; of an oral acetaminophen solution).  For other medications, the appropriate quantity may be expresses in terms of tablets, puffs, or actuations:  UCUM call these &quot;non-units&quot;, and they should be written inside of curly braces to avoid confusion.  For example, you would express &quot;1 tablet&quot; as a ValueAndUnit node with quantity=&quot;1&quot;, unit=&quot;{tablet}&quot;.
 	</rdfs:comment>
         <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#Medication"/>
@@ -3993,13 +3831,15 @@ For a medication with a simple dosing schedule, record the amount to take with e
         </owl:annotatedTarget>
     </owl:Axiom>
     <owl:Axiom>
-        <rdfs:comment rdf:datatype="&rdf;XMLLiteral">When the patient stopped taking a medication, as an ISO-8601 string.</rdfs:comment>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral">
+	Clinician-supplied instructions from the prescription signature 
+	</rdfs:comment>
         <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#Medication"/>
         <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
         <owl:annotatedTarget>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#endDate"/>
-                <owl:allValuesFrom rdf:resource="&xsd;dateTime"/>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#instructions"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </owl:annotatedTarget>
     </owl:Axiom>
@@ -4016,6 +3856,41 @@ For a medication with a simple dosing schedule, record how often to take the med
             </owl:Restriction>
         </owl:annotatedTarget>
     </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral">
+A single fulfillment event (that is, the medication was dispensed to the patient by a pharmacy)
+	</rdfs:comment>
+        <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#Medication"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#fulfillment"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#Fulfillment"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral">RxNorm Concept ID for this medication.  Note: the RxNorm CUI for a SMART medication should have one of the following four types:  SCD (Semantic Clinical Drug), SBD (Semantic Branded Drug), GPCK (Generic Pack), BPCK (Brand Name Pack).   Restricting medications to these four RxNorm types can also be expressed as &quot;TTY in (&#39;SCD&#39;,&#39;SBD&#39;,&#39;GPCK&#39;,&#39;BPCK&#39;)&quot; -- and this restriction ensures that SMART medications use concepts of the appropriate specificity:  concepts like &quot;650 mg generic acetaminophen&quot; or &quot;20 mg brand-name Claritin&quot;.   Please note that SMART medications do not include explicit structured data about pill strength, concentration, or precise ingredients.  These data are available through RxNorm, including through the free [http://rxnav.nlm.nih.gov/RxNormRestAPI.html RxNav REST API].  Code element with code drawn from http://purl.bioontology.org/ontology/RXNORM/{rxcui}</rdfs:comment>
+        <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#Medication"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#drugName"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral">When the patient stopped taking a medication, as an ISO-8601 string.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#Medication"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#endDate"/>
+                <owl:allValuesFrom rdf:resource="&xsd;dateTime"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
     
 
 
@@ -4026,13 +3901,13 @@ For a medication with a simple dosing schedule, record how often to take the med
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://smartplatforms.org/terms#value"/>
-                <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://smartplatforms.org/terms#value"/>
-                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+                <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -4067,6 +3942,12 @@ For a medication with a simple dosing schedule, record how often to take the med
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&v;adr"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&v;adr"/>
                 <owl:allValuesFrom rdf:resource="&v;Address"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -4074,12 +3955,6 @@ For a medication with a simple dosing schedule, record how often to take the med
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&v;organization-name"/>
                 <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&v;adr"/>
-                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -4117,6 +3992,18 @@ For a medication with a simple dosing schedule, record how often to take the med
         <rdfs:subClassOf rdf:resource="http://smartplatforms.org/terms#Component"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#role"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#role"/>
+                <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://smartplatforms.org/terms#organization"/>
                 <owl:onClass rdf:resource="http://smartplatforms.org/terms#Organization"/>
                 <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
@@ -4126,12 +4013,6 @@ For a medication with a simple dosing schedule, record how often to take the med
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://smartplatforms.org/terms#organization"/>
                 <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#Organization"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#role"/>
-                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -4147,24 +4028,7 @@ For a medication with a simple dosing schedule, record how often to take the med
                 <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#Person"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#role"/>
-                <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
     </owl:Class>
-    <owl:Axiom>
-        <rdfs:comment>Role of participant (free text)</rdfs:comment>
-        <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#Participant"/>
-        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#role"/>
-                <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-    </owl:Axiom>
     <owl:Axiom>
         <rdfs:comment>Organization of participant</rdfs:comment>
         <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#Participant"/>
@@ -4173,6 +4037,17 @@ For a medication with a simple dosing schedule, record how often to take the med
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://smartplatforms.org/terms#organization"/>
                 <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#Organization"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Role of participant (free text)</rdfs:comment>
+        <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#Participant"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#role"/>
+                <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
             </owl:Restriction>
         </owl:annotatedTarget>
     </owl:Axiom>
@@ -4210,7 +4085,7 @@ For a medication with a simple dosing schedule, record how often to take the med
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&foaf;gender"/>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#preferredLanguage"/>
                 <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -4222,7 +4097,7 @@ For a medication with a simple dosing schedule, record how often to take the med
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#preferredLanguage"/>
+                <owl:onProperty rdf:resource="&foaf;gender"/>
                 <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -4279,31 +4154,14 @@ For a medication with a simple dosing schedule, record how often to take the med
         <rdfs:subClassOf rdf:resource="http://smartplatforms.org/terms#Statement"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#problemName"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://smartplatforms.org/terms#endDate"/>
                 <owl:allValuesFrom rdf:resource="&xsd;dateTime"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#startDate"/>
-                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://smartplatforms.org/terms#problemStatus"/>
-                <owl:allValuesFrom>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://smartplatforms.org/terms#code"/>
-                        <owl:allValuesFrom rdf:resource="&spcode;ProblemStatus"/>
-                    </owl:Restriction>
-                </owl:allValuesFrom>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -4325,7 +4183,7 @@ For a medication with a simple dosing schedule, record how often to take the med
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#endDate"/>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#notes"/>
                 <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -4338,18 +4196,24 @@ For a medication with a simple dosing schedule, record how often to take the med
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://smartplatforms.org/terms#startDate"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#startDate"/>
                 <owl:allValuesFrom rdf:resource="&xsd;dateTime"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#problemStatus"/>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#problemName"/>
                 <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#notes"/>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#endDate"/>
                 <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -4363,6 +4227,17 @@ For a medication with a simple dosing schedule, record how often to take the med
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://smartplatforms.org/terms#problemStatus"/>
                 <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#problemStatus"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://smartplatforms.org/terms#code"/>
+                        <owl:allValuesFrom rdf:resource="&spcode;ProblemStatus"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
         <api:namePlural>Problems</api:namePlural>
@@ -4422,13 +4297,13 @@ For a medication with a simple dosing schedule, record how often to take the med
 </api:example>
     </owl:Class>
     <owl:Axiom>
-        <rdfs:comment>SNOMED-CT Concept for the problem</rdfs:comment>
+        <rdfs:comment>Date on which problem began, as an ISO-8601 string.</rdfs:comment>
         <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#Problem"/>
         <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
         <owl:annotatedTarget>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#problemName"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#startDate"/>
+                <owl:allValuesFrom rdf:resource="&xsd;dateTime"/>
             </owl:Restriction>
         </owl:annotatedTarget>
     </owl:Axiom>
@@ -4444,17 +4319,6 @@ For a medication with a simple dosing schedule, record how often to take the med
         </owl:annotatedTarget>
     </owl:Axiom>
     <owl:Axiom>
-        <rdfs:comment>Status of this problem, using a SNOMED code for Active, Inactive, or Resolved.</rdfs:comment>
-        <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#Problem"/>
-        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#problemStatus"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-    </owl:Axiom>
-    <owl:Axiom>
         <rdfs:comment>Date on which problem resolve (if any), as an ISO-8601 string.</rdfs:comment>
         <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#Problem"/>
         <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
@@ -4466,13 +4330,24 @@ For a medication with a simple dosing schedule, record how often to take the med
         </owl:annotatedTarget>
     </owl:Axiom>
     <owl:Axiom>
-        <rdfs:comment>Date on which problem began, as an ISO-8601 string.</rdfs:comment>
+        <rdfs:comment>SNOMED-CT Concept for the problem</rdfs:comment>
         <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#Problem"/>
         <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
         <owl:annotatedTarget>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#startDate"/>
-                <owl:allValuesFrom rdf:resource="&xsd;dateTime"/>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#problemName"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Status of this problem, using a SNOMED code for Active, Inactive, or Resolved.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#Problem"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#problemStatus"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
             </owl:Restriction>
         </owl:annotatedTarget>
     </owl:Axiom>
@@ -4508,20 +4383,32 @@ For a medication with a simple dosing schedule, record how often to take the med
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#provider"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#Provider"/>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#notes"/>
+                <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&dcterms;date"/>
-                <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#procedureStatus"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&dcterms;date"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#provider"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#Provider"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#procedureStatus"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -4537,20 +4424,14 @@ For a medication with a simple dosing schedule, record how often to take the med
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#procedureStatus"/>
-                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#procedureStatus"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#notes"/>
+                <owl:onProperty rdf:resource="&dcterms;date"/>
                 <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#procedureName"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -4561,19 +4442,13 @@ For a medication with a simple dosing schedule, record how often to take the med
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#procedureName"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#notes"/>
+                <owl:onProperty rdf:resource="&dcterms;date"/>
                 <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&dcterms;date"/>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#notes"/>
                 <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -4651,6 +4526,17 @@ For a medication with a simple dosing schedule, record how often to take the med
         <api:namePlural>Procedures</api:namePlural>
     </owl:Class>
     <owl:Axiom>
+        <rdfs:comment>Status of procedure.  (Active, complete, cancelled, aborted).</rdfs:comment>
+        <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#Procedure"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#procedureStatus"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
         <rdfs:comment rdf:datatype="&rdf;XMLLiteral">Provider responsible for the procedure.</rdfs:comment>
         <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#Procedure"/>
         <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
@@ -4658,28 +4544,6 @@ For a medication with a simple dosing schedule, record how often to take the med
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://smartplatforms.org/terms#provider"/>
                 <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#Provider"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-    </owl:Axiom>
-    <owl:Axiom>
-        <rdfs:comment rdf:datatype="&rdf;XMLLiteral">SNOMED CT concept ID (under the procedure hierarchy) for this procedure.  Code element with code drawn from http://purl.bioontology.org/ontology/SNOMEDCT/{cui}</rdfs:comment>
-        <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#Procedure"/>
-        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#procedureName"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-    </owl:Axiom>
-    <owl:Axiom>
-        <rdfs:comment rdf:datatype="&rdf;XMLLiteral">Free-text notes about this procedure.</rdfs:comment>
-        <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#Procedure"/>
-        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#notes"/>
-                <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
             </owl:Restriction>
         </owl:annotatedTarget>
     </owl:Axiom>
@@ -4695,12 +4559,23 @@ For a medication with a simple dosing schedule, record how often to take the med
         </owl:annotatedTarget>
     </owl:Axiom>
     <owl:Axiom>
-        <rdfs:comment>Status of procedure.  (Active, complete, cancelled, aborted).</rdfs:comment>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral">Free-text notes about this procedure.</rdfs:comment>
         <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#Procedure"/>
         <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
         <owl:annotatedTarget>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#procedureStatus"/>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#notes"/>
+                <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral">SNOMED CT concept ID (under the procedure hierarchy) for this procedure.  Code element with code drawn from http://purl.bioontology.org/ontology/SNOMEDCT/{cui}</rdfs:comment>
+        <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#Procedure"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#procedureName"/>
                 <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
             </owl:Restriction>
         </owl:annotatedTarget>
@@ -4722,13 +4597,13 @@ For a medication with a simple dosing schedule, record how often to take the med
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://smartplatforms.org/terms#npiNumber"/>
-                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+                <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://smartplatforms.org/terms#npiNumber"/>
-                <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -4769,8 +4644,9 @@ For a medication with a simple dosing schedule, record how often to take the med
         <rdfs:subClassOf rdf:resource="http://smartplatforms.org/terms#Component"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#nonCriticalRange"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#ValueRange"/>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#normalRange"/>
+                <owl:onClass rdf:resource="http://smartplatforms.org/terms#ValueRange"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -4781,13 +4657,7 @@ For a medication with a simple dosing schedule, record how often to take the med
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#valueAndUnit"/>
-                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#normalRange"/>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#nonCriticalRange"/>
                 <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#ValueRange"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -4801,8 +4671,13 @@ For a medication with a simple dosing schedule, record how often to take the med
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://smartplatforms.org/terms#normalRange"/>
-                <owl:onClass rdf:resource="http://smartplatforms.org/terms#ValueRange"/>
-                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#ValueRange"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#valueAndUnit"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -4848,15 +4723,15 @@ For a medication with a simple dosing schedule, record how often to take the med
         <rdfs:subClassOf rdf:resource="http://smartplatforms.org/terms#Component"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#location"/>
-                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#hash"/>
+                <owl:onClass rdf:resource="http://smartplatforms.org/terms#Hash"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#hash"/>
-                <owl:onClass rdf:resource="http://smartplatforms.org/terms#Hash"/>
-                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#location"/>
+                <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -4867,8 +4742,8 @@ For a medication with a simple dosing schedule, record how often to take the med
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#hash"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#Hash"/>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#location"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -4880,8 +4755,8 @@ For a medication with a simple dosing schedule, record how often to take the med
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#location"/>
-                <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#hash"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#Hash"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -4910,6 +4785,12 @@ For a medication with a simple dosing schedule, record how often to take the med
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://smartplatforms.org/terms#smokingStatus"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#smokingStatus"/>
                 <owl:allValuesFrom>
                     <owl:Class>
                         <owl:intersectionOf rdf:parseType="Collection">
@@ -4927,18 +4808,6 @@ For a medication with a simple dosing schedule, record how often to take the med
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://smartplatforms.org/terms#smokingStatus"/>
                 <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#smokingStatus"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#smokingStatus"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment rdf:datatype="&rdf;XMLLiteral">The SMART Social History model describes smoking status accoring to Meaningful Use classifications.  This mode is expected to expand over time to accomodate additional aspects of the social history.</rdfs:comment>
@@ -4968,25 +4837,6 @@ For a medication with a simple dosing schedule, record how often to take the med
 </api:example>
         <api:base_path>/records/{record_id}/social_history</api:base_path>
     </owl:Class>
-    <owl:Axiom>
-        <rdfs:comment>A patient&#39;s smoking status according the Meaningful Use classification.  This must be one of six prespecified LOINC codes: 
-
-449868002
-428041000124106
-8517006
-266919005
-266927001
-
-</rdfs:comment>
-        <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#SocialHistory"/>
-        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#smokingStatus"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-    </owl:Axiom>
     <owl:Axiom>
         <rdfs:comment>A patient&#39;s smoking status according the Meaningful Use classification.  This must be one of six prespecified LOINC codes: 
 
@@ -5124,7 +4974,19 @@ For a medication with a simple dosing schedule, record how often to take the med
         <rdfs:subClassOf rdf:resource="http://smartplatforms.org/terms#DataType"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#maximum"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://smartplatforms.org/terms#minimum"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#ValueAndUnit"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#maximum"/>
                 <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#ValueAndUnit"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -5132,18 +4994,6 @@ For a medication with a simple dosing schedule, record how often to take the med
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://smartplatforms.org/terms#minimum"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#maximum"/>
-                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#maximum"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#ValueAndUnit"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -5178,6 +5028,12 @@ For a medication with a simple dosing schedule, record how often to take the med
         <rdfs:subClassOf rdf:resource="http://smartplatforms.org/terms#DataType"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#numerator"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://smartplatforms.org/terms#denominator"/>
                 <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#ValueAndUnit"/>
             </owl:Restriction>
@@ -5192,12 +5048,6 @@ For a medication with a simple dosing schedule, record how often to take the med
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://smartplatforms.org/terms#numerator"/>
                 <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#ValueAndUnit"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#numerator"/>
-                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -5233,6 +5083,17 @@ For a medication with a simple dosing schedule, record how often to take the med
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://smartplatforms.org/terms#vitalName"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://smartplatforms.org/terms#code"/>
+                        <owl:allValuesFrom rdf:resource="&spcode;VitalSign"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#vitalName"/>
                 <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -5240,17 +5101,6 @@ For a medication with a simple dosing schedule, record how often to take the med
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://smartplatforms.org/terms#vitalName"/>
                 <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#vitalName"/>
-                <owl:allValuesFrom>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://smartplatforms.org/terms#code"/>
-                        <owl:allValuesFrom rdf:resource="&spcode;VitalSign"/>
-                    </owl:Restriction>
-                </owl:allValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>Vital Sign:  includes a LOINC code specifying which measurement is being reported, alongside a value and unit.</rdfs:comment>
@@ -5281,14 +5131,26 @@ For a medication with a simple dosing schedule, record how often to take the med
         <rdfs:subClassOf rdf:resource="http://smartplatforms.org/terms#Statement"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#oxygenSaturation"/>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#heartRate"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#VitalSign"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#height"/>
                 <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#VitalSign"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://smartplatforms.org/terms#temperature"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#VitalSign"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#respiratoryRate"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -5300,124 +5162,14 @@ For a medication with a simple dosing schedule, record how often to take the med
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#temperature"/>
-                <owl:allValuesFrom>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://smartplatforms.org/terms#unit"/>
-                        <owl:hasValue>Cel</owl:hasValue>
-                    </owl:Restriction>
-                </owl:allValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#headCircumference"/>
-                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#headCircumference"/>
-                <owl:allValuesFrom>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://smartplatforms.org/terms#unit"/>
-                        <owl:hasValue>cm</owl:hasValue>
-                    </owl:Restriction>
-                </owl:allValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&dcterms;date"/>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#encounter"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#respiratoryRate"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#VitalSign"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&dcterms;date"/>
-                <owl:allValuesFrom rdf:resource="&xsd;dateTime"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#weight"/>
-                <owl:allValuesFrom>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://smartplatforms.org/terms#unit"/>
-                        <owl:hasValue>kg</owl:hasValue>
-                    </owl:Restriction>
-                </owl:allValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#weight"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#VitalSign"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#oxygenSaturation"/>
-                <owl:allValuesFrom>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://smartplatforms.org/terms#unit"/>
-                        <owl:hasValue>%{HemoglobinSaturation}</owl:hasValue>
-                    </owl:Restriction>
-                </owl:allValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://smartplatforms.org/terms#encounter"/>
                 <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#Encounter"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#oxygenSaturation"/>
-                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#bodyMassIndex"/>
-                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#bodyMassIndex"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#VitalSign"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#headCircumference"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#VitalSign"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#encounter"/>
-                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#height"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#VitalSign"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#respiratoryRate"/>
-                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -5429,12 +5181,6 @@ For a medication with a simple dosing schedule, record how often to take the med
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://smartplatforms.org/terms#height"/>
-                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#height"/>
                 <owl:allValuesFrom>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://smartplatforms.org/terms#unit"/>
@@ -5445,20 +5191,31 @@ For a medication with a simple dosing schedule, record how often to take the med
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#heartRate"/>
-                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#respiratoryRate"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#VitalSign"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#temperature"/>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#headCircumference"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://smartplatforms.org/terms#unit"/>
+                        <owl:hasValue>cm</owl:hasValue>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#height"/>
                 <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://smartplatforms.org/terms#weight"/>
-                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#VitalSign"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -5468,6 +5225,17 @@ For a medication with a simple dosing schedule, record how often to take the med
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://smartplatforms.org/terms#unit"/>
                         <owl:hasValue>{breaths}/min</owl:hasValue>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#temperature"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://smartplatforms.org/terms#unit"/>
+                        <owl:hasValue>Cel</owl:hasValue>
                     </owl:Restriction>
                 </owl:allValuesFrom>
             </owl:Restriction>
@@ -5485,8 +5253,31 @@ For a medication with a simple dosing schedule, record how often to take the med
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#heartRate"/>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#oxygenSaturation"/>
                 <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#VitalSign"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#heartRate"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#oxygenSaturation"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://smartplatforms.org/terms#unit"/>
+                        <owl:hasValue>%{HemoglobinSaturation}</owl:hasValue>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#oxygenSaturation"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -5498,6 +5289,65 @@ For a medication with a simple dosing schedule, record how often to take the med
                         <owl:hasValue>{beats}/min</owl:hasValue>
                     </owl:Restriction>
                 </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#bodyMassIndex"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#VitalSign"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&dcterms;date"/>
+                <owl:allValuesFrom rdf:resource="&xsd;dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#bodyMassIndex"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&dcterms;date"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#headCircumference"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#weight"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://smartplatforms.org/terms#unit"/>
+                        <owl:hasValue>kg</owl:hasValue>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#temperature"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#VitalSign"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#weight"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#headCircumference"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#VitalSign"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <api:example>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
@@ -5759,13 +5609,13 @@ For a medication with a simple dosing schedule, record how often to take the med
         <api:description>Each Vital Sign Set element represent a set of vital signs collected together.</api:description>
     </owl:Class>
     <owl:Axiom>
-        <rdfs:comment>Patient&#39;s oxygen saturation in percent.  </rdfs:comment>
+        <rdfs:comment>Date + time when vital signs were recorded, as an ISO-8601 string.</rdfs:comment>
         <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#VitalSignSet"/>
         <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
         <owl:annotatedTarget>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#oxygenSaturation"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#VitalSign"/>
+                <owl:onProperty rdf:resource="&dcterms;date"/>
+                <owl:allValuesFrom rdf:resource="&xsd;dateTime"/>
             </owl:Restriction>
         </owl:annotatedTarget>
     </owl:Axiom>
@@ -5781,12 +5631,56 @@ For a medication with a simple dosing schedule, record how often to take the med
         </owl:annotatedTarget>
     </owl:Axiom>
     <owl:Axiom>
-        <rdfs:comment>Patient&#39;s Respiratory Rate per minute. </rdfs:comment>
+        <rdfs:comment>Patient&#39;s oxygen saturation in percent.  </rdfs:comment>
         <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#VitalSignSet"/>
         <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
         <owl:annotatedTarget>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#respiratoryRate"/>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#oxygenSaturation"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#VitalSign"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Patient&#39;s systolic + diastolic Blood Pressure in mmHg, with optional position coding</rdfs:comment>
+        <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#VitalSignSet"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#bloodPressure"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#BloodPressure"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Patient&#39;s Heart Rate per minute. </rdfs:comment>
+        <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#VitalSignSet"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#heartRate"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#VitalSign"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Patient&#39;s height in centimeters.  </rdfs:comment>
+        <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#VitalSignSet"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#height"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#VitalSign"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Patient&#39;s Body Mass Index.  </rdfs:comment>
+        <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#VitalSignSet"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#bodyMassIndex"/>
                 <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#VitalSign"/>
             </owl:Restriction>
         </owl:annotatedTarget>
@@ -5814,56 +5708,12 @@ For a medication with a simple dosing schedule, record how often to take the med
         </owl:annotatedTarget>
     </owl:Axiom>
     <owl:Axiom>
-        <rdfs:comment>Date + time when vital signs were recorded, as an ISO-8601 string.</rdfs:comment>
+        <rdfs:comment>Patient&#39;s Respiratory Rate per minute. </rdfs:comment>
         <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#VitalSignSet"/>
         <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
         <owl:annotatedTarget>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&dcterms;date"/>
-                <owl:allValuesFrom rdf:resource="&xsd;dateTime"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-    </owl:Axiom>
-    <owl:Axiom>
-        <rdfs:comment>Patient&#39;s Body Mass Index.  </rdfs:comment>
-        <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#VitalSignSet"/>
-        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#bodyMassIndex"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#VitalSign"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-    </owl:Axiom>
-    <owl:Axiom>
-        <rdfs:comment>Patient&#39;s Heart Rate per minute. </rdfs:comment>
-        <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#VitalSignSet"/>
-        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#heartRate"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#VitalSign"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-    </owl:Axiom>
-    <owl:Axiom>
-        <rdfs:comment>Patient&#39;s systolic + diastolic Blood Pressure in mmHg, with optional position coding</rdfs:comment>
-        <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#VitalSignSet"/>
-        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#bloodPressure"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#BloodPressure"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-    </owl:Axiom>
-    <owl:Axiom>
-        <rdfs:comment>Patient&#39;s height in centimeters.  </rdfs:comment>
-        <owl:annotatedSource rdf:resource="http://smartplatforms.org/terms#VitalSignSet"/>
-        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#height"/>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#respiratoryRate"/>
                 <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#VitalSign"/>
             </owl:Restriction>
         </owl:annotatedTarget>
@@ -6317,19 +6167,13 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
         <rdfs:subClassOf rdf:resource="http://smartplatforms.org/terms#Component"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&v;extended-address"/>
-                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&v;country-name"/>
-                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="&v;locality"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&v;region"/>
                 <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -6341,13 +6185,19 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&v;region"/>
+                <owl:onProperty rdf:resource="&v;street-address"/>
                 <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&v;street-address"/>
+                <owl:onProperty rdf:resource="&v;extended-address"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&v;country-name"/>
                 <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -6358,34 +6208,12 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
  * Work address (v:Work)</rdfs:comment>
     </owl:Class>
     <owl:Axiom>
-        <rdfs:comment>Street address</rdfs:comment>
-        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
-        <owl:annotatedSource rdf:resource="&v;Address"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&v;street-address"/>
-                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-    </owl:Axiom>
-    <owl:Axiom>
         <rdfs:comment>City Name</rdfs:comment>
         <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
         <owl:annotatedSource rdf:resource="&v;Address"/>
         <owl:annotatedTarget>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&v;extended-address"/>
-                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-    </owl:Axiom>
-    <owl:Axiom>
-        <rdfs:comment>e.g. state abbreviation</rdfs:comment>
-        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
-        <owl:annotatedSource rdf:resource="&v;Address"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&v;region"/>
                 <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </owl:annotatedTarget>
@@ -6402,12 +6230,34 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
         </owl:annotatedTarget>
     </owl:Axiom>
     <owl:Axiom>
+        <rdfs:comment>Street address</rdfs:comment>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedSource rdf:resource="&v;Address"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&v;street-address"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
         <rdfs:comment>Country name</rdfs:comment>
         <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
         <owl:annotatedSource rdf:resource="&v;Address"/>
         <owl:annotatedTarget>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&v;country-name"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>e.g. state abbreviation</rdfs:comment>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedSource rdf:resource="&v;Address"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&v;region"/>
                 <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </owl:annotatedTarget>
@@ -6464,7 +6314,13 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
         <rdfs:subClassOf rdf:resource="http://smartplatforms.org/terms#Component"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&v;honorific-suffix"/>
+                <owl:onProperty rdf:resource="&v;family-name"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&v;additional-name"/>
                 <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -6482,14 +6338,8 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&v;additional-name"/>
+                <owl:onProperty rdf:resource="&v;honorific-suffix"/>
                 <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&v;family-name"/>
-                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -6538,6 +6388,24 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
         <rdfs:subClassOf rdf:resource="http://smartplatforms.org/terms#Component"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="&v;n"/>
+                <owl:allValuesFrom rdf:resource="&v;Name"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&v;deathdate"/>
+                <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&v;bday"/>
+                <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="&v;deathdate"/>
                 <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
@@ -6550,20 +6418,8 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&v;deathdate"/>
-                <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&v;bday"/>
-                <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&v;n"/>
-                <owl:allValuesFrom rdf:resource="&v;Name"/>
+                <owl:onProperty rdf:resource="&v;tel"/>
+                <owl:allValuesFrom rdf:resource="&v;Tel"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -6574,26 +6430,14 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&v;adr"/>
-                <owl:allValuesFrom rdf:resource="&v;Address"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="&v;bday"/>
                 <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&v;tel"/>
-                <owl:allValuesFrom rdf:resource="&v;Tel"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&v;bday"/>
-                <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
+                <owl:onProperty rdf:resource="&v;adr"/>
+                <owl:allValuesFrom rdf:resource="&v;Address"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -6615,17 +6459,6 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
         <owl:annotatedTarget>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&v;deathdate"/>
-                <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-    </owl:Axiom>
-    <owl:Axiom>
-        <rdfs:comment>Birthday as an ISO-8601 string</rdfs:comment>
-        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
-        <owl:annotatedSource rdf:resource="&v;VCard"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&v;bday"/>
                 <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
             </owl:Restriction>
         </owl:annotatedTarget>
