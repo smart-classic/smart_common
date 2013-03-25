@@ -7572,8 +7572,6 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
         <rdfs:comment>Get an RDF graph of sp:Demographics elements for all patients that match the query.  Matching treats family_name and given_name as the *beginning* of a name.  For instance given_name=&apos;J&apos; matches /^J/i and thus matchs &apos;Josh&apos;. Date of birth is an ISO8601 string like &quot;2008-03-21&quot;; gender is &quot;male&quot; or &quot;female&quot;.  Gender, date_of_birth, zipcode, and medical_record_number must match exactly.
 	</rdfs:comment>
         <api:clientMethodName>search_records</api:clientMethodName>
-        <rdfs:comment>Get an RDF graph of sp:Demographics elements for all patients that match the query.  Matching treats family_name and given_name as the *beginning* of a name.  For instance given_name=&apos;J&apos; matches /^J/i and thus matchs &apos;Josh&apos;. Birthday is an ISO8601 string like &quot;2008-03-21&quot;; gender is &quot;male&quot; or &quot;female&quot;.  Gender, birthday, zipcode, and medical_record_number must match exactly.
-	</rdfs:comment>
         <api:httpMethod>GET</api:httpMethod>
         <api:category>container</api:category>
         <api:cardinality>multiple</api:cardinality>
