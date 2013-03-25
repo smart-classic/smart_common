@@ -6959,7 +6959,7 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
         <api:httpMethod>DELETE</api:httpMethod>
         <api:cardinality>single</api:cardinality>
         <rdfs:comment>Delete scratchpad data for an app</rdfs:comment>
-        <api:category>user</api:category>
+        <api:category>record</api:category>
         <api:clientMethodName>delete_scratchpad_data</api:clientMethodName>
         <api:path>/records/{record_id}/apps/{smart_app_id}/scratchpad</api:path>
         <api:target rdf:resource="http://smartplatforms.org/terms#ScratchpadData"/>
@@ -7427,7 +7427,7 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
         <rdf:type rdf:resource="&api;Call"/>
         <api:path>/records/{record_id}/apps/{smart_app_id}/scratchpad</api:path>
         <api:clientMethodName>get_scratchpad_data</api:clientMethodName>
-        <api:category>user</api:category>
+        <api:category>record</api:category>
         <api:cardinality>single</api:cardinality>
         <rdfs:comment>Get scratchpad data for an app</rdfs:comment>
         <api:httpMethod>GET</api:httpMethod>
@@ -7543,7 +7543,7 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
         <api:httpMethod>PUT</api:httpMethod>
         <api:clientMethodName>put_scratchpad_data</api:clientMethodName>
         <rdfs:comment>Set new scratchpad data for an app</rdfs:comment>
-        <api:category>user</api:category>
+        <api:category>record</api:category>
         <api:target rdf:resource="http://smartplatforms.org/terms#ScratchpadData"/>
     </owl:NamedIndividual>
     
