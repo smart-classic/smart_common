@@ -410,7 +410,7 @@ class SMART_Class(OWL_Class):
     def __init__(self, graph, uri):
         super(SMART_Class, self).__init__(graph, uri)
         self.name = self.get_annotation(rdfs.label) or self.guess_name()
-        self.description = self.get_annotation(rdfs.comment)
+        self.description = self.get_annotation(api.description)
         self.example = self.get_annotation(api.example)
         self.base_path = self.get_annotation(api.base_path)
 
