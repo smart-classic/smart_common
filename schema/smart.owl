@@ -4156,7 +4156,6 @@ A single fulfillment event (that is, the medication was dispensed to the patient
     &lt;/sp:Document&gt;
 &lt;/rdf:RDF&gt;</api:example>
         <api:base_path>/records/{record_id}/photographs/{photographs}</api:base_path>
-        <api:namePlural>Photographs</api:namePlural>
         <api:description>Models specific image documents that represent the patient. This allows SMART applications to show a patient photo (if available) to support an even more personal clinician-patient interaction. The photographs are returned in the Documents model format. The intent of these photographs is to show a head shot of the patient.</api:description>
     </owl:Class>
     
@@ -6974,10 +6973,10 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
         <rdf:type rdf:resource="&api;Call"/>
         <api:category>record</api:category>
         <api:httpMethod>GET</api:httpMethod>
-        <api:path>/records/{record_id}/photographs/{photograph_id}</api:path>
         <api:cardinality>single</api:cardinality>
         <rdfs:comment>Get one Photograph for a patient</rdfs:comment>
         <api:clientMethodName>get_photograph</api:clientMethodName>
+        <api:path>/records/{record_id}/photograph</api:path>
         <api:target rdf:resource="http://smartplatforms.org/terms#Photograph"/>
     </owl:NamedIndividual>
     
