@@ -6887,6 +6887,7 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
         <api:cardinality>single</api:cardinality>
         <api:httpMethod>GET</api:httpMethod>
         <api:target rdf:resource="http://smartplatforms.org/terms#Document"/>
+        <api:hasParameter rdf:resource="&parameters;format"/>
     </owl:NamedIndividual>
     
 
@@ -6903,6 +6904,7 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
         <api:defaultSort>sp:date</api:defaultSort>
         <api:cardinality>multiple</api:cardinality>
         <api:target rdf:resource="http://smartplatforms.org/terms#Document"/>
+        <api:hasParameter rdf:resource="&parameters;format"/>
     </owl:NamedIndividual>
     
 
@@ -6948,6 +6950,7 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
         <rdfs:comment>Get one Medical Image for a patient</rdfs:comment>
         <api:path>/records/{record_id}/medical_images/{medical_image_id}</api:path>
         <api:target rdf:resource="http://smartplatforms.org/terms#MedicalImage"/>
+        <api:hasParameter rdf:resource="&parameters;format"/>
     </owl:NamedIndividual>
     
 
@@ -6964,6 +6967,7 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
         <api:category>record</api:category>
         <api:httpMethod>GET</api:httpMethod>
         <api:target rdf:resource="http://smartplatforms.org/terms#MedicalImage"/>
+        <api:hasParameter rdf:resource="&parameters;format"/>
     </owl:NamedIndividual>
     
 
@@ -7623,7 +7627,6 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
         <api:category>container</api:category>
         <api:cardinality>multiple</api:cardinality>
         <api:target rdf:resource="http://smartplatforms.org/terms#Demographics"/>
-        <api:hasParameter rdf:resource="&parameters;birthday"/>
         <api:hasParameter rdf:resource="&parameters;date_of_birth"/>
         <api:hasParameter rdf:resource="&parameters;family_name"/>
         <api:hasParameter rdf:resource="&parameters;gender"/>
@@ -8276,19 +8279,8 @@ FILTER(?d &lt;= &quot;{date_to}&quot;)</api:filterSparql>
     <owl:NamedIndividual rdf:about="&parameter_sets;put_scratchpad_data_0">
         <rdf:type rdf:resource="&api;ParameterSet"/>
     </owl:NamedIndividual>
+
     
-
-
-    <!-- http://smartplatforms.org/terms/api/parameters#birthday -->
-
-    <owl:NamedIndividual rdf:about="&parameters;birthday">
-        <rdf:type rdf:resource="&api;Parameter"/>
-        <api:clientParameterType>query</api:clientParameterType>
-        <api:clientParameterName>birthday</api:clientParameterName>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://smartplatforms.org/terms/api/parameters#date_of_birth -->
 
     <owl:NamedIndividual rdf:about="&parameters;date_of_birth">
@@ -8361,6 +8353,16 @@ FILTER(?d &lt;= &quot;{date_to}&quot;)</api:filterSparql>
         <rdf:type rdf:resource="&api;Parameter"/>
         <api:clientParameterName>app_id</api:clientParameterName>
         <api:clientParameterType rdf:resource="&rdfs;Literal"/>
+    </owl:NamedIndividual>
+    
+
+    
+    <!-- http://smartplatforms.org/terms/api/parameters#format -->
+
+    <owl:NamedIndividual rdf:about="&parameters;format">
+        <rdf:type rdf:resource="&api;Parameter"/>
+        <api:clientParameterType rdf:resource="&rdfs;Literal"/>
+        <api:clientParameterName>format</api:clientParameterName>
     </owl:NamedIndividual>
     
 
