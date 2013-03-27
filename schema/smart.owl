@@ -245,6 +245,12 @@
     
 
 
+    <!-- http://smartplatforms.org/terms#documentType -->
+
+    <owl:ObjectProperty rdf:about="http://smartplatforms.org/terms#documentType"/>
+    
+
+
     <!-- http://smartplatforms.org/terms#drugAllergen -->
 
     <owl:ObjectProperty rdf:about="http://smartplatforms.org/terms#drugAllergen"/>
@@ -2202,6 +2208,12 @@ The formatted data, in turn, comprises a MIME type and either supply the value i
         <rdfs:subClassOf rdf:resource="http://smartplatforms.org/terms#Statement"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#documentType"/>
+                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://smartplatforms.org/terms#fileSize"/>
                 <owl:onClass rdf:resource="http://smartplatforms.org/terms#ValueAndUnit"/>
                 <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
@@ -2269,8 +2281,13 @@ The formatted data, in turn, comprises a MIME type and either supply the value i
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#classification"/>
-                <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#documentType"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://smartplatforms.org/terms#code"/>
+                        <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#DocumentType"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -2338,11 +2355,52 @@ The formatted data, in turn, comprises a MIME type and either supply the value i
            &lt;/sp:content&gt;
         &lt;/sp:Resource&gt;
       &lt;/sp:resource&gt;
-      &lt;sp:classification&gt;scan&lt;/sp:classification&gt;
-      &lt;sp:classification&gt;image&lt;/sp:classification&gt;
-      &lt;sp:classification&gt;report&lt;/sp:classification&gt;
+      &lt;sp:documentType&gt;
+          &lt;sp:CodedValue&gt;
+            &lt;dcterms:title&gt;A digital image pertaining to the patient record&lt;/dcterms:title&gt;
+            &lt;sp:code&gt;
+              &lt;spcode:DocumentType rdf:about=&quot;http://smartplatforms.org/terms/codes/DocumentType#image&quot;&gt;
+                &lt;rdf:type rdf:resource=&quot;http://smartplatforms.org/terms#Code&quot; /&gt;
+                &lt;dcterms:title&gt;A digital image pertaining to the patient record&lt;/dcterms:title&gt;
+                &lt;sp:system&gt;http://smartplatforms.org/terms/codes/DocumentType#&lt;/sp:system&gt;
+                &lt;dcterms:identifier&gt;image&lt;/dcterms:identifier&gt;
+              &lt;/spcode:DocumentType&gt;
+            &lt;/sp:code&gt;
+          &lt;/sp:CodedValue&gt;
+      &lt;/sp:documentType&gt;
+      &lt;sp:documentType&gt;
+          &lt;sp:CodedValue&gt;
+            &lt;dcterms:title&gt;A report about the patient&lt;/dcterms:title&gt;
+            &lt;sp:code&gt;
+              &lt;spcode:DocumentType rdf:about=&quot;http://smartplatforms.org/terms/codes/DocumentType#report&quot;&gt;
+                &lt;rdf:type rdf:resource=&quot;http://smartplatforms.org/terms#Code&quot; /&gt;
+                &lt;dcterms:title&gt;A report about the patient&lt;/dcterms:title&gt;
+                &lt;sp:system&gt;http://smartplatforms.org/terms/codes/DocumentType#&lt;/sp:system&gt;
+                &lt;dcterms:identifier&gt;report&lt;/dcterms:identifier&gt;
+              &lt;/spcode:DocumentType&gt;
+            &lt;/sp:code&gt;
+          &lt;/sp:CodedValue&gt;
+      &lt;/sp:documentType&gt;
     &lt;/sp:Document&gt;
 &lt;/rdf:RDF&gt;</api:example>
+    </owl:Class>
+    
+
+
+    <!-- http://smartplatforms.org/terms#DocumentType -->
+
+    <owl:Class rdf:about="http://smartplatforms.org/terms#DocumentType">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&spcode;DocumentType#image"/>
+                    <rdf:Description rdf:about="&spcode;DocumentType#report"/>
+                    <rdf:Description rdf:about="&spcode;DocumentType#scanned"/>
+                    <rdf:Description rdf:about="&spcode;DocumentType#note"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://smartplatforms.org/terms#Code"/>
     </owl:Class>
     
 
@@ -8394,6 +8452,42 @@ FILTER(?d &lt;= &quot;{date_to}&quot;)</api:filterSparql>
     <owl:NamedIndividual rdf:about="&spcode;BloodPressureMethod#palpation">
         <rdf:type rdf:resource="&spcode;BloodPressureMethod"/>
         <dcterms:title>Palpation</dcterms:title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://smartplatforms.org/terms/codes/DocumentType#image -->
+
+    <owl:NamedIndividual rdf:about="&spcode;DocumentType#image">
+        <rdf:type rdf:resource="http://smartplatforms.org/terms#DocumentType"/>
+        <dcterms:title>A digital image pertaining to the patient record</dcterms:title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://smartplatforms.org/terms/codes/DocumentType#note -->
+
+    <owl:NamedIndividual rdf:about="&spcode;DocumentType#note">
+        <rdf:type rdf:resource="http://smartplatforms.org/terms#DocumentType"/>
+        <dcterms:title>A clinical note about the patient</dcterms:title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://smartplatforms.org/terms/codes/DocumentType#report -->
+
+    <owl:NamedIndividual rdf:about="&spcode;DocumentType#report">
+        <rdf:type rdf:resource="http://smartplatforms.org/terms#DocumentType"/>
+        <dcterms:title>A report about the patient</dcterms:title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://smartplatforms.org/terms/codes/DocumentType#scanned -->
+
+    <owl:NamedIndividual rdf:about="&spcode;DocumentType#scanned">
+        <rdf:type rdf:resource="http://smartplatforms.org/terms#DocumentType"/>
+        <dcterms:title>A scanned document</dcterms:title>
     </owl:NamedIndividual>
     
 
