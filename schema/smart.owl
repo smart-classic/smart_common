@@ -5854,16 +5854,6 @@ A single fulfillment event (that is, the medication was dispensed to the patient
     <!-- http://smartplatforms.org/terms/codes/DocumentType -->
 
     <owl:Class rdf:about="&spcode;DocumentType">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&spcode;DocumentType#image"/>
-                    <rdf:Description rdf:about="&spcode;DocumentType#report"/>
-                    <rdf:Description rdf:about="&spcode;DocumentType#scanned"/>
-                    <rdf:Description rdf:about="&spcode;DocumentType#note"/>
-                </owl:oneOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://smartplatforms.org/terms#Code"/>
     </owl:Class>
     
@@ -8445,11 +8435,29 @@ FILTER(?d &lt;= &quot;{date_to}&quot;)</api:filterSparql>
     
 
 
+    <!-- http://smartplatforms.org/terms/codes/DocumentType#letter -->
+
+    <owl:NamedIndividual rdf:about="&spcode;DocumentType#letter">
+        <rdf:type rdf:resource="&spcode;DocumentType"/>
+        <dcterms:title>Letter about the patient</dcterms:title>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://smartplatforms.org/terms/codes/DocumentType#note -->
 
     <owl:NamedIndividual rdf:about="&spcode;DocumentType#note">
         <rdf:type rdf:resource="&spcode;DocumentType"/>
         <dcterms:title>A clinical note about the patient</dcterms:title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://smartplatforms.org/terms/codes/DocumentType#referral -->
+
+    <owl:NamedIndividual rdf:about="&spcode;DocumentType#referral">
+        <rdf:type rdf:resource="&spcode;DocumentType"/>
+        <dcterms:title>Patient referral note</dcterms:title>
     </owl:NamedIndividual>
     
 
@@ -8463,11 +8471,11 @@ FILTER(?d &lt;= &quot;{date_to}&quot;)</api:filterSparql>
     
 
 
-    <!-- http://smartplatforms.org/terms/codes/DocumentType#scanned -->
+    <!-- http://smartplatforms.org/terms/codes/DocumentType#summary -->
 
-    <owl:NamedIndividual rdf:about="&spcode;DocumentType#scanned">
+    <owl:NamedIndividual rdf:about="&spcode;DocumentType#summary">
         <rdf:type rdf:resource="&spcode;DocumentType"/>
-        <dcterms:title>A scanned document</dcterms:title>
+        <dcterms:title>Summary about the patient</dcterms:title>
     </owl:NamedIndividual>
     
 
