@@ -3703,7 +3703,9 @@ No example yet.</api:example>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <api:description>Describes a medical image that pertains to the patient record (such as a CT scan, an echograph, an X-ray, etc).</api:description>
+        <api:description>EXPERIMENTAL: This data model and API should be considered experimental as of v0.6
+
+Describes a medical image that pertains to the patient record (such as a CT scan, an echograph, an X-ray, etc).</api:description>
         <api:example>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
 &lt;rdf:RDF xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;
   xmlns:rdfs=&quot;http://www.w3.org/2000/01/rdf-schema#&quot;
@@ -7166,7 +7168,7 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
         <api:clientMethodName>get_medical_image</api:clientMethodName>
         <api:cardinality>single</api:cardinality>
         <api:category>record</api:category>
-        <rdfs:comment>Get one Medical Image for a patient</rdfs:comment>
+        <rdfs:comment>EXPERIMENTAL: Get one Medical Image for a patient</rdfs:comment>
         <api:path>/records/{record_id}/medical_images/{medical_image_id}</api:path>
         <api:target rdf:resource="http://smartplatforms.org/terms#MedicalImage"/>
         <api:hasParameter rdf:resource="&parameters;format"/>
@@ -7179,7 +7181,7 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
     <owl:NamedIndividual rdf:about="http://smartplatforms.org/terms#get_medical_images">
         <rdf:type rdf:resource="&api;Call"/>
         <api:cardinality>multiple</api:cardinality>
-        <rdfs:comment>Get all Medical Images for a patient</rdfs:comment>
+        <rdfs:comment>EXPERIMENTAL: Get all Medical Images for a patient</rdfs:comment>
         <api:defaultSort>dcterms:date</api:defaultSort>
         <api:clientMethodName>get_medical_images</api:clientMethodName>
         <api:path>/records/{record_id}/medical_images/</api:path>
