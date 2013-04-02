@@ -184,7 +184,7 @@ def container_manifest_structure_validator (manifest):
                 "properties":{
                     "app_launch": {
                         "type":"string",
-                        "pattern":URLPATTERN,
+                        #"pattern":URLPATTERN,  /// <-doed not like {{template}} tags
                         "required":True
                     },
                     "authorize_token": {
