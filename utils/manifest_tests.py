@@ -182,6 +182,11 @@ def container_manifest_structure_validator (manifest):
                 "type":"object",
                 "required":True,
                 "properties":{
+                    "app_launch": {
+                        "type":"string",
+                        "pattern":URLPATTERN,
+                        "required":True
+                    },
                     "authorize_token": {
                         "type":"string",
                         "pattern":URLPATTERN,
