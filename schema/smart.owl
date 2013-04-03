@@ -1851,9 +1851,7 @@ While it might seem inelegant to expose explicit AllergyExclusion statements, th
     <owl:Class rdf:about="http://smartplatforms.org/terms#ClinicalNote">
         <rdfs:label>Clinical Note</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://smartplatforms.org/terms#Document"/>
-        <api:description>The SMART Clinical Note model encapsulates a simple clinical note with a date, author, title, and one or more instances of formatted data (as sp:DocumentWithFormat nodes) ,  
-
-The formatted data, in turn, comprises a MIME type and either supply the value inline (via the rdf:value property) or as a URI at which the content can be found (by assigning a URI to the sp:DocumentWithFormat).</api:description>
+        <api:description></api:description>
         <api:namePlural>Clinical Notes</api:namePlural>
         <api:base_path>/records/{record_id}/clinical_notes/{clinical_note_id}</api:base_path>
         <api:example>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
