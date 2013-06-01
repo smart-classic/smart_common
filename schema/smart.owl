@@ -7628,7 +7628,7 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
     <owl:NamedIndividual rdf:about="&calls;post_clinical_note">
         <rdf:type rdf:resource="&api;Call"/>
         <api:cardinality>single</api:cardinality>
-        <rdfs:comment>Post a Clinical Note for a patient</rdfs:comment>
+        <rdfs:comment>Post a Clinical Note for a patient. The body of the post should contain SMART RDF/XML serialization of the clinical note without the belongsTo predicate. The clinical note will be added to the collection of notes and the call will return a a copy of the posted data to indicate as successful posting.</rdfs:comment>
         <api:clientMethodName>post_clinical_note</api:clientMethodName>
         <api:httpMethod>POST</api:httpMethod>
         <api:path>/records/{record_id}/clinical_notes/</api:path>
