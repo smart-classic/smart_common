@@ -7040,38 +7040,6 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
         <api:clientMethodName>get_family_history_observations</api:clientMethodName>
         <api:target rdf:resource="http://smartplatforms.org/terms#FamilyHistory"/>
     </owl:NamedIndividual>
-    
-
-
-    <!-- http://smartplatforms.org/terms#get_medical_image -->
-
-    <owl:NamedIndividual rdf:about="http://smartplatforms.org/terms#get_medical_image">
-        <api:httpMethod>GET</api:httpMethod>
-        <api:clientMethodName>get_medical_image</api:clientMethodName>
-        <api:cardinality>single</api:cardinality>
-        <api:category>record</api:category>
-        <rdfs:comment>Get one Medical Image for a patient</rdfs:comment>
-        <api:path>/records/{record_id}/medical_images/{medical_image_id}</api:path>
-        <api:target rdf:resource="http://smartplatforms.org/terms#MedicalImage"/>
-        <api:hasParameter rdf:resource="&parameters;format"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://smartplatforms.org/terms#get_medical_images -->
-
-    <owl:NamedIndividual rdf:about="http://smartplatforms.org/terms#get_medical_images">
-        <api:cardinality>multiple</api:cardinality>
-        <rdfs:comment>Get all Medical Images for a patient</rdfs:comment>
-        <api:defaultSort>dcterms:date</api:defaultSort>
-        <api:clientMethodName>get_medical_images</api:clientMethodName>
-        <api:path>/records/{record_id}/medical_images/</api:path>
-        <api:category>record</api:category>
-        <api:httpMethod>GET</api:httpMethod>
-        <api:target rdf:resource="http://smartplatforms.org/terms#MedicalImage"/>
-        <api:hasParameter rdf:resource="&parameters;format"/>
-    </owl:NamedIndividual>
-    
 
 
     <!-- http://smartplatforms.org/terms#get_photograph -->
