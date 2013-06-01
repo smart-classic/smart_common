@@ -1851,8 +1851,7 @@ The formatted data, in turn, comprises a MIME type and either supply the value i
   xmlns:dcterms=&quot;http://purl.org/dc/terms/&quot;
   xmlns:v=&quot;http://www.w3.org/2006/vcard/ns#&quot;
 &gt;
- &lt;sp:ClinicalNote rdf:about=&quot;http://sandbox-api.smartplatforms.org/records/2169591/clinical_notes/827335&quot;&gt;
-    &lt;sp:belongsTo rdf:resource=&quot;http://sandbox-api.smartplatforms.org/records/2169591&quot; /&gt;
+ &lt;sp:ClinicalNote&gt;
     &lt;dcterms:date&gt;2012-05-17&lt;/dcterms:date&gt;
     &lt;dcterms:title&gt;Cardiology clinic follow-up&lt;/dcterms:title&gt;
     &lt;dcterms:format&gt;
