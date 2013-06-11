@@ -7975,8 +7975,6 @@ FILTER (?c = uri(&lt;http://purl.bioontology.org/ontology/LNC/{loinc}&gt;))</api
     <owl:NamedIndividual rdf:about="&filters;lab_results_from_date">
         <rdf:type rdf:resource="&api;Filter"/>
         <api:clientParameterName>date_from</api:clientParameterName>
-        <api:filterSparql>?v dcterms:date ?d .
-FILTER(?d &gt;= &quot;{date_from}&quot;)</api:filterSparql>
         <api:filterSparql>?v dcterms:date ?d .</api:filterSparql>
     </owl:NamedIndividual>
     
@@ -8260,8 +8258,6 @@ FILTER(?c=uri(&lt;http://smartplatforms.org/terms/codes/EncounterType#{encounter
 
     <owl:NamedIndividual rdf:about="&filters;vital_sign_sets_from_date">
         <rdf:type rdf:resource="&api;Filter"/>
-        <api:filterSparql>?v dcterms:date ?d .
-FILTER(?d &gt;= &quot;{date_from}&quot;)</api:filterSparql>
         <api:filterSparql>?v dcterms:date ?d .</api:filterSparql>
         <api:clientParameterName>date_from</api:clientParameterName>
     </owl:NamedIndividual>
@@ -8294,8 +8290,6 @@ FILTER(?d &gt;= &quot;{date_from}&quot;)</api:filterSparql>
         <rdf:type rdf:resource="&api;Filter"/>
         <api:clientParameterName>date_to</api:clientParameterName>
         <api:filterSparql>?v dcterms:date ?d .</api:filterSparql>
-        <api:filterSparql>?v dcterms:date ?d .
-FILTER(?d &lt;= &quot;{date_to}&quot;)</api:filterSparql>
     </owl:NamedIndividual>
     
 
