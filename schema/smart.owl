@@ -5146,7 +5146,7 @@ For a medication with a simple dosing schedule, record the amount to take with e
                 <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment>Vital Sign:  includes a LOINC code specifying which measurement is being reported, alongside a value and unit.</rdfs:comment>
+        <rdfs:comment>Vital Sign:  includes a LOINC code specifying which measurement is being reported, alongside a value and unit expressed in UCUM.</rdfs:comment>
     </owl:Class>
     <owl:Axiom>
         <rdfs:comment>LOINC Coded Value for the vital sign type</rdfs:comment>
