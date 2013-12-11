@@ -2009,14 +2009,7 @@ The formatted data, in turn, comprises a MIME type and either supply the value i
 
     <!-- http://smartplatforms.org/terms#Component -->
 
-    <owl:Class rdf:about="http://smartplatforms.org/terms#Component">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#images"/>
-                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
+    <owl:Class rdf:about="http://smartplatforms.org/terms#Component"/>
     
 
 
@@ -3056,20 +3049,31 @@ The formatted data, in turn, comprises a MIME type and either supply the value i
         <rdfs:subClassOf rdf:resource="http://smartplatforms.org/terms#Statement"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#accessionNumber"/>
-                <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://smartplatforms.org/terms#series"/>
                 <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#Series"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#accessionNumber"/>
+                <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="&dcterms;title"/>
                 <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#modality"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://smartplatforms.org/terms#code"/>
+                        <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#ModalityType"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -3087,12 +3091,6 @@ The formatted data, in turn, comprises a MIME type and either supply the value i
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#modality"/>
-                <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://smartplatforms.org/terms#accessionNumber"/>
                 <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
@@ -3101,6 +3099,13 @@ The formatted data, in turn, comprises a MIME type and either supply the value i
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&dcterms;date"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#modality"/>
+                <owl:onClass rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <api:example>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
@@ -4051,8 +4056,8 @@ For a medication with a simple dosing schedule, record how often to take the med
         <owl:equivalentClass>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://smartplatforms.org/terms#ct"/>
-                    <rdf:Description rdf:about="http://smartplatforms.org/terms#mri"/>
+                    <rdf:Description rdf:about="&spcode;ModalityType#CT"/>
+                    <rdf:Description rdf:about="&spcode;ModalityType#MRI"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:equivalentClass>
@@ -4976,6 +4981,30 @@ For a medication with a simple dosing schedule, record how often to take the med
 
     <owl:Class rdf:about="http://smartplatforms.org/terms#Series">
         <rdfs:subClassOf rdf:resource="http://smartplatforms.org/terms#Component"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#modality"/>
+                <owl:onClass rdf:resource="http://smartplatforms.org/terms#CodedValue"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#images"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smartplatforms.org/terms#modality"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://smartplatforms.org/terms#code"/>
+                        <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#ModalityType"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -7139,15 +7168,6 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
     
 
 
-    <!-- http://smartplatforms.org/terms#ct -->
-
-    <owl:NamedIndividual rdf:about="http://smartplatforms.org/terms#ct">
-        <rdf:type rdf:resource="http://smartplatforms.org/terms#ModalityType"/>
-        <dcterms:title>A computer tomography scan of the patient.</dcterms:title>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://smartplatforms.org/terms#get_document -->
 
     <owl:NamedIndividual rdf:about="http://smartplatforms.org/terms#get_document">
@@ -7253,15 +7273,6 @@ system = http://www2a.cdc.gov/nip/IIS/IISStandards/vaccines.asp?rpt=cvx#</rdfs:c
         <api:clientMethodName>get_photograph</api:clientMethodName>
         <api:path>/records/{record_id}/photograph</api:path>
         <api:target rdf:resource="http://smartplatforms.org/terms#Photograph"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://smartplatforms.org/terms#mri -->
-
-    <owl:NamedIndividual rdf:about="http://smartplatforms.org/terms#mri">
-        <rdf:type rdf:resource="http://smartplatforms.org/terms#ModalityType"/>
-        <dcterms:title>A magnetic resonance imaging scan of the patient.</dcterms:title>
     </owl:NamedIndividual>
     
 
@@ -8963,6 +8974,24 @@ FILTER(?c=uri(&lt;http://smartplatforms.org/terms/codes/EncounterType#{encounter
     <owl:NamedIndividual rdf:about="&spcode;LabStatus#preliminary">
         <rdf:type rdf:resource="&spcode;LabResultStatus"/>
         <dcterms:title>Preliminary</dcterms:title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://smartplatforms.org/terms/codes/ModalityType#CT -->
+
+    <owl:NamedIndividual rdf:about="&spcode;ModalityType#CT">
+        <rdf:type rdf:resource="http://smartplatforms.org/terms#ModalityType"/>
+        <dcterms:title>A CT study of the patient</dcterms:title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://smartplatforms.org/terms/codes/ModalityType#MRI -->
+
+    <owl:NamedIndividual rdf:about="&spcode;ModalityType#MRI">
+        <rdf:type rdf:resource="http://smartplatforms.org/terms#ModalityType"/>
+        <dcterms:title>An MRI study of the patient</dcterms:title>
     </owl:NamedIndividual>
     
 
