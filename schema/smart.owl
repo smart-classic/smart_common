@@ -4176,8 +4176,42 @@ A single fulfillment event (that is, the medication was dispensed to the patient
         <owl:equivalentClass>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&spcode;ModalityType#MR"/>
+                    <rdf:Description rdf:about="&spcode;ModalityType#AR"/>
+                    <rdf:Description rdf:about="&spcode;ModalityType#BDUS"/>
+                    <rdf:Description rdf:about="&spcode;ModalityType#BMD"/>
+                    <rdf:Description rdf:about="&spcode;ModalityType#CR"/>
                     <rdf:Description rdf:about="&spcode;ModalityType#CT"/>
+                    <rdf:Description rdf:about="&spcode;ModalityType#DX"/>
+                    <rdf:Description rdf:about="&spcode;ModalityType#ECG"/>
+                    <rdf:Description rdf:about="&spcode;ModalityType#EPS"/>
+                    <rdf:Description rdf:about="&spcode;ModalityType#ES"/>
+                    <rdf:Description rdf:about="&spcode;ModalityType#GM"/>
+                    <rdf:Description rdf:about="&spcode;ModalityType#HD"/>
+                    <rdf:Description rdf:about="&spcode;ModalityType#IO"/>
+                    <rdf:Description rdf:about="&spcode;ModalityType#IVOCT"/>
+                    <rdf:Description rdf:about="&spcode;ModalityType#IVUS"/>
+                    <rdf:Description rdf:about="&spcode;ModalityType#KER"/>
+                    <rdf:Description rdf:about="&spcode;ModalityType#LEN"/>
+                    <rdf:Description rdf:about="&spcode;ModalityType#MG"/>
+                    <rdf:Description rdf:about="&spcode;ModalityType#MR"/>
+                    <rdf:Description rdf:about="&spcode;ModalityType#NM"/>
+                    <rdf:Description rdf:about="&spcode;ModalityType#OAM"/>
+                    <rdf:Description rdf:about="&spcode;ModalityType#OCT"/>
+                    <rdf:Description rdf:about="&spcode;ModalityType#OP"/>
+                    <rdf:Description rdf:about="&spcode;ModalityType#OPM"/>
+                    <rdf:Description rdf:about="&spcode;ModalityType#OPR"/>
+                    <rdf:Description rdf:about="&spcode;ModalityType#OPT"/>
+                    <rdf:Description rdf:about="&spcode;ModalityType#OPV"/>
+                    <rdf:Description rdf:about="&spcode;ModalityType#PT"/>
+                    <rdf:Description rdf:about="&spcode;ModalityType#PX"/>
+                    <rdf:Description rdf:about="&spcode;ModalityType#RF"/>
+                    <rdf:Description rdf:about="&spcode;ModalityType#RG"/>
+                    <rdf:Description rdf:about="&spcode;ModalityType#SM"/>
+                    <rdf:Description rdf:about="&spcode;ModalityType#SRF"/>
+                    <rdf:Description rdf:about="&spcode;ModalityType#US"/>
+                    <rdf:Description rdf:about="&spcode;ModalityType#VA"/>
+                    <rdf:Description rdf:about="&spcode;ModalityType#XA"/>
+                    <rdf:Description rdf:about="&spcode;ModalityType#XC"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:equivalentClass>
