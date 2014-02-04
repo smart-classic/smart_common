@@ -3118,7 +3118,7 @@ The formatted data, in turn, comprises a MIME type and either supply the value i
                 <owl:allValuesFrom>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://smartplatforms.org/terms#code"/>
-                        <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#ModalityType"/>
+                        <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms/codes/ModalityType"/>
                     </owl:Restriction>
                 </owl:allValuesFrom>
             </owl:Restriction>
@@ -4170,9 +4170,9 @@ A single fulfillment event (that is, the medication was dispensed to the patient
     
 
 
-    <!-- http://smartplatforms.org/terms#ModalityType -->
+    <!-- http://smartplatforms.org/terms/codes/ModalityType -->
 
-    <owl:Class rdf:about="http://smartplatforms.org/terms#ModalityType">
+    <owl:Class rdf:about="http://smartplatforms.org/terms/codes/ModalityType">
         <owl:equivalentClass>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
@@ -5121,7 +5121,7 @@ A single fulfillment event (that is, the medication was dispensed to the patient
                 <owl:allValuesFrom>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://smartplatforms.org/terms#code"/>
-                        <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms#ModalityType"/>
+                        <owl:allValuesFrom rdf:resource="http://smartplatforms.org/terms/codes/ModalityType"/>
                     </owl:Restriction>
                 </owl:allValuesFrom>
             </owl:Restriction>
@@ -9140,7 +9140,7 @@ FILTER(?c=uri(&lt;http://smartplatforms.org/terms/codes/EncounterType#{encounter
     <!-- http://smartplatforms.org/terms/codes/ModalityType#AR -->
 
     <owl:NamedIndividual rdf:about="&spcode;ModalityType#AR">
-        <rdf:type rdf:resource="http://smartplatforms.org/terms#ModalityType"/>
+        <rdf:type rdf:resource="http://smartplatforms.org/terms/codes/ModalityType"/>
         <dcterms:title>Autorefraction</dcterms:title>
     </owl:NamedIndividual>
     
@@ -9149,7 +9149,7 @@ FILTER(?c=uri(&lt;http://smartplatforms.org/terms/codes/EncounterType#{encounter
     <!-- http://smartplatforms.org/terms/codes/ModalityType#BDUS -->
 
     <owl:NamedIndividual rdf:about="&spcode;ModalityType#BDUS">
-        <rdf:type rdf:resource="http://smartplatforms.org/terms#ModalityType"/>
+        <rdf:type rdf:resource="http://smartplatforms.org/terms/codes/ModalityType"/>
         <dcterms:title>Ultrasound Bone Densitometry</dcterms:title>
     </owl:NamedIndividual>
     
@@ -9158,7 +9158,7 @@ FILTER(?c=uri(&lt;http://smartplatforms.org/terms/codes/EncounterType#{encounter
     <!-- http://smartplatforms.org/terms/codes/ModalityType#BMD -->
 
     <owl:NamedIndividual rdf:about="&spcode;ModalityType#BMD">
-        <rdf:type rdf:resource="http://smartplatforms.org/terms#ModalityType"/>
+        <rdf:type rdf:resource="http://smartplatforms.org/terms/codes/ModalityType"/>
         <dcterms:title>Bone Mineral Densitometry</dcterms:title>
     </owl:NamedIndividual>
     
@@ -9167,7 +9167,7 @@ FILTER(?c=uri(&lt;http://smartplatforms.org/terms/codes/EncounterType#{encounter
     <!-- http://smartplatforms.org/terms/codes/ModalityType#CR -->
 
     <owl:NamedIndividual rdf:about="&spcode;ModalityType#CR">
-        <rdf:type rdf:resource="http://smartplatforms.org/terms#ModalityType"/>
+        <rdf:type rdf:resource="http://smartplatforms.org/terms/codes/ModalityType"/>
         <dcterms:title>Computed Radiography</dcterms:title>
     </owl:NamedIndividual>
     
@@ -9176,7 +9176,7 @@ FILTER(?c=uri(&lt;http://smartplatforms.org/terms/codes/EncounterType#{encounter
     <!-- http://smartplatforms.org/terms/codes/ModalityType#CT -->
 
     <owl:NamedIndividual rdf:about="&spcode;ModalityType#CT">
-        <rdf:type rdf:resource="http://smartplatforms.org/terms#ModalityType"/>
+        <rdf:type rdf:resource="http://smartplatforms.org/terms/codes/ModalityType"/>
         <dcterms:title>Computed Tomography</dcterms:title>
     </owl:NamedIndividual>
     
@@ -9185,7 +9185,7 @@ FILTER(?c=uri(&lt;http://smartplatforms.org/terms/codes/EncounterType#{encounter
     <!-- http://smartplatforms.org/terms/codes/ModalityType#DX -->
 
     <owl:NamedIndividual rdf:about="&spcode;ModalityType#DX">
-        <rdf:type rdf:resource="http://smartplatforms.org/terms#ModalityType"/>
+        <rdf:type rdf:resource="http://smartplatforms.org/terms/codes/ModalityType"/>
         <dcterms:title>Digital Radiography</dcterms:title>
     </owl:NamedIndividual>
     
@@ -9194,7 +9194,7 @@ FILTER(?c=uri(&lt;http://smartplatforms.org/terms/codes/EncounterType#{encounter
     <!-- http://smartplatforms.org/terms/codes/ModalityType#ECG -->
 
     <owl:NamedIndividual rdf:about="&spcode;ModalityType#ECG">
-        <rdf:type rdf:resource="http://smartplatforms.org/terms#ModalityType"/>
+        <rdf:type rdf:resource="http://smartplatforms.org/terms/codes/ModalityType"/>
         <dcterms:title>Electrocardiography</dcterms:title>
     </owl:NamedIndividual>
     
@@ -9203,7 +9203,7 @@ FILTER(?c=uri(&lt;http://smartplatforms.org/terms/codes/EncounterType#{encounter
     <!-- http://smartplatforms.org/terms/codes/ModalityType#EPS -->
 
     <owl:NamedIndividual rdf:about="&spcode;ModalityType#EPS">
-        <rdf:type rdf:resource="http://smartplatforms.org/terms#ModalityType"/>
+        <rdf:type rdf:resource="http://smartplatforms.org/terms/codes/ModalityType"/>
         <dcterms:title>Cardiac Electrophysiology</dcterms:title>
     </owl:NamedIndividual>
     
@@ -9212,7 +9212,7 @@ FILTER(?c=uri(&lt;http://smartplatforms.org/terms/codes/EncounterType#{encounter
     <!-- http://smartplatforms.org/terms/codes/ModalityType#ES -->
 
     <owl:NamedIndividual rdf:about="&spcode;ModalityType#ES">
-        <rdf:type rdf:resource="http://smartplatforms.org/terms#ModalityType"/>
+        <rdf:type rdf:resource="http://smartplatforms.org/terms/codes/ModalityType"/>
         <dcterms:title>Endoscopy</dcterms:title>
     </owl:NamedIndividual>
     
@@ -9221,7 +9221,7 @@ FILTER(?c=uri(&lt;http://smartplatforms.org/terms/codes/EncounterType#{encounter
     <!-- http://smartplatforms.org/terms/codes/ModalityType#GM -->
 
     <owl:NamedIndividual rdf:about="&spcode;ModalityType#GM">
-        <rdf:type rdf:resource="http://smartplatforms.org/terms#ModalityType"/>
+        <rdf:type rdf:resource="http://smartplatforms.org/terms/codes/ModalityType"/>
         <dcterms:title>General Microscopy</dcterms:title>
     </owl:NamedIndividual>
     
@@ -9230,7 +9230,7 @@ FILTER(?c=uri(&lt;http://smartplatforms.org/terms/codes/EncounterType#{encounter
     <!-- http://smartplatforms.org/terms/codes/ModalityType#HD -->
 
     <owl:NamedIndividual rdf:about="&spcode;ModalityType#HD">
-        <rdf:type rdf:resource="http://smartplatforms.org/terms#ModalityType"/>
+        <rdf:type rdf:resource="http://smartplatforms.org/terms/codes/ModalityType"/>
         <dcterms:title>Hemodynamic Waveform</dcterms:title>
     </owl:NamedIndividual>
     
@@ -9239,7 +9239,7 @@ FILTER(?c=uri(&lt;http://smartplatforms.org/terms/codes/EncounterType#{encounter
     <!-- http://smartplatforms.org/terms/codes/ModalityType#IO -->
 
     <owl:NamedIndividual rdf:about="&spcode;ModalityType#IO">
-        <rdf:type rdf:resource="http://smartplatforms.org/terms#ModalityType"/>
+        <rdf:type rdf:resource="http://smartplatforms.org/terms/codes/ModalityType"/>
         <dcterms:title>Intra-oral Radiography</dcterms:title>
     </owl:NamedIndividual>
     
@@ -9248,7 +9248,7 @@ FILTER(?c=uri(&lt;http://smartplatforms.org/terms/codes/EncounterType#{encounter
     <!-- http://smartplatforms.org/terms/codes/ModalityType#IVOCT -->
 
     <owl:NamedIndividual rdf:about="&spcode;ModalityType#IVOCT">
-        <rdf:type rdf:resource="http://smartplatforms.org/terms#ModalityType"/>
+        <rdf:type rdf:resource="http://smartplatforms.org/terms/codes/ModalityType"/>
         <dcterms:title>Intravascular Optical Coherence Tomography</dcterms:title>
     </owl:NamedIndividual>
     
@@ -9257,7 +9257,7 @@ FILTER(?c=uri(&lt;http://smartplatforms.org/terms/codes/EncounterType#{encounter
     <!-- http://smartplatforms.org/terms/codes/ModalityType#IVUS -->
 
     <owl:NamedIndividual rdf:about="&spcode;ModalityType#IVUS">
-        <rdf:type rdf:resource="http://smartplatforms.org/terms#ModalityType"/>
+        <rdf:type rdf:resource="http://smartplatforms.org/terms/codes/ModalityType"/>
         <dcterms:title>Intravascular Ultrasound</dcterms:title>
     </owl:NamedIndividual>
     
@@ -9266,7 +9266,7 @@ FILTER(?c=uri(&lt;http://smartplatforms.org/terms/codes/EncounterType#{encounter
     <!-- http://smartplatforms.org/terms/codes/ModalityType#KER -->
 
     <owl:NamedIndividual rdf:about="&spcode;ModalityType#KER">
-        <rdf:type rdf:resource="http://smartplatforms.org/terms#ModalityType"/>
+        <rdf:type rdf:resource="http://smartplatforms.org/terms/codes/ModalityType"/>
         <dcterms:title>Keratometry</dcterms:title>
     </owl:NamedIndividual>
     
@@ -9275,7 +9275,7 @@ FILTER(?c=uri(&lt;http://smartplatforms.org/terms/codes/EncounterType#{encounter
     <!-- http://smartplatforms.org/terms/codes/ModalityType#LEN -->
 
     <owl:NamedIndividual rdf:about="&spcode;ModalityType#LEN">
-        <rdf:type rdf:resource="http://smartplatforms.org/terms#ModalityType"/>
+        <rdf:type rdf:resource="http://smartplatforms.org/terms/codes/ModalityType"/>
         <dcterms:title>Lensometry</dcterms:title>
     </owl:NamedIndividual>
     
@@ -9284,7 +9284,7 @@ FILTER(?c=uri(&lt;http://smartplatforms.org/terms/codes/EncounterType#{encounter
     <!-- http://smartplatforms.org/terms/codes/ModalityType#MG -->
 
     <owl:NamedIndividual rdf:about="&spcode;ModalityType#MG">
-        <rdf:type rdf:resource="http://smartplatforms.org/terms#ModalityType"/>
+        <rdf:type rdf:resource="http://smartplatforms.org/terms/codes/ModalityType"/>
         <dcterms:title>Mammography</dcterms:title>
     </owl:NamedIndividual>
     
@@ -9293,7 +9293,7 @@ FILTER(?c=uri(&lt;http://smartplatforms.org/terms/codes/EncounterType#{encounter
     <!-- http://smartplatforms.org/terms/codes/ModalityType#MR -->
 
     <owl:NamedIndividual rdf:about="&spcode;ModalityType#MR">
-        <rdf:type rdf:resource="http://smartplatforms.org/terms#ModalityType"/>
+        <rdf:type rdf:resource="http://smartplatforms.org/terms/codes/ModalityType"/>
         <dcterms:title>Magnetic Resonance</dcterms:title>
     </owl:NamedIndividual>
     
@@ -9302,7 +9302,7 @@ FILTER(?c=uri(&lt;http://smartplatforms.org/terms/codes/EncounterType#{encounter
     <!-- http://smartplatforms.org/terms/codes/ModalityType#NM -->
 
     <owl:NamedIndividual rdf:about="&spcode;ModalityType#NM">
-        <rdf:type rdf:resource="http://smartplatforms.org/terms#ModalityType"/>
+        <rdf:type rdf:resource="http://smartplatforms.org/terms/codes/ModalityType"/>
         <dcterms:title>Nuclear Medicine</dcterms:title>
     </owl:NamedIndividual>
     
@@ -9311,7 +9311,7 @@ FILTER(?c=uri(&lt;http://smartplatforms.org/terms/codes/EncounterType#{encounter
     <!-- http://smartplatforms.org/terms/codes/ModalityType#OAM -->
 
     <owl:NamedIndividual rdf:about="&spcode;ModalityType#OAM">
-        <rdf:type rdf:resource="http://smartplatforms.org/terms#ModalityType"/>
+        <rdf:type rdf:resource="http://smartplatforms.org/terms/codes/ModalityType"/>
         <dcterms:title>Ophthalmic Axial Measurements</dcterms:title>
     </owl:NamedIndividual>
     
@@ -9320,7 +9320,7 @@ FILTER(?c=uri(&lt;http://smartplatforms.org/terms/codes/EncounterType#{encounter
     <!-- http://smartplatforms.org/terms/codes/ModalityType#OCT -->
 
     <owl:NamedIndividual rdf:about="&spcode;ModalityType#OCT">
-        <rdf:type rdf:resource="http://smartplatforms.org/terms#ModalityType"/>
+        <rdf:type rdf:resource="http://smartplatforms.org/terms/codes/ModalityType"/>
         <dcterms:title>Optical Coherence Tomography</dcterms:title>
     </owl:NamedIndividual>
     
@@ -9329,7 +9329,7 @@ FILTER(?c=uri(&lt;http://smartplatforms.org/terms/codes/EncounterType#{encounter
     <!-- http://smartplatforms.org/terms/codes/ModalityType#OP -->
 
     <owl:NamedIndividual rdf:about="&spcode;ModalityType#OP">
-        <rdf:type rdf:resource="http://smartplatforms.org/terms#ModalityType"/>
+        <rdf:type rdf:resource="http://smartplatforms.org/terms/codes/ModalityType"/>
         <dcterms:title>Ophthalmic Photography</dcterms:title>
     </owl:NamedIndividual>
     
@@ -9338,7 +9338,7 @@ FILTER(?c=uri(&lt;http://smartplatforms.org/terms/codes/EncounterType#{encounter
     <!-- http://smartplatforms.org/terms/codes/ModalityType#OPM -->
 
     <owl:NamedIndividual rdf:about="&spcode;ModalityType#OPM">
-        <rdf:type rdf:resource="http://smartplatforms.org/terms#ModalityType"/>
+        <rdf:type rdf:resource="http://smartplatforms.org/terms/codes/ModalityType"/>
         <dcterms:title>Ophthalmic Mapping</dcterms:title>
     </owl:NamedIndividual>
     
@@ -9347,7 +9347,7 @@ FILTER(?c=uri(&lt;http://smartplatforms.org/terms/codes/EncounterType#{encounter
     <!-- http://smartplatforms.org/terms/codes/ModalityType#OPR -->
 
     <owl:NamedIndividual rdf:about="&spcode;ModalityType#OPR">
-        <rdf:type rdf:resource="http://smartplatforms.org/terms#ModalityType"/>
+        <rdf:type rdf:resource="http://smartplatforms.org/terms/codes/ModalityType"/>
         <dcterms:title>Ophthalmic Refraction</dcterms:title>
     </owl:NamedIndividual>
     
@@ -9356,7 +9356,7 @@ FILTER(?c=uri(&lt;http://smartplatforms.org/terms/codes/EncounterType#{encounter
     <!-- http://smartplatforms.org/terms/codes/ModalityType#OPT -->
 
     <owl:NamedIndividual rdf:about="&spcode;ModalityType#OPT">
-        <rdf:type rdf:resource="http://smartplatforms.org/terms#ModalityType"/>
+        <rdf:type rdf:resource="http://smartplatforms.org/terms/codes/ModalityType"/>
         <dcterms:title>Ophthalmic Tomography</dcterms:title>
     </owl:NamedIndividual>
     
@@ -9365,7 +9365,7 @@ FILTER(?c=uri(&lt;http://smartplatforms.org/terms/codes/EncounterType#{encounter
     <!-- http://smartplatforms.org/terms/codes/ModalityType#OPV -->
 
     <owl:NamedIndividual rdf:about="&spcode;ModalityType#OPV">
-        <rdf:type rdf:resource="http://smartplatforms.org/terms#ModalityType"/>
+        <rdf:type rdf:resource="http://smartplatforms.org/terms/codes/ModalityType"/>
         <dcterms:title>Ophthalmic Visual Field</dcterms:title>
     </owl:NamedIndividual>
     
@@ -9374,7 +9374,7 @@ FILTER(?c=uri(&lt;http://smartplatforms.org/terms/codes/EncounterType#{encounter
     <!-- http://smartplatforms.org/terms/codes/ModalityType#PT -->
 
     <owl:NamedIndividual rdf:about="&spcode;ModalityType#PT">
-        <rdf:type rdf:resource="http://smartplatforms.org/terms#ModalityType"/>
+        <rdf:type rdf:resource="http://smartplatforms.org/terms/codes/ModalityType"/>
         <dcterms:title>Positron emission tomography</dcterms:title>
     </owl:NamedIndividual>
     
@@ -9383,7 +9383,7 @@ FILTER(?c=uri(&lt;http://smartplatforms.org/terms/codes/EncounterType#{encounter
     <!-- http://smartplatforms.org/terms/codes/ModalityType#PX -->
 
     <owl:NamedIndividual rdf:about="&spcode;ModalityType#PX">
-        <rdf:type rdf:resource="http://smartplatforms.org/terms#ModalityType"/>
+        <rdf:type rdf:resource="http://smartplatforms.org/terms/codes/ModalityType"/>
         <dcterms:title>Panoramic X-Ray</dcterms:title>
     </owl:NamedIndividual>
     
@@ -9392,7 +9392,7 @@ FILTER(?c=uri(&lt;http://smartplatforms.org/terms/codes/EncounterType#{encounter
     <!-- http://smartplatforms.org/terms/codes/ModalityType#RF -->
 
     <owl:NamedIndividual rdf:about="&spcode;ModalityType#RF">
-        <rdf:type rdf:resource="http://smartplatforms.org/terms#ModalityType"/>
+        <rdf:type rdf:resource="http://smartplatforms.org/terms/codes/ModalityType"/>
         <dcterms:title>Radiofluoroscopy</dcterms:title>
     </owl:NamedIndividual>
     
@@ -9401,7 +9401,7 @@ FILTER(?c=uri(&lt;http://smartplatforms.org/terms/codes/EncounterType#{encounter
     <!-- http://smartplatforms.org/terms/codes/ModalityType#RG -->
 
     <owl:NamedIndividual rdf:about="&spcode;ModalityType#RG">
-        <rdf:type rdf:resource="http://smartplatforms.org/terms#ModalityType"/>
+        <rdf:type rdf:resource="http://smartplatforms.org/terms/codes/ModalityType"/>
         <dcterms:title>Radiographic imaging</dcterms:title>
     </owl:NamedIndividual>
     
@@ -9410,7 +9410,7 @@ FILTER(?c=uri(&lt;http://smartplatforms.org/terms/codes/EncounterType#{encounter
     <!-- http://smartplatforms.org/terms/codes/ModalityType#SM -->
 
     <owl:NamedIndividual rdf:about="&spcode;ModalityType#SM">
-        <rdf:type rdf:resource="http://smartplatforms.org/terms#ModalityType"/>
+        <rdf:type rdf:resource="http://smartplatforms.org/terms/codes/ModalityType"/>
         <dcterms:title>Slide Microscopy</dcterms:title>
     </owl:NamedIndividual>
     
@@ -9419,7 +9419,7 @@ FILTER(?c=uri(&lt;http://smartplatforms.org/terms/codes/EncounterType#{encounter
     <!-- http://smartplatforms.org/terms/codes/ModalityType#SRF -->
 
     <owl:NamedIndividual rdf:about="&spcode;ModalityType#SRF">
-        <rdf:type rdf:resource="http://smartplatforms.org/terms#ModalityType"/>
+        <rdf:type rdf:resource="http://smartplatforms.org/terms/codes/ModalityType"/>
         <dcterms:title>Subjective Refraction</dcterms:title>
     </owl:NamedIndividual>
     
@@ -9428,7 +9428,7 @@ FILTER(?c=uri(&lt;http://smartplatforms.org/terms/codes/EncounterType#{encounter
     <!-- http://smartplatforms.org/terms/codes/ModalityType#US -->
 
     <owl:NamedIndividual rdf:about="&spcode;ModalityType#US">
-        <rdf:type rdf:resource="http://smartplatforms.org/terms#ModalityType"/>
+        <rdf:type rdf:resource="http://smartplatforms.org/terms/codes/ModalityType"/>
         <dcterms:title>Ultrasound</dcterms:title>
     </owl:NamedIndividual>
     
@@ -9437,7 +9437,7 @@ FILTER(?c=uri(&lt;http://smartplatforms.org/terms/codes/EncounterType#{encounter
     <!-- http://smartplatforms.org/terms/codes/ModalityType#VA -->
 
     <owl:NamedIndividual rdf:about="&spcode;ModalityType#VA">
-        <rdf:type rdf:resource="http://smartplatforms.org/terms#ModalityType"/>
+        <rdf:type rdf:resource="http://smartplatforms.org/terms/codes/ModalityType"/>
         <dcterms:title>Visual Acuity</dcterms:title>
     </owl:NamedIndividual>
     
@@ -9446,7 +9446,7 @@ FILTER(?c=uri(&lt;http://smartplatforms.org/terms/codes/EncounterType#{encounter
     <!-- http://smartplatforms.org/terms/codes/ModalityType#XA -->
 
     <owl:NamedIndividual rdf:about="&spcode;ModalityType#XA">
-        <rdf:type rdf:resource="http://smartplatforms.org/terms#ModalityType"/>
+        <rdf:type rdf:resource="http://smartplatforms.org/terms/codes/ModalityType"/>
         <dcterms:title>X-Ray Angiography</dcterms:title>
     </owl:NamedIndividual>
     
@@ -9455,7 +9455,7 @@ FILTER(?c=uri(&lt;http://smartplatforms.org/terms/codes/EncounterType#{encounter
     <!-- http://smartplatforms.org/terms/codes/ModalityType#XC -->
 
     <owl:NamedIndividual rdf:about="&spcode;ModalityType#XC">
-        <rdf:type rdf:resource="http://smartplatforms.org/terms#ModalityType"/>
+        <rdf:type rdf:resource="http://smartplatforms.org/terms/codes/ModalityType"/>
         <dcterms:title>External-camera Photography</dcterms:title>
     </owl:NamedIndividual>
     
