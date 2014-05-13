@@ -3898,9 +3898,16 @@ No example yet.</api:example>
         </rdfs:subClassOf>
         <api:namePlural>Medical Images</api:namePlural>
         <api:description>Describes a medical image of the patient&apos;s body.</api:description>
-        <api:example>&lt;sp:MedicalImage&gt;
-      &lt;sp:belongsTo  rdf:resource=&quot;http://sandbox-api.smartplatforms.org/records/99912345&quot; /&gt;
-      &lt;sp:imagingStudy rdf:resource=&quot;http://sandbox-api.smartplatforms.org/records/99912345/imaging_studies/456&quot; /&gt;
+        <api:example>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:sp="http://smartplatforms.org/terms#"
+    xmlns:dcterms="http://purl.org/dc/terms/"
+    xmlns:v="http://www.w3.org/2006/vcard/ns#"
+&gt;
+  &lt;sp:MedicalImage&gt;
+      &lt;sp:belongsTo rdf:resource="http://sandbox-api.smartplatforms.org/records/99912345" /&gt;
+      &lt;sp:imagingStudy rdf:resource="http://sandbox-api.smartplatforms.org/records/99912345/imaging_studies/456" /&gt;
       &lt;sp:fileName&gt;IM-0002-1021.dcm&lt;/sp:fileName&gt;
       &lt;dcterms:title&gt;Image from chest CT scan to study bone structure&lt;/dcterms:title&gt;
       &lt;dcterms:date&gt;2004-09-30T12:14:00.6848Z&lt;/dcterms:date&gt;
@@ -3908,7 +3915,7 @@ No example yet.</api:example>
       &lt;sp:dicomSeriesUID&gt;748225&lt;/sp:dicomSeriesUID&gt;
       &lt;sp:dicomImageUID&gt;60937345&lt;/sp:dicomImageUID&gt;
       &lt;dcterms:format&gt;
-        &lt;dcterms:MediaTypeOrExtent rdf:about=&quot;http://purl.org/NET/mediatypes/application/dicom&quot;&gt;
+        &lt;dcterms:MediaTypeOrExtent rdf:about="http://purl.org/NET/mediatypes/application/dicom"&gt;
             &lt;rdfs:label&gt;application/dicom&lt;/rdfs:label&gt;
         &lt;/dcterms:MediaTypeOrExtent&gt;
       &lt;/dcterms:format&gt;
@@ -3923,7 +3930,8 @@ No example yet.</api:example>
            &lt;/sp:hash&gt;
         &lt;/sp:Resource&gt;
       &lt;/sp:resource&gt;
-&lt;/sp:MedicalImage&gt;</api:example>
+  &lt;/sp:MedicalImage&gt;
+&lt;/rdf:RDF&gt;</api:example>
         <api:base_path>/records/{record_id}/medical_images/{medical_image_id}</api:base_path>
     </owl:Class>
     
